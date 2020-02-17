@@ -11,6 +11,8 @@ Get the repo id we'll need for later queries.
 ```
 
 ```
-> travis raw '/repos/ethereum/go-ethereum/builds?event_type=pull_request' --json | jq .builds > builds.json
-> cat builds.json | jq '.[-1].id'
+> travis raw '/repos/ethereum/go-ethereum/builds' --json | jq '[.builds[] | del(.config)]' > builds.json
+> cat builds.json | jq '.[-1].number'
+> travis raw '/repos/ethereum/go-ethereum/builds?after_number=21201' --json | jq '[.builds[] | del(.config)]' | jq -s add builds.json - > tmp.json
+> mv tmp.json builds.json
 ```
