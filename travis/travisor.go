@@ -2,10 +2,13 @@ package main
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"flag"
 	"fmt"
+	"github.com/shuheiktgw/go-travis"
 	"net/http"
+	"testing"
 )
 
 const (
@@ -46,7 +49,7 @@ func builds(repo string, maxBuilds int) (buildInfo,error) {
 	return b, nil
 }
 
-func main() {
+func old_main() {
 	repo := flag.String("repo", "ethereum/go-ethereum", "<username>/<repo> on github")
 	maxBuilds := flag.Int("max-builds", 5, "Max number of builds")
 	flag.Parse()
@@ -56,4 +59,27 @@ func main() {
 	}
 	fmt.Printf("builds: %#v", b)
 }
+
+func main() {
+	TestDev(nil)
+}
+
+func TestDev(t *testing.T) {
+	client := travis.NewClient(travis.ApiOrgUrl, "")
+
+	builds, _, _ := client.Builds.ListByRepoSlug(context.Background(), "ethereum/go-ethereum", nil)
+	for _, b := range builds {
+		if *b.State == "failed" {
+			jobs, _, _ := client.Jobs.ListByBuild(context.Background(), *b.Id)
+			for _, j := range jobs {
+				if *j.State == "failed" {
+					log, _, _ := client.Logs.FindByJobId(context.Background(), *j.Id)
+					fmt.Println(*log.Href)
+				}
+			}
+		}
+	}
+
+}
+
 
