@@ -12,8 +12,8 @@ const (
 	baseUrl = "https://api.travis-ci.org"
 )
 
-// type buildInfo []interface{}
-type buildInfo map[string]interface{}
+type buildInfo []interface{}
+//type buildInfo map[string]interface{}
 
 func readJSONFromUrl(path string) ([]byte, error) {
 	url := baseUrl + path
@@ -35,7 +35,8 @@ func readJSONFromUrl(path string) ([]byte, error) {
 func builds(repo string, maxBuilds int) (buildInfo,error) {
 	var jsonBytes []byte
 	var err error
-	if jsonBytes, err = readJSONFromUrl("/builds/650345062"); err != nil {
+	path := fmt.Sprintf("/repos/%v/builds", repo)
+	if jsonBytes, err = readJSONFromUrl(path); err != nil {
 		return nil, err
 	}
 	var b buildInfo
@@ -53,5 +54,6 @@ func main() {
 	if err != nil {
 		fmt.Print(err)
 	}
-	fmt.Print("builds: ", b)
+	fmt.Printf("builds: %#v", b)
 }
+
