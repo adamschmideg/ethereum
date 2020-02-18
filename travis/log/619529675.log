@@ -1,0 +1,2214 @@
+travis_fold:start:worker_info
+[0K[33;1mWorker information[0m
+hostname: 2d6f01df-8f42-40aa-b4f6-f7c0be4c1221@1.worker-org-6bc68c5dcd-6fz2z.macstadium-prod-2
+version: v6.2.0 https://github.com/travis-ci/worker/tree/5e5476e01646095f48eec13196fdb3faf8f5cbf7
+instance: a7770f4b-3a48-441f-ad41-a3a6ae36baeb travis-ci-macos-10.13-xcode9.4.1-1529955246 (via amqp)
+startup: 59.560359882s
+travis_fold:end:worker_info
+[0Ktravis_time:start:0471c0d5
+[0Ktravis_time:end:0471c0d5:start=1575279203545263000,finish=1575279204022697000,duration=477434000,event=no_world_writable_dirs
+[0Ktravis_time:start:23e8727b
+[0Ktravis_time:end:23e8727b:start=1575279204030734000,finish=1575279204042810000,duration=12076000,event=setup_filter
+[0Ktravis_time:start:0898dec1
+[0Ktravis_time:end:0898dec1:start=1575279204058428000,finish=1575279204067303000,duration=8875000,event=check_unsupported
+[0Ktravis_time:start:01694dee
+[0Ktravis_fold:start:system_info
+[0K[33;1mBuild system information[0m
+
+
+Build language: go
+
+
+Build id: 619529670
+
+
+Job id: 619529675
+
+
+Runtime kernel version: 17.4.0
+
+
+travis-build version: 2a7679d1b
+
+
+[34m[1mBuild image provisioning date and time[0m
+
+
+Mon Jun 25 21:55:14 GMT 2018
+
+
+[34m[1mOperating System Details[0m
+
+
+ProductName:	Mac OS X
+
+
+ProductVersion:	10.13.3
+
+
+BuildVersion:	17D102
+
+
+[34m[1mGit version[0m
+
+
+git version 2.18.0
+
+
+[34m[1mbash version[0m
+
+
+GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin17)
+
+
+Copyright (C) 2007 Free Software Foundation, Inc.
+
+
+[34m[1mGCC version[0m
+
+
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+
+
+Target: x86_64-apple-darwin17.4.0
+
+
+Thread model: posix
+
+
+InstalledDir: /Applications/Xcode-9.4.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+
+[34m[1mLLVM version[0m
+
+
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+
+
+Target: x86_64-apple-darwin17.4.0
+
+
+Thread model: posix
+
+
+InstalledDir: /Applications/Xcode-9.4.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+
+[34m[1mPre-installed Ruby versions[0m
+
+
+ruby-2.3.5
+
+
+ruby-2.4.3
+
+
+[34m[1mPre-installed Node.js versions[0m
+
+
+v4.9.1
+
+
+v5.12.0
+
+
+v6.14.3
+
+
+v8.11.3
+
+
+[34m[1mmvn -version[0m
+
+
+Apache Maven 3.5.4 (1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-17T18:33:14Z)
+
+
+Maven home: /usr/local/Cellar/maven/3.5.4/libexec
+
+
+Java version: 10.0.1, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home
+
+
+Default locale: en_US, platform encoding: UTF-8
+
+
+OS name: "mac os x", version: "10.13.3", arch: "x86_64", family: "mac"
+
+
+travis_fold:end:system_info
+[0K
+
+
+travis_time:end:01694dee:start=1575279204076429000,finish=1575279204090394000,duration=13965000,event=show_system_info
+[0Ktravis_time:start:14c11920
+[0Ktravis_time:end:14c11920:start=1575279204100153000,finish=1575279204106916000,duration=6763000,event=rm_riak_source
+[0Ktravis_time:start:00f105c9
+[0Ktravis_time:end:00f105c9:start=1575279204114926000,finish=1575279204123445000,duration=8519000,event=fix_rwky_redis
+[0Ktravis_time:start:22e7b104
+[0Ktravis_time:end:22e7b104:start=1575279204133053000,finish=1575279205123269000,duration=990216000,event=wait_for_network
+[0Ktravis_time:start:180367fe
+[0Ktravis_time:end:180367fe:start=1575279205133116000,finish=1575279205139937000,duration=6821000,event=update_apt_keys
+[0Ktravis_time:start:0055f737
+[0Ktravis_time:end:0055f737:start=1575279205149611000,finish=1575279205157223000,duration=7612000,event=fix_hhvm_source
+[0Ktravis_time:start:0203de40
+[0Ktravis_time:end:0203de40:start=1575279205168240000,finish=1575279205176064000,duration=7824000,event=update_mongo_arch
+[0Ktravis_time:start:0651ddcc
+[0Ktravis_time:end:0651ddcc:start=1575279205186496000,finish=1575279205197863000,duration=11367000,event=fix_sudo_enabled_trusty
+[0Ktravis_time:start:0baa103a
+[0Ktravis_time:end:0baa103a:start=1575279205217563000,finish=1575279205229053000,duration=11490000,event=update_glibc
+[0Ktravis_time:start:13b5609a
+[0Ktravis_time:end:13b5609a:start=1575279205249085000,finish=1575279205312215000,duration=63130000,event=clean_up_path
+[0Ktravis_time:start:0335104a
+[0Ktravis_time:end:0335104a:start=1575279205327138000,finish=1575279205368578000,duration=41440000,event=fix_resolv_conf
+[0Ktravis_time:start:09f4ffcc
+[0Ktravis_time:end:09f4ffcc:start=1575279205377007000,finish=1575279205421128000,duration=44121000,event=fix_etc_hosts
+[0Ktravis_time:start:130b12c0
+[0Ktravis_time:end:130b12c0:start=1575279205430048000,finish=1575279205436436000,duration=6388000,event=fix_mvn_settings_xml
+[0Ktravis_time:start:00ab252f
+[0Ktravis_time:end:00ab252f:start=1575279205446524000,finish=1575279205488769000,duration=42245000,event=no_ipv6_localhost
+[0Ktravis_time:start:28931214
+[0Ktravis_time:end:28931214:start=1575279205497051000,finish=1575279205503520000,duration=6469000,event=fix_etc_mavenrc
+[0Ktravis_time:start:09524db6
+[0Ktravis_time:end:09524db6:start=1575279205511509000,finish=1575279205716984000,duration=205475000,event=fix_wwdr_certificate
+[0Ktravis_time:start:0056fffe
+[0Ktravis_time:end:0056fffe:start=1575279205725874000,finish=1575279205879698000,duration=153824000,event=put_localhost_first
+[0Ktravis_time:start:0b1cb235
+[0Ktravis_time:end:0b1cb235:start=1575279205888890000,finish=1575279205895108000,duration=6218000,event=home_paths
+[0Ktravis_time:start:04510320
+[0Ktravis_time:end:04510320:start=1575279205904384000,finish=1575279205917018000,duration=12634000,event=disable_initramfs
+[0Ktravis_time:start:00c3e624
+[0Ktravis_time:end:00c3e624:start=1575279205925406000,finish=1575279205945405000,duration=19999000,event=disable_ssh_roaming
+[0Ktravis_time:start:04254073
+[0Ktravis_time:end:04254073:start=1575279205954735000,finish=1575279205961237000,duration=6502000,event=debug_tools
+[0Ktravis_time:start:0030f6c2
+[0KUninstalled oclint to prevent interference with other packages.
+
+
+If you need oclint, you must explicitly install it.
+
+
+
+
+
+travis_time:end:0030f6c2:start=1575279205969775000,finish=1575279209042383000,duration=3072608000,event=uninstall_oclint
+[0Ktravis_time:start:261bbf1a
+[0Ktravis_time:end:261bbf1a:start=1575279209052358000,finish=1575279209957757000,duration=905399000,event=rvm_use
+[0Ktravis_time:start:038590ec
+[0Ktravis_time:end:038590ec:start=1575279209968258000,finish=1575279210010601000,duration=42343000,event=rm_etc_boto_cfg
+[0Ktravis_time:start:013025d4
+[0Ktravis_time:end:013025d4:start=1575279210019916000,finish=1575279210026783000,duration=6867000,event=rm_oraclejdk8_symlink
+[0Ktravis_time:start:21aeadd6
+[0Ktravis_time:end:21aeadd6:start=1575279210036366000,finish=1575279210048739000,duration=12373000,event=enable_i386
+[0Ktravis_time:start:07a939a6
+[0Ktravis_time:end:07a939a6:start=1575279210057677000,finish=1575279210067853000,duration=10176000,event=update_rubygems
+[0Ktravis_time:start:0cdef808
+[0Ktravis_time:end:0cdef808:start=1575279210077672000,finish=1575279210090183000,duration=12511000,event=ensure_path_components
+[0Ktravis_time:start:15dce465
+[0Ktravis_time:end:15dce465:start=1575279210099703000,finish=1575279210106368000,duration=6665000,event=redefine_curl
+[0Ktravis_time:start:0191e2d8
+[0Ktravis_time:end:0191e2d8:start=1575279210117972000,finish=1575279210270753000,duration=152781000,event=nonblock_pipe
+[0Ktravis_time:start:058ad26d
+[0Ktravis_time:end:058ad26d:start=1575279210281431000,finish=1575279210289033000,duration=7602000,event=apt_get_update
+[0Ktravis_time:start:00c6b088
+[0Ktravis_time:end:00c6b088:start=1575279210298636000,finish=1575279210305606000,duration=6970000,event=deprecate_xcode_64
+[0Ktravis_time:start:0dcba234
+[0Ktravis_time:end:0dcba234:start=1575279210315691000,finish=1575279210327264000,duration=11573000,event=update_heroku
+[0Ktravis_time:start:14800abb
+[0Ktravis_time:end:14800abb:start=1575279210337032000,finish=1575279210344050000,duration=7018000,event=shell_session_update
+[0Ktravis_time:start:0005b128
+[0Ktravis_time:end:0005b128:start=1575279210354652000,finish=1575279210361626000,duration=6974000,event=maven_central_mirror
+[0Ktravis_time:start:2299b655
+[0Ktravis_time:end:2299b655:start=1575279210372392000,finish=1575279210379367000,duration=6975000,event=fix_ps4
+[0KUpdating gimme
+
+
+travis_time:start:03530800
+[0K
+
+
+travis_fold:start:git.checkout
+[0Ktravis_time:start:0ee3976c
+[0K$ git clone --depth=50 --branch=master https://github.com/ethereum/go-ethereum.git ethereum/go-ethereum
+
+
+Cloning into 'ethereum/go-ethereum'...
+
+
+travis_time:end:0ee3976c:start=1575279221186400000,finish=1575279223989489000,duration=2803089000,event=checkout
+[0K$ cd ethereum/go-ethereum
+
+
+$ git checkout -qf 7ce7c3967cf2c8ebf921fd90891a5105909e752c
+
+
+travis_fold:end:git.checkout
+[0K
+
+
+travis_fold:start:git.submodule
+[0Ktravis_time:start:0358f4df
+[0K$ git submodule update --init --recursive
+
+
+Submodule 'tests' (https://github.com/ethereum/tests) registered for path 'tests/testdata'
+
+
+Cloning into '/Users/travis/build/ethereum/go-ethereum/tests/testdata'...
+
+
+Submodule path 'tests/testdata': checked out 'b5eb9900ee2147b40d3e681fe86efa4fd693959a'
+
+
+travis_time:end:0358f4df:start=1575279224607081000,finish=1575279270966057000,duration=46358976000,event=checkout
+[0Ktravis_fold:end:git.submodule
+[0Ktravis_time:end:0358f4df:start=1575279224607081000,finish=1575279270978068000,duration=46370987000,event=checkout
+[0K$ travis_export_go 1.13.x github.com/ethereum/go-ethereum
+
+
+travis_time:start:01f6627b
+[0K
+
+
+[33;1mSetting environment variables from repository settings[0m
+
+
+$ export IOS_SIGNING_KEY=[secure]
+
+
+$ export LINUX_SIGNING_KEY=[secure]
+
+
+$ export OSX_SIGNING_KEY=[secure]
+
+
+$ export ANDROID_SIGNING_KEY=[secure]
+
+
+$ export AZURE_BLOBSTORE_TOKEN=[secure]
+
+
+$ export ANDROID_SONATYPE_USERNAME=[secure]
+
+
+$ export ANDROID_SONATYPE_PASSWORD=[secure]
+
+
+$ export COCOAPODS_TRUNK_TOKEN=[secure]
+
+
+$ export PPA_SIGNING_KEY=[secure]
+
+
+$ export PPA_SSH_KEY=[secure]
+
+
+
+
+
+travis_time:end:01f6627b:start=1575279271007173000,finish=1575279271045153000,duration=37980000,event=env
+[0Ktravis_time:start:06c47f94
+[0K$ travis_setup_go
+
+
+go version go1.13.4 darwin/amd64
+
+
+$ export GOPATH="/Users/travis/gopath"
+
+
+$ export PATH="/Users/travis/gopath/bin:/Users/travis/.gimme/versions/go1.13.4.darwin.amd64/bin:/Users/travis/bin:/Users/travis/.rvm/gems/ruby-2.4.3/bin:/Users/travis/.rvm/gems/ruby-2.4.3@global/bin:/Users/travis/.rvm/rubies/ruby-2.4.3/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/Users/travis/.nvm/versions/node/v6.14.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+
+
+$ export GO111MODULE="auto"
+
+
+travis_time:end:06c47f94:start=1575279271056633000,finish=1575279323325604000,duration=52268971000,event=
+[0K$ gimme version
+
+
+v1.5.3
+
+
+$ go version
+
+
+go version go1.13.4 darwin/amd64
+
+
+travis_fold:start:go.env
+[0K$ go env
+
+
+GO111MODULE="auto"
+
+
+GOARCH="amd64"
+
+
+GOBIN=""
+
+
+GOCACHE="/Users/travis/Library/Caches/go-build"
+
+
+GOENV="/Users/travis/Library/Application Support/go/env"
+
+
+GOEXE=""
+
+
+GOFLAGS=""
+
+
+GOHOSTARCH="amd64"
+
+
+GOHOSTOS="darwin"
+
+
+GONOPROXY=""
+
+
+GONOSUMDB=""
+
+
+GOOS="darwin"
+
+
+GOPATH="/Users/travis/gopath"
+
+
+GOPRIVATE=""
+
+
+GOPROXY="https://proxy.golang.org,direct"
+
+
+GOROOT="/Users/travis/.gimme/versions/go1.13.4.darwin.amd64"
+
+
+GOSUMDB="sum.golang.org"
+
+
+GOTMPDIR=""
+
+
+GOTOOLDIR="/Users/travis/.gimme/versions/go1.13.4.darwin.amd64/pkg/tool/darwin_amd64"
+
+
+GCCGO="gccgo"
+
+
+AR="ar"
+
+
+CC="clang"
+
+
+CXX="clang++"
+
+
+CGO_ENABLED="1"
+
+
+GOMOD="/Users/travis/gopath/src/github.com/ethereum/go-ethereum/go.mod"
+
+
+CGO_CFLAGS="-g -O2"
+
+
+CGO_CPPFLAGS=""
+
+
+CGO_CXXFLAGS="-g -O2"
+
+
+CGO_FFLAGS="-g -O2"
+
+
+CGO_LDFLAGS="-g -O2"
+
+
+PKG_CONFIG="pkg-config"
+
+
+GOGCCFLAGS="-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-build003659907=/tmp/go-build -gno-record-gcc-switches -fno-common"
+
+
+travis_fold:end:go.env
+[0Ktravis_fold:start:install
+[0Ktravis_time:start:09859794
+[0K$ travis_install_go_dependencies 1.13.x -v
+
+
+Makefile detected
+
+
+travis_time:end:09859794:start=1575279323984620000,finish=1575279324003148000,duration=18528000,event=install
+[0Ktravis_fold:end:install
+[0Ktravis_time:start:032d4b30
+[0K$ echo "Increase the maximum number of open file descriptors on macOS"
+
+
+Increase the maximum number of open file descriptors on macOS
+
+
+travis_time:end:032d4b30:start=1575279324025726000,finish=1575279324038841000,duration=13115000,event=script
+[0K[32;1mThe command "echo "Increase the maximum number of open file descriptors on macOS"" exited with 0.[0m
+
+
+travis_time:start:1159ceff
+[0K$ NOFILE=20480
+
+
+travis_time:end:1159ceff:start=1575279324049768000,finish=1575279324057148000,duration=7380000,event=script
+[0K[32;1mThe command "NOFILE=20480" exited with 0.[0m
+
+
+travis_time:start:10990fa4
+[0K$ sudo sysctl -w kern.maxfiles=$NOFILE
+
+
+kern.maxfiles: 12288 -> 20480
+
+
+travis_time:end:10990fa4:start=1575279324067926000,finish=1575279324178338000,duration=110412000,event=script
+[0K[32;1mThe command "sudo sysctl -w kern.maxfiles=$NOFILE" exited with 0.[0m
+
+
+travis_time:start:2180f568
+[0K$ sudo sysctl -w kern.maxfilesperproc=$NOFILE
+
+
+kern.maxfilesperproc: 10240 -> 20480
+
+
+travis_time:end:2180f568:start=1575279324190885000,finish=1575279324235503000,duration=44618000,event=script
+[0K[32;1mThe command "sudo sysctl -w kern.maxfilesperproc=$NOFILE" exited with 0.[0m
+
+
+travis_time:start:061f622a
+[0K$ sudo launchctl limit maxfiles $NOFILE $NOFILE
+
+
+travis_time:end:061f622a:start=1575279324254705000,finish=1575279324301432000,duration=46727000,event=script
+[0K[32;1mThe command "sudo launchctl limit maxfiles $NOFILE $NOFILE" exited with 0.[0m
+
+
+travis_time:start:09b89ac0
+[0K$ sudo launchctl limit maxfiles
+
+
+	maxfiles    20480          20480          
+
+
+travis_time:end:09b89ac0:start=1575279324316599000,finish=1575279324358340000,duration=41741000,event=script
+[0K[32;1mThe command "sudo launchctl limit maxfiles" exited with 0.[0m
+
+
+travis_time:start:13c39386
+[0K$ ulimit -S -n $NOFILE
+
+
+travis_time:end:13c39386:start=1575279324379871000,finish=1575279324387333000,duration=7462000,event=script
+[0K[32;1mThe command "ulimit -S -n $NOFILE" exited with 0.[0m
+
+
+travis_time:start:1aa08ec0
+[0K$ ulimit -n
+
+
+20480
+
+
+travis_time:end:1aa08ec0:start=1575279324399507000,finish=1575279324408101000,duration=8594000,event=script
+[0K[32;1mThe command "ulimit -n" exited with 0.[0m
+
+
+travis_time:start:0187a572
+[0K$ unset -f cd
+
+
+travis_time:end:0187a572:start=1575279324420576000,finish=1575279324430672000,duration=10096000,event=script
+[0K[32;1mThe command "unset -f cd" exited with 0.[0m
+
+
+travis_time:start:031f1ae4
+[0K$ go run build/ci.go install
+
+
+go: downloading github.com/cespare/cp v0.1.0
+
+
+go: downloading golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
+
+
+go: extracting github.com/cespare/cp v0.1.0
+
+
+go: downloading github.com/Azure/azure-storage-blob-go v0.7.0
+
+
+go: extracting github.com/Azure/azure-storage-blob-go v0.7.0
+
+
+go: downloading github.com/Azure/azure-pipeline-go v0.2.2
+
+
+go: extracting github.com/Azure/azure-pipeline-go v0.2.2
+
+
+go: extracting golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
+
+
+go: downloading github.com/mattn/go-ieproxy v0.0.0-20190702010315-6dee0af9227d
+
+
+go: extracting github.com/mattn/go-ieproxy v0.0.0-20190702010315-6dee0af9227d
+
+
+go: finding github.com/cespare/cp v0.1.0
+
+
+go: finding github.com/Azure/azure-storage-blob-go v0.7.0
+
+
+go: finding github.com/Azure/azure-pipeline-go v0.2.2
+
+
+go: finding github.com/mattn/go-ieproxy v0.0.0-20190702010315-6dee0af9227d
+
+
+go: finding golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
+
+
+>>> /Users/travis/.gimme/versions/go1.13.4.darwin.amd64/bin/go install -ldflags -X main.gitCommit=7ce7c3967cf2c8ebf921fd90891a5105909e752c -X main.gitDate=20191202 -s -v ./...
+
+
+go: downloading gopkg.in/urfave/cli.v1 v1.20.0
+
+
+go: downloading github.com/graph-gophers/graphql-go v0.0.0-20191115155744-f33e81362277
+
+
+go: downloading golang.org/x/sync v0.0.0-20181108010431-42b317875d0f
+
+
+go: downloading github.com/golang/snappy v0.0.1
+
+
+go: downloading github.com/[secure]/usb v0.0.0-20190919080040-51dc0efba356
+
+
+go: downloading github.com/cloudflare/cloudflare-go v0.10.2-0.20190916151808-a80f83b9add9
+
+
+go: downloading github.com/syndtr/goleveldb v1.0.1-0.20190923125748-758128399b1d
+
+
+go: downloading golang.org/x/sys v0.0.0-20190712062909-fae7ac547cb7
+
+
+go: downloading github.com/hashicorp/golang-lru v0.0.0-20160813221303-0a025b7e63ad
+
+
+go: downloading github.com/rs/cors v0.0.0-20160617231935-a62a804a8a00
+
+
+go: extracting golang.org/x/sync v0.0.0-20181108010431-42b317875d0f
+
+
+go: extracting gopkg.in/urfave/cli.v1 v1.20.0
+
+
+go: extracting github.com/hashicorp/golang-lru v0.0.0-20160813221303-0a025b7e63ad
+
+
+go: extracting github.com/syndtr/goleveldb v1.0.1-0.20190923125748-758128399b1d
+
+
+go: extracting github.com/rs/cors v0.0.0-20160617231935-a62a804a8a00
+
+
+go: extracting github.com/graph-gophers/graphql-go v0.0.0-20191115155744-f33e81362277
+
+
+go: extracting github.com/[secure]/usb v0.0.0-20190919080040-51dc0efba356
+
+
+go: extracting github.com/cloudflare/cloudflare-go v0.10.2-0.20190916151808-a80f83b9add9
+
+
+go: extracting github.com/golang/snappy v0.0.1
+
+
+go: downloading github.com/mattn/go-colorable v0.1.0
+
+
+go: downloading gopkg.in/olebedev/go-duktape.v3 v3.0.0-20190213234257-ec84240a7772
+
+
+go: downloading github.com/docker/docker v1.4.2-0.20180625184442-8e610b2b55bf
+
+
+go: downloading github.com/rs/xhandler v0.0.0-20160618193221-ed27b6fd6521
+
+
+go: downloading github.com/tyler-smith/go-bip39 v1.0.1-0.20181017060643-dbb3b84ba2ef
+
+
+go: downloading github.com/gballet/go-libpcsclite v0.0.0-20190607065134-2772fd86a8ff
+
+
+go: downloading github.com/jackpal/go-nat-pmp v1.0.2-0.20160603034137-1fa385a6f458
+
+
+go: extracting github.com/mattn/go-colorable v0.1.0
+
+
+go: extracting github.com/gballet/go-libpcsclite v0.0.0-20190607065134-2772fd86a8ff
+
+
+go: downloading github.com/pkg/errors v0.8.1
+
+
+go: downloading github.com/fatih/color v1.3.0
+
+
+go: downloading github.com/elastic/gosigar v0.8.1-0.20180330100440-37f05ff46ffa
+
+
+go: extracting github.com/jackpal/go-nat-pmp v1.0.2-0.20160603034137-1fa385a6f458
+
+
+go: extracting github.com/rs/xhandler v0.0.0-20160618193221-ed27b6fd6521
+
+
+go: downloading github.com/julienschmidt/httprouter v1.1.1-0.20170430222011-975b5c4c7c21
+
+
+go: extracting github.com/tyler-smith/go-bip39 v1.0.1-0.20181017060643-dbb3b84ba2ef
+
+
+go: downloading github.com/pborman/uuid v0.0.0-20170112150404-1b00554d8222
+
+
+go: extracting github.com/elastic/gosigar v0.8.1-0.20180330100440-37f05ff46ffa
+
+
+go: extracting gopkg.in/olebedev/go-duktape.v3 v3.0.0-20190213234257-ec84240a7772
+
+
+go: downloading github.com/golang/protobuf v1.3.2-0.20190517061210-b285ee9cfc6c
+
+
+go: extracting github.com/fatih/color v1.3.0
+
+
+go: extracting github.com/pkg/errors v0.8.1
+
+
+go: downloading golang.org/x/net v0.0.0-20190628185345-da137c7871d7
+
+
+go: downloading github.com/olekukonko/tablewriter v0.0.2-0.20190409134802-7e037d187b0c
+
+
+go: extracting golang.org/x/sys v0.0.0-20190712062909-fae7ac547cb7
+
+
+go: downloading github.com/huin/goupnp v0.0.0-20161224104101-679507af18f3
+
+
+go: downloading github.com/robertkrimen/otto v0.0.0-20170205013659-6a77b7cbc37d
+
+
+go: extracting github.com/pborman/uuid v0.0.0-20170112150404-1b00554d8222
+
+
+go: extracting github.com/julienschmidt/httprouter v1.1.1-0.20170430222011-975b5c4c7c21
+
+
+go: extracting github.com/olekukonko/tablewriter v0.0.2-0.20190409134802-7e037d187b0c
+
+
+go: extracting github.com/huin/goupnp v0.0.0-20161224104101-679507af18f3
+
+
+go: downloading github.com/influxdata/influxdb v1.2.3-0.20180221223340-01288bdb0883
+
+
+go: downloading github.com/rjeczalik/notify v0.9.1
+
+
+go: downloading golang.org/x/time v0.0.0-20190308202827-9d24e82272b4
+
+
+go: extracting github.com/robertkrimen/otto v0.0.0-20170205013659-6a77b7cbc37d
+
+
+go: downloading github.com/steakknife/bloomfilter v0.0.0-20180922174646-6819c0d2a570
+
+
+go: extracting github.com/golang/protobuf v1.3.2-0.20190517061210-b285ee9cfc6c
+
+
+go: downloading github.com/VictoriaMetrics/fastcache v1.5.3
+
+
+go: extracting golang.org/x/time v0.0.0-20190308202827-9d24e82272b4
+
+
+go: extracting github.com/VictoriaMetrics/fastcache v1.5.3
+
+
+go: extracting github.com/rjeczalik/notify v0.9.1
+
+
+go: extracting golang.org/x/net v0.0.0-20190628185345-da137c7871d7
+
+
+go: downloading github.com/prometheus/tsdb v0.6.2-0.20190402121629-4f204dcbc150
+
+
+go: downloading github.com/edsrzf/mmap-go v0.0.0-20160512033002-935e0e8a636c
+
+
+go: extracting github.com/steakknife/bloomfilter v0.0.0-20180922174646-6819c0d2a570
+
+
+go: extracting github.com/edsrzf/mmap-go v0.0.0-20160512033002-935e0e8a636c
+
+
+go: downloading github.com/aristanetworks/goarista v0.0.0-20170210015632-ea17b1a17847
+
+
+go: downloading github.com/mattn/go-isatty v0.0.5-0.20180830101745-3fb116b82035
+
+
+go: downloading github.com/cespare/xxhash v1.1.0
+
+
+go: extracting github.com/cespare/xxhash v1.1.0
+
+
+go: extracting github.com/aristanetworks/goarista v0.0.0-20170210015632-ea17b1a17847
+
+
+go: extracting github.com/mattn/go-isatty v0.0.5-0.20180830101745-3fb116b82035
+
+
+go: extracting github.com/influxdata/influxdb v1.2.3-0.20180221223340-01288bdb0883
+
+
+go: downloading github.com/cespare/xxhash/v2 v2.1.1
+
+
+go: downloading github.com/mattn/go-runewidth v0.0.4
+
+
+go: extracting github.com/mattn/go-runewidth v0.0.4
+
+
+go: extracting github.com/cespare/xxhash/v2 v2.1.1
+
+
+go: downloading golang.org/x/text v0.3.2
+
+
+go: downloading github.com/gorilla/websocket v1.4.1-0.20190629185528-ae1634f6a989
+
+
+go: downloading github.com/status-im/keycard-go v0.0.0-20190316090335-8537d3370df4
+
+
+go: extracting github.com/prometheus/tsdb v0.6.2-0.20190402121629-4f204dcbc150
+
+
+go: downloading github.com/fjl/memsize v0.0.0-20180418122429-ca190fb6ffbc
+
+
+go: extracting github.com/gorilla/websocket v1.4.1-0.20190629185528-ae1634f6a989
+
+
+go: downloading github.com/naoina/toml v0.1.2-0.20170918210437-9fafd6967416
+
+
+go: extracting github.com/status-im/keycard-go v0.0.0-20190316090335-8537d3370df4
+
+
+go: extracting github.com/docker/docker v1.4.2-0.20180625184442-8e610b2b55bf
+
+
+go: extracting github.com/fjl/memsize v0.0.0-20180418122429-ca190fb6ffbc
+
+
+go: downloading github.com/peterh/liner v1.1.1-0.20190123174540-a2c9a5303de7
+
+
+go: downloading github.com/davecgh/go-spew v1.1.1
+
+
+go: extracting github.com/naoina/toml v0.1.2-0.20170918210437-9fafd6967416
+
+
+go: downloading github.com/steakknife/hamming v0.0.0-20180906055917-c99c65617cd3
+
+
+go: extracting github.com/peterh/liner v1.1.1-0.20190123174540-a2c9a5303de7
+
+
+go: downloading github.com/wsddn/go-ecdh v0.0.0-20161211032359-48726bab9208
+
+
+go: extracting github.com/davecgh/go-spew v1.1.1
+
+
+go: downloading github.com/go-stack/stack v1.8.0
+
+
+go: extracting github.com/steakknife/hamming v0.0.0-20180906055917-c99c65617cd3
+
+
+go: downloading github.com/naoina/go-stringutil v0.1.0
+
+
+go: extracting github.com/wsddn/go-ecdh v0.0.0-20161211032359-48726bab9208
+
+
+go: downloading gopkg.in/sourcemap.v1 v1.0.5
+
+
+go: downloading github.com/deckarep/golang-set v0.0.0-20180603214616-504e848d77ea
+
+
+go: downloading github.com/opentracing/opentracing-go v1.1.0
+
+
+go: extracting gopkg.in/sourcemap.v1 v1.0.5
+
+
+go: extracting github.com/go-stack/stack v1.8.0
+
+
+go: extracting github.com/naoina/go-stringutil v0.1.0
+
+
+go: extracting github.com/opentracing/opentracing-go v1.1.0
+
+
+go: extracting github.com/deckarep/golang-set v0.0.0-20180603214616-504e848d77ea
+
+
+go: extracting golang.org/x/text v0.3.2
+
+
+go: finding github.com/golang/protobuf v1.3.2-0.20190517061210-b285ee9cfc6c
+
+
+go: finding github.com/aristanetworks/goarista v0.0.0-20170210015632-ea17b1a17847
+
+
+go: finding gopkg.in/urfave/cli.v1 v1.20.0
+
+
+go: finding github.com/davecgh/go-spew v1.1.1
+
+
+go: finding github.com/deckarep/golang-set v0.0.0-20180603214616-504e848d77ea
+
+
+go: finding github.com/go-stack/stack v1.8.0
+
+
+go: finding github.com/cloudflare/cloudflare-go v0.10.2-0.20190916151808-a80f83b9add9
+
+
+go: finding github.com/edsrzf/mmap-go v0.0.0-20160512033002-935e0e8a636c
+
+
+go: finding github.com/pborman/uuid v0.0.0-20170112150404-1b00554d8222
+
+
+go: finding github.com/huin/goupnp v0.0.0-20161224104101-679507af18f3
+
+
+go: finding github.com/[secure]/usb v0.0.0-20190919080040-51dc0efba356
+
+
+go: finding github.com/VictoriaMetrics/fastcache v1.5.3
+
+
+go: finding github.com/elastic/gosigar v0.8.1-0.20180330100440-37f05ff46ffa
+
+
+go: finding github.com/jackpal/go-nat-pmp v1.0.2-0.20160603034137-1fa385a6f458
+
+
+go: finding github.com/gballet/go-libpcsclite v0.0.0-20190607065134-2772fd86a8ff
+
+
+go: finding github.com/pkg/errors v0.8.1
+
+
+go: finding github.com/cespare/xxhash/v2 v2.1.1
+
+
+go: finding github.com/rjeczalik/notify v0.9.1
+
+
+go: finding github.com/status-im/keycard-go v0.0.0-20190316090335-8537d3370df4
+
+
+go: finding golang.org/x/time v0.0.0-20190308202827-9d24e82272b4
+
+
+go: finding github.com/golang/snappy v0.0.1
+
+
+go: finding github.com/wsddn/go-ecdh v0.0.0-20161211032359-48726bab9208
+
+
+go: finding github.com/hashicorp/golang-lru v0.0.0-20160813221303-0a025b7e63ad
+
+
+go: finding golang.org/x/sys v0.0.0-20190712062909-fae7ac547cb7
+
+
+go: finding github.com/mattn/go-colorable v0.1.0
+
+
+go: finding golang.org/x/text v0.3.2
+
+
+go: finding github.com/peterh/liner v1.1.1-0.20190123174540-a2c9a5303de7
+
+
+go: finding golang.org/x/net v0.0.0-20190628185345-da137c7871d7
+
+
+go: finding github.com/syndtr/goleveldb v1.0.1-0.20190923125748-758128399b1d
+
+
+go: finding github.com/steakknife/bloomfilter v0.0.0-20180922174646-6819c0d2a570
+
+
+go: finding github.com/gorilla/websocket v1.4.1-0.20190629185528-ae1634f6a989
+
+
+go: finding github.com/fjl/memsize v0.0.0-20180418122429-ca190fb6ffbc
+
+
+go: finding github.com/robertkrimen/otto v0.0.0-20170205013659-6a77b7cbc37d
+
+
+go: finding github.com/fatih/color v1.3.0
+
+
+go: finding github.com/mattn/go-isatty v0.0.5-0.20180830101745-3fb116b82035
+
+
+go: finding github.com/rs/cors v0.0.0-20160617231935-a62a804a8a00
+
+
+go: finding github.com/olekukonko/tablewriter v0.0.2-0.20190409134802-7e037d187b0c
+
+
+go: finding github.com/prometheus/tsdb v0.6.2-0.20190402121629-4f204dcbc150
+
+
+go: finding github.com/rs/xhandler v0.0.0-20160618193221-ed27b6fd6521
+
+
+go: finding github.com/docker/docker v1.4.2-0.20180625184442-8e610b2b55bf
+
+
+go: finding github.com/mattn/go-runewidth v0.0.4
+
+
+go: finding github.com/julienschmidt/httprouter v1.1.1-0.20170430222011-975b5c4c7c21
+
+
+go: finding github.com/tyler-smith/go-bip39 v1.0.1-0.20181017060643-dbb3b84ba2ef
+
+
+go: finding github.com/steakknife/hamming v0.0.0-20180906055917-c99c65617cd3
+
+
+go: finding gopkg.in/sourcemap.v1 v1.0.5
+
+
+go: finding github.com/influxdata/influxdb v1.2.3-0.20180221223340-01288bdb0883
+
+
+go: finding github.com/graph-gophers/graphql-go v0.0.0-20191115155744-f33e81362277
+
+
+go: finding github.com/naoina/toml v0.1.2-0.20170918210437-9fafd6967416
+
+
+go: finding github.com/naoina/go-stringutil v0.1.0
+
+
+go: finding golang.org/x/sync v0.0.0-20181108010431-42b317875d0f
+
+
+go: finding gopkg.in/olebedev/go-duktape.v3 v3.0.0-20190213234257-ec84240a7772
+
+
+go: finding github.com/opentracing/opentracing-go v1.1.0
+
+
+github.com/cespare/xxhash/v2
+
+
+github.com/golang/snappy
+
+
+github.com/aristanetworks/goarista/monotime
+
+
+github.com/VictoriaMetrics/fastcache
+
+
+github.com/ethereum/go-ethereum/common/mclock
+
+
+github.com/ethereum/go-ethereum/common/prque
+
+
+github.com/ethereum/go-ethereum/ethdb
+
+
+github.com/go-stack/stack
+
+
+golang.org/x/sys/unix
+
+
+github.com/ethereum/go-ethereum/log
+
+
+github.com/steakknife/hamming
+
+
+github.com/steakknife/bloomfilter
+
+
+github.com/ethereum/go-ethereum/event
+
+
+github.com/ethereum/go-ethereum/accounts/abi
+
+
+github.com/elastic/gosigar
+
+
+github.com/davecgh/go-spew/spew
+
+
+github.com/deckarep/golang-set
+
+
+github.com/pborman/uuid
+
+
+github.com/rjeczalik/notify
+
+
+github.com/ethereum/go-ethereum/metrics
+
+
+github.com/ethereum/go-ethereum/trie
+
+
+github.com/ethereum/go-ethereum/core/types
+
+
+github.com/ethereum/go-ethereum
+
+
+github.com/ethereum/go-ethereum/accounts
+
+
+golang.org/x/crypto/pbkdf2
+
+
+golang.org/x/crypto/scrypt
+
+
+github.com/gballet/go-libpcsclite
+
+
+github.com/status-im/keycard-go/derivationpath
+
+
+golang.org/x/crypto/curve25519
+
+
+github.com/wsddn/go-ecdh
+
+
+golang.org/x/text/transform
+
+
+golang.org/x/text/unicode/norm
+
+
+github.com/ethereum/go-ethereum/accounts/scwallet
+
+
+github.com/hashicorp/golang-lru/simplelru
+
+
+github.com/hashicorp/golang-lru
+
+
+github.com/ethereum/go-ethereum/core/state
+
+
+github.com/ethereum/go-ethereum/p2p/netutil
+
+
+github.com/gorilla/websocket
+
+
+golang.org/x/net/context
+
+
+github.com/rs/xhandler
+
+
+github.com/rs/cors
+
+
+github.com/ethereum/go-ethereum/rpc
+
+
+github.com/ethereum/go-ethereum/consensus
+
+
+github.com/ethereum/go-ethereum/consensus/misc
+
+
+github.com/ethereum/go-ethereum/consensus/clique
+
+
+github.com/edsrzf/mmap-go
+
+
+github.com/ethereum/go-ethereum/common/bitutil
+
+
+github.com/ethereum/go-ethereum/consensus/ethash
+
+
+github.com/syndtr/goleveldb/leveldb/util
+
+
+github.com/syndtr/goleveldb/leveldb/cache
+
+
+github.com/syndtr/goleveldb/leveldb/comparer
+
+
+github.com/syndtr/goleveldb/leveldb/storage
+
+
+github.com/syndtr/goleveldb/leveldb/errors
+
+
+github.com/syndtr/goleveldb/leveldb/filter
+
+
+github.com/syndtr/goleveldb/leveldb/iterator
+
+
+github.com/syndtr/goleveldb/leveldb/journal
+
+
+github.com/syndtr/goleveldb/leveldb/memdb
+
+
+github.com/syndtr/goleveldb/leveldb/opt
+
+
+github.com/syndtr/goleveldb/leveldb/table
+
+
+github.com/syndtr/goleveldb/leveldb
+
+
+github.com/ethereum/go-ethereum/accounts/keystore
+
+
+github.com/ethereum/go-ethereum/ethdb/memorydb
+
+
+github.com/mattn/go-runewidth
+
+
+github.com/olekukonko/tablewriter
+
+
+github.com/pkg/errors
+
+
+github.com/prometheus/tsdb/fileutil
+
+
+golang.org/x/sys/cpu
+
+
+github.com/ethereum/go-ethereum/crypto/blake2b
+
+
+github.com/ethereum/go-ethereum/crypto/bn256/cloudflare
+
+
+github.com/ethereum/go-ethereum/crypto/bn256
+
+
+golang.org/x/crypto/ripemd160
+
+
+github.com/ethereum/go-ethereum/core/vm
+
+
+github.com/ethereum/go-ethereum/ethdb/leveldb
+
+
+github.com/ethereum/go-ethereum/core/rawdb
+
+
+github.com/ethereum/go-ethereum/core/bloombits
+
+
+github.com/ethereum/go-ethereum/crypto/ecies
+
+
+github.com/ethereum/go-ethereum/p2p/enr
+
+
+github.com/ethereum/go-ethereum/p2p/enode
+
+
+github.com/ethereum/go-ethereum/p2p/discover
+
+
+github.com/ethereum/go-ethereum/core
+
+
+github.com/ethereum/go-ethereum/p2p/discv5
+
+
+github.com/huin/goupnp/httpu
+
+
+github.com/huin/goupnp/scpd
+
+
+github.com/huin/goupnp/soap
+
+
+github.com/huin/goupnp/ssdp
+
+
+golang.org/x/net/html/atom
+
+
+golang.org/x/net/html
+
+
+github.com/ethereum/go-ethereum/eth/downloader
+
+
+golang.org/x/text/encoding/internal/identifier
+
+
+golang.org/x/text/encoding
+
+
+golang.org/x/text/encoding/internal
+
+
+golang.org/x/text/encoding/charmap
+
+
+golang.org/x/text/encoding/japanese
+
+
+golang.org/x/text/encoding/korean
+
+
+golang.org/x/text/encoding/simplifiedchinese
+
+
+golang.org/x/text/encoding/traditionalchinese
+
+
+golang.org/x/text/internal/utf8internal
+
+
+golang.org/x/text/runes
+
+
+golang.org/x/text/encoding/unicode
+
+
+golang.org/x/text/internal/tag
+
+
+github.com/jackpal/go-nat-pmp
+
+
+golang.org/x/text/internal/language
+
+
+github.com/tyler-smith/go-bip39/wordlists
+
+
+github.com/tyler-smith/go-bip39
+
+
+github.com/golang/protobuf/proto
+
+
+golang.org/x/text/internal/language/compact
+
+
+golang.org/x/text/language
+
+
+golang.org/x/text/encoding/htmlindex
+
+
+golang.org/x/net/html/charset
+
+
+github.com/huin/goupnp
+
+
+github.com/huin/goupnp/dcps/internetgateway1
+
+
+github.com/huin/goupnp/dcps/internetgateway2
+
+
+github.com/ethereum/go-ethereum/p2p/nat
+
+
+github.com/ethereum/go-ethereum/p2p
+
+
+github.com/golang/protobuf/protoc-gen-go/descriptor
+
+
+github.com/ethereum/go-ethereum/internal/ethapi
+
+
+github.com/ethereum/go-ethereum/accounts/usbwallet/trezor
+
+
+github.com/[secure]/usb
+
+
+github.com/ethereum/go-ethereum/signer/storage
+
+
+golang.org/x/crypto/ssh/terminal
+
+
+github.com/ethereum/go-ethereum/eth/filters
+
+
+github.com/ethereum/go-ethereum/common/fdlimit
+
+
+github.com/ethereum/go-ethereum/core/forkid
+
+
+github.com/ethereum/go-ethereum/eth/fetcher
+
+
+github.com/ethereum/go-ethereum/eth/gasprice
+
+
+github.com/ethereum/go-ethereum/eth/tracers/internal/tracers
+
+
+gopkg.in/olebedev/go-duktape.v3
+
+
+github.com/ethereum/go-ethereum/accounts/usbwallet
+
+
+github.com/ethereum/go-ethereum/signer/core
+
+
+github.com/ethereum/go-ethereum/accounts/external
+
+
+github.com/ethereum/go-ethereum/accounts/abi/bind
+
+
+github.com/ethereum/go-ethereum/accounts/abi/bind/backends
+
+
+github.com/ethereum/go-ethereum/miner
+
+
+github.com/ethereum/go-ethereum/metrics/prometheus
+
+
+github.com/ethereum/go-ethereum/metrics/exp
+
+
+github.com/fjl/memsize
+
+
+github.com/fjl/memsize/memsizeui
+
+
+github.com/mattn/go-isatty
+
+
+github.com/mattn/go-colorable
+
+
+gopkg.in/urfave/cli.v1
+
+
+github.com/ethereum/go-ethereum/internal/debug
+
+
+github.com/ethereum/go-ethereum/node
+
+
+github.com/ethereum/go-ethereum/contracts/checkpointoracle/contract
+
+
+github.com/ethereum/go-ethereum/contracts/checkpointoracle
+
+
+github.com/ethereum/go-ethereum/les/flowcontrol
+
+
+github.com/ethereum/go-ethereum/light
+
+
+github.com/graph-gophers/graphql-go/errors
+
+
+github.com/graph-gophers/graphql-go/internal/common
+
+
+github.com/graph-gophers/graphql-go/internal/schema
+
+
+github.com/graph-gophers/graphql-go/internal/exec/packer
+
+
+github.com/graph-gophers/graphql-go/introspection
+
+
+github.com/graph-gophers/graphql-go/internal/exec/resolvable
+
+
+github.com/graph-gophers/graphql-go/internal/query
+
+
+github.com/graph-gophers/graphql-go/internal/exec/selected
+
+
+github.com/graph-gophers/graphql-go/log
+
+
+github.com/opentracing/opentracing-go/log
+
+
+github.com/opentracing/opentracing-go
+
+
+github.com/opentracing/opentracing-go/ext
+
+
+github.com/graph-gophers/graphql-go/trace
+
+
+github.com/graph-gophers/graphql-go/internal/exec
+
+
+github.com/graph-gophers/graphql-go/internal/validation
+
+
+github.com/graph-gophers/graphql-go
+
+
+github.com/graph-gophers/graphql-go/relay
+
+
+github.com/ethereum/go-ethereum/graphql
+
+
+github.com/influxdata/influxdb/pkg/escape
+
+
+github.com/influxdata/influxdb/models
+
+
+github.com/influxdata/influxdb/client
+
+
+github.com/ethereum/go-ethereum/metrics/influxdb
+
+
+golang.org/x/sync/syncmap
+
+
+github.com/ethereum/go-ethereum/whisper/whisperv6
+
+
+github.com/ethereum/go-ethereum/common/compiler
+
+
+github.com/ethereum/go-ethereum/ethclient
+
+
+github.com/ethereum/go-ethereum/internal/jsre/deps
+
+
+github.com/fatih/color
+
+
+gopkg.in/sourcemap.v1/base64vlq
+
+
+gopkg.in/sourcemap.v1
+
+
+github.com/robertkrimen/otto/file
+
+
+github.com/robertkrimen/otto/token
+
+
+github.com/robertkrimen/otto/ast
+
+
+github.com/robertkrimen/otto/dbg
+
+
+github.com/robertkrimen/otto/parser
+
+
+github.com/robertkrimen/otto/registry
+
+
+github.com/robertkrimen/otto
+
+
+github.com/ethereum/go-ethereum/internal/jsre
+
+
+github.com/ethereum/go-ethereum/internal/web3ext
+
+
+github.com/peterh/liner
+
+
+github.com/ethereum/go-ethereum/console
+
+
+github.com/ethereum/go-ethereum/signer/fourbyte
+
+
+github.com/ethereum/go-ethereum/signer/rules/deps
+
+
+github.com/ethereum/go-ethereum/signer/rules
+
+
+golang.org/x/time/rate
+
+
+github.com/cloudflare/cloudflare-go
+
+
+github.com/ethereum/go-ethereum/p2p/dnsdisc
+
+
+github.com/ethereum/go-ethereum/cmd/devp2p
+
+
+github.com/ethereum/go-ethereum/core/asm
+
+
+github.com/ethereum/go-ethereum/cmd/evm/internal/compiler
+
+
+github.com/ethereum/go-ethereum/core/vm/runtime
+
+
+github.com/ethereum/go-ethereum/tests
+
+
+github.com/naoina/go-stringutil
+
+
+github.com/naoina/toml/ast
+
+
+github.com/naoina/toml
+
+
+github.com/docker/docker/pkg/reexec
+
+
+github.com/ethereum/go-ethereum/p2p/simulations/pipes
+
+
+github.com/ethereum/go-ethereum/p2p/simulations/adapters
+
+
+github.com/julienschmidt/httprouter
+
+
+github.com/ethereum/go-ethereum/p2p/simulations
+
+
+github.com/ethereum/go-ethereum/cmd/p2psim
+
+
+golang.org/x/crypto/ed25519/internal/edwards25519
+
+
+golang.org/x/crypto/ed25519
+
+
+golang.org/x/crypto/internal/subtle
+
+
+golang.org/x/crypto/internal/chacha20
+
+
+golang.org/x/crypto/poly1305
+
+
+golang.org/x/crypto/ssh
+
+
+github.com/ethereum/go-ethereum/cmd/puppeth
+
+
+github.com/ethereum/go-ethereum/cmd/rlpdump
+
+
+github.com/ethereum/go-ethereum/whisper/mailserver
+
+
+github.com/ethereum/go-ethereum/crypto/bn256/google
+
+
+github.com/ethereum/go-ethereum/ethdb/dbtest
+
+
+github.com/ethereum/go-ethereum/internal/cmdtest
+
+
+github.com/ethereum/go-ethereum/internal/guide
+
+
+github.com/ethereum/go-ethereum/internal/testlog
+
+
+github.com/ethereum/go-ethereum/metrics/librato
+
+
+github.com/ethereum/go-ethereum/whisper/shhclient
+
+
+github.com/ethereum/go-ethereum/p2p/simulations/examples
+
+
+github.com/ethereum/go-ethereum/p2p/testing
+
+
+github.com/ethereum/go-ethereum/eth/tracers
+
+
+github.com/ethereum/go-ethereum/eth
+
+
+github.com/ethereum/go-ethereum/les
+
+
+github.com/ethereum/go-ethereum/ethstats
+
+
+github.com/ethereum/go-ethereum/cmd/utils
+
+
+github.com/ethereum/go-ethereum/cmd/faucet
+
+
+github.com/ethereum/go-ethereum/cmd/abigen
+
+
+github.com/ethereum/go-ethereum/cmd/bootnode
+
+
+github.com/ethereum/go-ethereum/cmd/checkpoint-admin
+
+
+github.com/ethereum/go-ethereum/cmd/clef
+
+
+github.com/ethereum/go-ethereum/cmd/ethkey
+
+
+github.com/ethereum/go-ethereum/cmd/evm
+
+
+github.com/ethereum/go-ethereum/cmd/geth
+
+
+github.com/ethereum/go-ethereum/cmd/wnode
+
+
+github.com/ethereum/go-ethereum/mobile
+
+
+travis_time:end:031f1ae4:start=1575279324442446000,finish=1575279434022188000,duration=109579742000,event=script
+[0K[32;1mThe command "go run build/ci.go install" exited with 0.[0m
+
+
+travis_time:start:036550c4
+[0K$ go run build/ci.go test -coverage $TEST_PACKAGES
+
+
+>>> /Users/travis/.gimme/versions/go1.13.4.darwin.amd64/bin/go test -ldflags -X main.gitCommit=7ce7c3967cf2c8ebf921fd90891a5105909e752c -X main.gitDate=20191202 -s -p 1 -timeout 5m -covermode=atomic -cover ./...
+
+
+go: downloading github.com/stretchr/testify v1.4.0
+
+
+go: extracting github.com/stretchr/testify v1.4.0
+
+
+go: downloading github.com/pmezard/go-difflib v1.0.0
+
+
+go: downloading gopkg.in/yaml.v2 v2.2.2
+
+
+go: extracting github.com/pmezard/go-difflib v1.0.0
+
+
+go: extracting gopkg.in/yaml.v2 v2.2.2
+
+
+go: finding github.com/stretchr/testify v1.4.0
+
+
+go: finding github.com/pmezard/go-difflib v1.0.0
+
+
+go: finding gopkg.in/yaml.v2 v2.2.2
+
+
+?   	github.com/ethereum/go-ethereum	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/accounts	0.036s	coverage: 30.8% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/accounts/abi	0.073s	coverage: 88.8% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/accounts/abi/bind	8.498s	coverage: 52.0% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/accounts/abi/bind/backends	0.066s	coverage: 21.5% of statements
+
+
+?   	github.com/ethereum/go-ethereum/accounts/external	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/accounts/keystore	19.351s	coverage: 76.6% of statements
+
+
+?   	github.com/ethereum/go-ethereum/accounts/scwallet	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/accounts/usbwallet	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/accounts/usbwallet/trezor	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/cmd/abigen	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/cmd/bootnode	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/cmd/checkpoint-admin	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/cmd/clef	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/cmd/devp2p	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/cmd/ethkey	2.777s	coverage: 2.0% of statements
+
+
+?   	github.com/ethereum/go-ethereum/cmd/evm	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/cmd/evm/internal/compiler	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/cmd/faucet	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/cmd/geth	14.524s	coverage: 1.6% of statements
+
+
+?   	github.com/ethereum/go-ethereum/cmd/p2psim	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/cmd/puppeth	0.054s	coverage: 8.6% of statements
+
+
+?   	github.com/ethereum/go-ethereum/cmd/rlpdump	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/cmd/utils	0.065s	coverage: 2.3% of statements
+
+
+?   	github.com/ethereum/go-ethereum/cmd/wnode	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/common	0.010s	coverage: 39.3% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/common/bitutil	0.010s	coverage: 95.7% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/common/compiler	0.012s	coverage: 0.0% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/common/fdlimit	0.008s	coverage: 76.2% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/common/hexutil	0.009s	coverage: 80.9% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/common/math	0.009s	coverage: 92.4% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/common/mclock	0.008s	coverage: 86.6% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/common/prque	1.288s	coverage: 74.0% of statements
+
+
+?   	github.com/ethereum/go-ethereum/consensus	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/consensus/clique	0.173s	coverage: 52.5% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/consensus/ethash	13.341s	coverage: 64.3% of statements
+
+
+?   	github.com/ethereum/go-ethereum/consensus/misc	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/console	1.404s	coverage: 37.8% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/contracts/checkpointoracle	0.975s	coverage: 0.0% of statements
+
+
+?   	github.com/ethereum/go-ethereum/contracts/checkpointoracle/contract	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/core	33.962s	coverage: 73.1% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/core/asm	0.038s	coverage: 72.6% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/core/bloombits	4.074s	coverage: 95.5% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/core/forkid	0.048s	coverage: 85.9% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/core/rawdb	4.136s	coverage: 48.2% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/core/state	11.865s	coverage: 76.9% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/core/types	0.352s	coverage: 50.1% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/core/vm	0.330s	coverage: 40.3% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/core/vm/runtime	0.053s	coverage: 76.7% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/crypto	0.098s	coverage: 80.5% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/crypto/blake2b	0.083s	coverage: 90.3% of statements
+
+
+?   	github.com/ethereum/go-ethereum/crypto/bn256	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/crypto/bn256/cloudflare	0.141s	coverage: 81.3% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/crypto/bn256/google	0.677s	coverage: 91.6% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/crypto/ecies	0.049s	coverage: 75.9% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/crypto/secp256k1	1.393s	coverage: 30.6% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/eth	15.025s	coverage: 28.8% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/eth/downloader	99.841s	coverage: 78.2% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/eth/fetcher	13.516s	coverage: 89.7% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/eth/filters	2.686s	coverage: 54.1% of statements
+
+
+?   	github.com/ethereum/go-ethereum/eth/gasprice	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/eth/tracers	0.337s	coverage: 75.6% of statements
+
+
+?   	github.com/ethereum/go-ethereum/eth/tracers/internal/tracers	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/ethclient	0.164s	coverage: 14.0% of statements
+
+
+?   	github.com/ethereum/go-ethereum/ethdb	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/ethdb/dbtest	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/ethdb/leveldb	0.038s	coverage: 15.1% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/ethdb/memorydb	0.009s	coverage: 81.6% of statements
+
+
+?   	github.com/ethereum/go-ethereum/ethstats	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/event	0.938s	coverage: 94.3% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/graphql	0.069s	coverage: 2.1% of statements
+
+
+?   	github.com/ethereum/go-ethereum/internal/build	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/internal/cmdtest	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/internal/debug	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/internal/ethapi	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/internal/guide	17.467s	coverage: [no statements]
+
+
+ok  	github.com/ethereum/go-ethereum/internal/jsre	0.204s	coverage: 48.5% of statements
+
+
+?   	github.com/ethereum/go-ethereum/internal/jsre/deps	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/internal/testlog	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/internal/web3ext	[no test files]
+
+
+--- FAIL: TestNodeDBExpiration (1.17s)
+
+
+    clientpool_test.go:538: timeout
+
+
+--- FAIL: TestOdrGetBlockLes3 (0.38s)
+
+
+    odr_test.go:194: Failed to sync the chain with server, head: 0
+
+
+FAIL
+
+
+coverage: 51.6% of statements
+
+
+FAIL	github.com/ethereum/go-ethereum/les	85.458s
+
+
+ok  	github.com/ethereum/go-ethereum/les/flowcontrol	13.599s	coverage: 37.9% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/light	1.150s	coverage: 38.4% of statements
+
+
+?   	github.com/ethereum/go-ethereum/log	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/metrics	7.525s	coverage: 49.5% of statements
+
+
+?   	github.com/ethereum/go-ethereum/metrics/exp	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/metrics/influxdb	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/metrics/librato	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/metrics/prometheus	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/miner	10.662s	coverage: 66.6% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/mobile	0.073s	coverage: 15.2% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/node	1.135s	coverage: 43.0% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/p2p	0.812s	coverage: 74.6% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/p2p/discover	70.079s	coverage: 76.2% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/p2p/discv5	8.974s	coverage: 46.1% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/p2p/dnsdisc	0.286s	coverage: 82.7% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/p2p/enode	2.543s	coverage: 80.6% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/p2p/enr	0.018s	coverage: 62.3% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/p2p/nat	2.686s	coverage: 20.3% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/p2p/netutil	0.020s	coverage: 84.1% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/p2p/simulations	3.935s	coverage: 69.2% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/p2p/simulations/adapters	0.069s	coverage: 0.2% of statements
+
+
+?   	github.com/ethereum/go-ethereum/p2p/simulations/examples	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/p2p/simulations/pipes	[no test files]
+
+
+?   	github.com/ethereum/go-ethereum/p2p/testing	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/params	0.042s	coverage: 50.0% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/rlp	0.026s	coverage: 96.6% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/rpc	9.251s	coverage: 77.7% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/signer/core	4.463s	coverage: 41.9% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/signer/fourbyte	4.037s	coverage: 46.9% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/signer/rules	0.190s	coverage: 77.1% of statements
+
+
+?   	github.com/ethereum/go-ethereum/signer/rules/deps	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/signer/storage	0.014s	coverage: 52.3% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/tests	130.609s	coverage: 68.5% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/trie	4.146s	coverage: 70.9% of statements
+
+
+ok  	github.com/ethereum/go-ethereum/whisper/mailserver	0.327s	coverage: 66.7% of statements
+
+
+?   	github.com/ethereum/go-ethereum/whisper/shhclient	[no test files]
+
+
+ok  	github.com/ethereum/go-ethereum/whisper/whisperv6	20.688s	coverage: 64.5% of statements
+
+
+FAIL
+
+
+util.go:45: exit status 1
+
+
+exit status 1
+
+
+travis_time:end:036550c4:start=1575279434036569000,finish=1575280307280378000,duration=873243809000,event=script
+[0K[31;1mThe command "go run build/ci.go test -coverage $TEST_PACKAGES" exited with 1.[0m
+
+
+
+
+
+
+
+
+Done. Your build exited with 1.
+
+

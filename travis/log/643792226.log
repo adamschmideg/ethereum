@@ -1,0 +1,4593 @@
+travis_fold:start:worker_info
+[0K[33;1mWorker information[0m
+hostname: 5f852938-a409-4388-8bc2-f1cc197fd60a@1.worker-org-6bc68c5dcd-k6mbl.macstadium-prod-2
+version: v6.2.0 https://github.com/travis-ci/worker/tree/5e5476e01646095f48eec13196fdb3faf8f5cbf7
+instance: 322b3e0d-9d83-4ea2-b814-d3ac3ba0ceaa travis-ci-macos10.13-xcode9.4.1-19-1576204381 (via amqp)
+startup: 1m11.711547124s
+travis_fold:end:worker_info
+[0Ktravis_time:start:14560e66
+[0Ktravis_time:end:14560e66:start=1580380204090971000,finish=1580380204779575000,duration=688604000,event=no_world_writable_dirs
+[0Ktravis_time:start:353b0d04
+[0Ktravis_time:end:353b0d04:start=1580380204792392000,finish=1580380204805569000,duration=13177000,event=setup_filter
+[0Ktravis_time:start:11bf78b0
+[0Ktravis_time:end:11bf78b0:start=1580380204819337000,finish=1580380204829867000,duration=10530000,event=check_unsupported
+[0Ktravis_time:start:001c3737
+[0Ktravis_fold:start:system_info
+[0K[33;1mBuild system information[0m
+
+
+Build language: go
+
+
+Build id: 643792216
+
+
+Job id: 643792226
+
+
+Runtime kernel version: 17.7.0
+
+
+travis-build version: 74fa7e3af
+
+
+[34m[1mBuild image provisioning date and time[0m
+
+
+Fri Dec 13 04:54:58 GMT 2019
+
+
+[34m[1mOperating System Details[0m
+
+
+ProductName:	Mac OS X
+
+
+ProductVersion:	10.13.6
+
+
+BuildVersion:	17G65
+
+
+[34m[1mGit version[0m
+
+
+git version 2.24.1
+
+
+[34m[1mbash version[0m
+
+
+GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin17)
+
+
+Copyright (C) 2007 Free Software Foundation, Inc.
+
+
+[34m[1mGCC version[0m
+
+
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+
+
+Target: x86_64-apple-darwin17.7.0
+
+
+Thread model: posix
+
+
+InstalledDir: /Applications/Xcode-9.4.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+
+[34m[1mLLVM version[0m
+
+
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+
+
+Target: x86_64-apple-darwin17.7.0
+
+
+Thread model: posix
+
+
+InstalledDir: /Applications/Xcode-9.4.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+
+[34m[1mPre-installed Ruby versions[0m
+
+
+ruby-2.6.3
+
+
+[34m[1mPre-installed Node.js versions[0m
+
+
+v10.17.0
+
+
+v12.13.0
+
+
+v12.13.1
+
+
+v13.0.1
+
+
+v4.9.1
+
+
+v6.17.1
+
+
+v8.16.2
+
+
+[34m[1mmvn -version[0m
+
+
+Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+
+
+Maven home: /usr/local/Cellar/maven/3.6.3/libexec
+
+
+Java version: 13.0.1, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/openjdk-13.0.1.jdk/Contents/Home
+
+
+Default locale: en_US, platform encoding: UTF-8
+
+
+OS name: "mac os x", version: "10.13.6", arch: "x86_64", family: "mac"
+
+
+travis_fold:end:system_info
+[0K
+
+
+travis_time:end:001c3737:start=1580380204843093000,finish=1580380204864081000,duration=20988000,event=show_system_info
+[0Ktravis_time:start:220b7bc9
+[0Ktravis_time:end:220b7bc9:start=1580380204883173000,finish=1580380204893227000,duration=10054000,event=rm_riak_source
+[0Ktravis_time:start:055ed0c8
+[0Ktravis_time:end:055ed0c8:start=1580380204905737000,finish=1580380204916898000,duration=11161000,event=fix_rwky_redis
+[0Ktravis_time:start:0417f982
+[0Ktravis_time:end:0417f982:start=1580380204932174000,finish=1580380205317626000,duration=385452000,event=wait_for_network
+[0Ktravis_time:start:19d3f32c
+[0Ktravis_time:end:19d3f32c:start=1580380205334460000,finish=1580380205344947000,duration=10487000,event=update_apt_keys
+[0Ktravis_time:start:0224a7cb
+[0Ktravis_time:end:0224a7cb:start=1580380205359454000,finish=1580380205371656000,duration=12202000,event=fix_hhvm_source
+[0Ktravis_time:start:08e5d260
+[0Ktravis_time:end:08e5d260:start=1580380205386191000,finish=1580380205403463000,duration=17272000,event=update_mongo_arch
+[0Ktravis_time:start:0eff3b90
+[0Ktravis_time:end:0eff3b90:start=1580380205422774000,finish=1580380205445168000,duration=22394000,event=fix_sudo_enabled_trusty
+[0Ktravis_time:start:16693950
+[0Ktravis_time:end:16693950:start=1580380205459037000,finish=1580380205476612000,duration=17575000,event=update_glibc
+[0Ktravis_time:start:231d0e1c
+[0Ktravis_time:end:231d0e1c:start=1580380205495574000,finish=1580380205597874000,duration=102300000,event=clean_up_path
+[0Ktravis_time:start:0bd25935
+[0Ktravis_time:end:0bd25935:start=1580380205615414000,finish=1580380205679328000,duration=63914000,event=fix_resolv_conf
+[0Ktravis_time:start:1554b5fa
+[0Ktravis_time:end:1554b5fa:start=1580380205692556000,finish=1580380205758217000,duration=65661000,event=fix_etc_hosts
+[0Ktravis_time:start:212dee3e
+[0Ktravis_time:end:212dee3e:start=1580380205771440000,finish=1580380205782757000,duration=11317000,event=fix_mvn_settings_xml
+[0Ktravis_time:start:05f115b8
+[0Ktravis_time:end:05f115b8:start=1580380205796871000,finish=1580380205891850000,duration=94979000,event=no_ipv6_localhost
+[0Ktravis_time:start:3b89b88e
+[0Ktravis_time:end:3b89b88e:start=1580380205910295000,finish=1580380205922673000,duration=12378000,event=fix_etc_mavenrc
+[0Ktravis_time:start:136cbdf8
+[0Ktravis_time:end:136cbdf8:start=1580380205940347000,finish=1580380206238398000,duration=298051000,event=fix_wwdr_certificate
+[0Ktravis_time:start:24ae000f
+[0Ktravis_time:end:24ae000f:start=1580380206251530000,finish=1580380206443576000,duration=192046000,event=put_localhost_first
+[0Ktravis_time:start:000c5715
+[0Ktravis_time:end:000c5715:start=1580380206456159000,finish=1580380206465492000,duration=9333000,event=home_paths
+[0Ktravis_time:start:1d794c34
+[0Ktravis_time:end:1d794c34:start=1580380206477670000,finish=1580380206497797000,duration=20127000,event=disable_initramfs
+[0Ktravis_time:start:2a632abd
+[0Ktravis_time:end:2a632abd:start=1580380206511932000,finish=1580380206537704000,duration=25772000,event=disable_ssh_roaming
+[0Ktravis_time:start:06c42280
+[0Ktravis_time:end:06c42280:start=1580380206551260000,finish=1580380206560420000,duration=9160000,event=debug_tools
+[0Ktravis_time:start:1127abad
+[0K
+
+
+travis_time:end:1127abad:start=1580380206573108000,finish=1580380212080869000,duration=5507761000,event=uninstall_oclint
+[0Ktravis_time:start:120f9c3d
+[0Ktravis_time:end:120f9c3d:start=1580380212092916000,finish=1580380213280624000,duration=1187708000,event=rvm_use
+[0Ktravis_time:start:0c6c098d
+[0Ktravis_time:end:0c6c098d:start=1580380213292250000,finish=1580380213343370000,duration=51120000,event=rm_etc_boto_cfg
+[0Ktravis_time:start:08477dc4
+[0Ktravis_time:end:08477dc4:start=1580380213355523000,finish=1580380213362992000,duration=7469000,event=rm_oraclejdk8_symlink
+[0Ktravis_time:start:1a8af1be
+[0Ktravis_time:end:1a8af1be:start=1580380213377067000,finish=1580380213397572000,duration=20505000,event=enable_i386
+[0Ktravis_time:start:03eeb444
+[0Ktravis_time:end:03eeb444:start=1580380213418113000,finish=1580380213473035000,duration=54922000,event=update_rubygems
+[0Ktravis_time:start:07e2ba3c
+[0Ktravis_time:end:07e2ba3c:start=1580380213485703000,finish=1580380213499500000,duration=13797000,event=ensure_path_components
+[0Ktravis_time:start:0f33fcb8
+[0Ktravis_time:end:0f33fcb8:start=1580380213511381000,finish=1580380213518448000,duration=7067000,event=redefine_curl
+[0Ktravis_time:start:0fe43002
+[0Ktravis_time:end:0fe43002:start=1580380213528800000,finish=1580380213648669000,duration=119869000,event=nonblock_pipe
+[0Ktravis_time:start:0109401e
+[0Ktravis_time:end:0109401e:start=1580380213659285000,finish=1580380213666910000,duration=7625000,event=apt_get_update
+[0Ktravis_time:start:01625310
+[0Ktravis_time:end:01625310:start=1580380213677132000,finish=1580380213684386000,duration=7254000,event=deprecate_xcode_64
+[0Ktravis_time:start:0731fc25
+[0Ktravis_time:end:0731fc25:start=1580380213694408000,finish=1580380213705802000,duration=11394000,event=update_heroku
+[0Ktravis_time:start:0ca49328
+[0Ktravis_time:end:0ca49328:start=1580380213716362000,finish=1580380213723503000,duration=7141000,event=shell_session_update
+[0Ktravis_time:start:135b281e
+[0Ktravis_time:end:135b281e:start=1580380213734181000,finish=1580380213741052000,duration=6871000,event=maven_central_mirror
+[0Ktravis_time:start:18a59fee
+[0Ktravis_time:end:18a59fee:start=1580380213753179000,finish=1580380213763053000,duration=9874000,event=maven_https
+[0Ktravis_time:start:2356a537
+[0Ktravis_time:end:2356a537:start=1580380213779819000,finish=1580380213789357000,duration=9538000,event=fix_ps4
+[0KUpdating gimme
+
+
+travis_time:start:0a004a24
+[0K
+
+
+travis_fold:start:git.checkout
+[0Ktravis_time:start:0c2d7ea6
+[0K$ git clone --depth=50 --branch=master https://github.com/ethereum/go-ethereum.git ethereum/go-ethereum
+
+
+Cloning into 'ethereum/go-ethereum'...
+
+
+travis_time:end:0c2d7ea6:start=1580380225612569000,finish=1580380228117705000,duration=2505136000,event=checkout
+[0K$ cd ethereum/go-ethereum
+
+
+$ git checkout -qf 24cab2d5357ed968aa5a4752f7afc27c8320b064
+
+
+travis_fold:end:git.checkout
+[0K
+
+
+travis_time:end:0c2d7ea6:start=1580380225612569000,finish=1580380228212944000,duration=2600375000,event=checkout
+[0K$ travis_export_go 1.13.x github.com/ethereum/go-ethereum
+
+
+travis_time:start:06831e6d
+[0K
+
+
+[33;1mSetting environment variables from repository settings[0m
+
+
+$ export IOS_SIGNING_KEY=[secure]
+
+
+$ export LINUX_SIGNING_KEY=[secure]
+
+
+$ export OSX_SIGNING_KEY=[secure]
+
+
+$ export ANDROID_SIGNING_KEY=[secure]
+
+
+$ export AZURE_BLOBSTORE_TOKEN=[secure]
+
+
+$ export ANDROID_SONATYPE_USERNAME=[secure]
+
+
+$ export ANDROID_SONATYPE_PASSWORD=[secure]
+
+
+$ export COCOAPODS_TRUNK_TOKEN=[secure]
+
+
+$ export PPA_SIGNING_KEY=[secure]
+
+
+$ export PPA_SSH_KEY=[secure]
+
+
+
+
+
+travis_time:end:06831e6d:start=1580380228237195000,finish=1580380228303148000,duration=65953000,event=env
+[0Ktravis_time:start:0e9b1712
+[0K$ travis_setup_go
+
+
+go version go1.13.7 darwin/amd64
+
+
+$ export GOPATH="/Users/travis/gopath"
+
+
+$ export PATH="/Users/travis/gopath/bin:/Users/travis/.gimme/versions/go1.13.7.darwin.amd64/bin:/Users/travis/bin:/Users/travis/.rvm/gems/ruby-2.6.3/bin:/Users/travis/.rvm/gems/ruby-2.6.3@global/bin:/Users/travis/.rvm/rubies/ruby-2.6.3/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/Users/travis/.nvm/versions/node/v13.0.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+
+
+$ export GO111MODULE="auto"
+
+
+travis_time:end:0e9b1712:start=1580380228319007000,finish=1580380241195356000,duration=12876349000,event=
+[0K$ gimme version
+
+
+v1.5.3
+
+
+$ go version
+
+
+go version go1.13.7 darwin/amd64
+
+
+travis_fold:start:go.env
+[0K$ go env
+
+
+GO111MODULE="auto"
+
+
+GOARCH="amd64"
+
+
+GOBIN=""
+
+
+GOCACHE="/Users/travis/Library/Caches/go-build"
+
+
+GOENV="/Users/travis/Library/Application Support/go/env"
+
+
+GOEXE=""
+
+
+GOFLAGS=""
+
+
+GOHOSTARCH="amd64"
+
+
+GOHOSTOS="darwin"
+
+
+GONOPROXY=""
+
+
+GONOSUMDB=""
+
+
+GOOS="darwin"
+
+
+GOPATH="/Users/travis/gopath"
+
+
+GOPRIVATE=""
+
+
+GOPROXY="https://proxy.golang.org,direct"
+
+
+GOROOT="/Users/travis/.gimme/versions/go1.13.7.darwin.amd64"
+
+
+GOSUMDB="sum.golang.org"
+
+
+GOTMPDIR=""
+
+
+GOTOOLDIR="/Users/travis/.gimme/versions/go1.13.7.darwin.amd64/pkg/tool/darwin_amd64"
+
+
+GCCGO="gccgo"
+
+
+AR="ar"
+
+
+CC="clang"
+
+
+CXX="clang++"
+
+
+CGO_ENABLED="1"
+
+
+GOMOD="/Users/travis/gopath/src/github.com/ethereum/go-ethereum/go.mod"
+
+
+CGO_CFLAGS="-g -O2"
+
+
+CGO_CPPFLAGS=""
+
+
+CGO_CXXFLAGS="-g -O2"
+
+
+CGO_FFLAGS="-g -O2"
+
+
+CGO_LDFLAGS="-g -O2"
+
+
+PKG_CONFIG="pkg-config"
+
+
+GOGCCFLAGS="-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-build143729675=/tmp/go-build -gno-record-gcc-switches -fno-common"
+
+
+travis_fold:end:go.env
+[0Ktravis_fold:start:install
+[0Ktravis_time:start:06efc190
+[0K$ travis_install_go_dependencies 1.13.x -v
+
+
+Makefile detected
+
+
+travis_time:end:06efc190:start=1580380241462438000,finish=1580380241476486000,duration=14048000,event=install
+[0Ktravis_fold:end:install
+[0Ktravis_time:start:29200cc9
+[0K$ go run build/ci.go install
+
+
+go: downloading github.com/cespare/cp v0.1.0
+
+
+go: downloading golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
+
+
+go: downloading github.com/Azure/azure-storage-blob-go v0.7.0
+
+
+go: extracting github.com/cespare/cp v0.1.0
+
+
+go: extracting github.com/Azure/azure-storage-blob-go v0.7.0
+
+
+go: downloading github.com/Azure/azure-pipeline-go v0.2.2
+
+
+go: extracting github.com/Azure/azure-pipeline-go v0.2.2
+
+
+go: downloading github.com/mattn/go-ieproxy v0.0.0-20190702010315-6dee0af9227d
+
+
+go: extracting github.com/mattn/go-ieproxy v0.0.0-20190702010315-6dee0af9227d
+
+
+go: extracting golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
+
+
+go: finding github.com/cespare/cp v0.1.0
+
+
+go: finding github.com/Azure/azure-storage-blob-go v0.7.0
+
+
+go: finding github.com/Azure/azure-pipeline-go v0.2.2
+
+
+go: finding github.com/mattn/go-ieproxy v0.0.0-20190702010315-6dee0af9227d
+
+
+go: finding golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
+
+
+# command-line-arguments
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000000.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000001.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000002.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000003.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000004.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/go.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000005.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000006.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000007.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000008.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000013.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000014.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000015.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000016.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000017.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000018.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000019.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000020.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-949406456/000021.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+>>> /Users/travis/.gimme/versions/go1.13.7.darwin.amd64/bin/go install -ldflags -X main.gitCommit=24cab2d5357ed968aa5a4752f7afc27c8320b064 -X main.gitDate=20200130 -s -v ./...
+
+
+go: downloading github.com/gorilla/websocket v1.4.1-0.20190629185528-ae1634f6a989
+
+
+go: downloading github.com/aws/aws-sdk-go v1.25.48
+
+
+go: downloading github.com/aristanetworks/goarista v0.0.0-20170210015632-ea17b1a17847
+
+
+go: downloading github.com/hashicorp/golang-lru v0.0.0-20160813221303-0a025b7e63ad
+
+
+go: downloading github.com/edsrzf/mmap-go v0.0.0-20160512033002-935e0e8a636c
+
+
+go: downloading github.com/dop251/goja v0.0.0-20200106141417-aaec0e7bde29
+
+
+go: downloading github.com/tyler-smith/go-bip39 v1.0.1-0.20181017060643-dbb3b84ba2ef
+
+
+go: downloading github.com/[secure]/usb v0.0.0-20190919080040-51dc0efba356
+
+
+go: downloading github.com/influxdata/influxdb v1.2.3-0.20180221223340-01288bdb0883
+
+
+go: downloading github.com/fatih/color v1.3.0
+
+
+go: extracting github.com/edsrzf/mmap-go v0.0.0-20160512033002-935e0e8a636c
+
+
+go: extracting github.com/fatih/color v1.3.0
+
+
+go: downloading github.com/syndtr/goleveldb v1.0.1-0.20190923125748-758128399b1d
+
+
+go: extracting github.com/gorilla/websocket v1.4.1-0.20190629185528-ae1634f6a989
+
+
+go: downloading github.com/golang/protobuf v1.3.2-0.20190517061210-b285ee9cfc6c
+
+
+go: extracting github.com/tyler-smith/go-bip39 v1.0.1-0.20181017060643-dbb3b84ba2ef
+
+
+go: extracting github.com/hashicorp/golang-lru v0.0.0-20160813221303-0a025b7e63ad
+
+
+go: extracting github.com/aristanetworks/goarista v0.0.0-20170210015632-ea17b1a17847
+
+
+go: downloading github.com/deckarep/golang-set v0.0.0-20180603214616-504e848d77ea
+
+
+go: downloading github.com/rjeczalik/notify v0.9.1
+
+
+go: extracting github.com/dop251/goja v0.0.0-20200106141417-aaec0e7bde29
+
+
+go: extracting github.com/deckarep/golang-set v0.0.0-20180603214616-504e848d77ea
+
+
+go: downloading github.com/go-stack/stack v1.8.0
+
+
+go: extracting github.com/[secure]/usb v0.0.0-20190919080040-51dc0efba356
+
+
+go: extracting github.com/rjeczalik/notify v0.9.1
+
+
+go: downloading github.com/prometheus/tsdb v0.6.2-0.20190402121629-4f204dcbc150
+
+
+go: extracting github.com/go-stack/stack v1.8.0
+
+
+go: downloading golang.org/x/text v0.3.2
+
+
+go: extracting github.com/golang/protobuf v1.3.2-0.20190517061210-b285ee9cfc6c
+
+
+go: extracting github.com/influxdata/influxdb v1.2.3-0.20180221223340-01288bdb0883
+
+
+go: downloading github.com/mattn/go-isatty v0.0.5-0.20180830101745-3fb116b82035
+
+
+go: extracting github.com/syndtr/goleveldb v1.0.1-0.20190923125748-758128399b1d
+
+
+go: extracting github.com/mattn/go-isatty v0.0.5-0.20180830101745-3fb116b82035
+
+
+go: downloading github.com/olekukonko/tablewriter v0.0.2-0.20190409134802-7e037d187b0c
+
+
+go: extracting github.com/prometheus/tsdb v0.6.2-0.20190402121629-4f204dcbc150
+
+
+go: downloading golang.org/x/sys v0.0.0-20190712062909-fae7ac547cb7
+
+
+go: downloading gopkg.in/urfave/cli.v1 v1.20.0
+
+
+go: downloading github.com/julienschmidt/httprouter v1.1.1-0.20170430222011-975b5c4c7c21
+
+
+go: extracting github.com/olekukonko/tablewriter v0.0.2-0.20190409134802-7e037d187b0c
+
+
+go: extracting gopkg.in/urfave/cli.v1 v1.20.0
+
+
+go: downloading golang.org/x/sync v0.0.0-20181108010431-42b317875d0f
+
+
+go: downloading github.com/mattn/go-runewidth v0.0.4
+
+
+go: extracting github.com/mattn/go-runewidth v0.0.4
+
+
+go: extracting github.com/julienschmidt/httprouter v1.1.1-0.20170430222011-975b5c4c7c21
+
+
+go: downloading github.com/cloudflare/cloudflare-go v0.10.2-0.20190916151808-a80f83b9add9
+
+
+go: extracting golang.org/x/text v0.3.2
+
+
+go: extracting golang.org/x/sys v0.0.0-20190712062909-fae7ac547cb7
+
+
+go: extracting golang.org/x/sync v0.0.0-20181108010431-42b317875d0f
+
+
+go: downloading gopkg.in/olebedev/go-duktape.v3 v3.0.0-20190213234257-ec84240a7772
+
+
+go: extracting github.com/cloudflare/cloudflare-go v0.10.2-0.20190916151808-a80f83b9add9
+
+
+go: downloading github.com/pborman/uuid v0.0.0-20170112150404-1b00554d8222
+
+
+go: extracting github.com/pborman/uuid v0.0.0-20170112150404-1b00554d8222
+
+
+go: downloading github.com/golang/snappy v0.0.1
+
+
+go: downloading golang.org/x/time v0.0.0-20190308202827-9d24e82272b4
+
+
+go: extracting gopkg.in/olebedev/go-duktape.v3 v3.0.0-20190213234257-ec84240a7772
+
+
+go: extracting github.com/golang/snappy v0.0.1
+
+
+go: downloading github.com/wsddn/go-ecdh v0.0.0-20161211032359-48726bab9208
+
+
+go: extracting golang.org/x/time v0.0.0-20190308202827-9d24e82272b4
+
+
+go: downloading github.com/rs/cors v0.0.0-20160617231935-a62a804a8a00
+
+
+go: extracting github.com/wsddn/go-ecdh v0.0.0-20161211032359-48726bab9208
+
+
+go: downloading github.com/dlclark/regexp2 v1.2.0
+
+
+go: downloading github.com/jackpal/go-nat-pmp v1.0.2-0.20160603034137-1fa385a6f458
+
+
+go: extracting github.com/rs/cors v0.0.0-20160617231935-a62a804a8a00
+
+
+go: downloading github.com/fjl/memsize v0.0.0-20180418122429-ca190fb6ffbc
+
+
+go: extracting github.com/jackpal/go-nat-pmp v1.0.2-0.20160603034137-1fa385a6f458
+
+
+go: extracting github.com/fjl/memsize v0.0.0-20180418122429-ca190fb6ffbc
+
+
+go: downloading github.com/steakknife/bloomfilter v0.0.0-20180922174646-6819c0d2a570
+
+
+go: downloading github.com/huin/goupnp v0.0.0-20161224104101-679507af18f3
+
+
+go: extracting github.com/dlclark/regexp2 v1.2.0
+
+
+go: extracting github.com/huin/goupnp v0.0.0-20161224104101-679507af18f3
+
+
+go: extracting github.com/steakknife/bloomfilter v0.0.0-20180922174646-6819c0d2a570
+
+
+go: downloading github.com/naoina/toml v0.1.2-0.20170918210437-9fafd6967416
+
+
+go: downloading github.com/graph-gophers/graphql-go v0.0.0-20191115155744-f33e81362277
+
+
+go: downloading github.com/VictoriaMetrics/fastcache v1.5.3
+
+
+go: downloading github.com/pkg/errors v0.8.1
+
+
+go: downloading golang.org/x/net v0.0.0-20190628185345-da137c7871d7
+
+
+go: extracting github.com/naoina/toml v0.1.2-0.20170918210437-9fafd6967416
+
+
+go: extracting github.com/VictoriaMetrics/fastcache v1.5.3
+
+
+go: extracting github.com/graph-gophers/graphql-go v0.0.0-20191115155744-f33e81362277
+
+
+go: downloading github.com/cespare/xxhash v1.1.0
+
+
+go: extracting github.com/pkg/errors v0.8.1
+
+
+go: downloading github.com/rs/xhandler v0.0.0-20160618193221-ed27b6fd6521
+
+
+go: downloading github.com/elastic/gosigar v0.8.1-0.20180330100440-37f05ff46ffa
+
+
+go: extracting github.com/aws/aws-sdk-go v1.25.48
+
+
+go: extracting github.com/cespare/xxhash v1.1.0
+
+
+go: downloading github.com/go-sourcemap/sourcemap v2.1.2+incompatible
+
+
+go: downloading github.com/cespare/xxhash/v2 v2.1.1
+
+
+go: extracting github.com/rs/xhandler v0.0.0-20160618193221-ed27b6fd6521
+
+
+go: downloading github.com/peterh/liner v1.1.1-0.20190123174540-a2c9a5303de7
+
+
+go: extracting github.com/elastic/gosigar v0.8.1-0.20180330100440-37f05ff46ffa
+
+
+go: extracting golang.org/x/net v0.0.0-20190628185345-da137c7871d7
+
+
+go: downloading github.com/docker/docker v1.4.2-0.20180625184442-8e610b2b55bf
+
+
+go: extracting github.com/go-sourcemap/sourcemap v2.1.2+incompatible
+
+
+go: extracting github.com/cespare/xxhash/v2 v2.1.1
+
+
+go: downloading github.com/steakknife/hamming v0.0.0-20180906055917-c99c65617cd3
+
+
+go: downloading github.com/status-im/keycard-go v0.0.0-20190316090335-8537d3370df4
+
+
+go: extracting github.com/peterh/liner v1.1.1-0.20190123174540-a2c9a5303de7
+
+
+go: extracting github.com/status-im/keycard-go v0.0.0-20190316090335-8537d3370df4
+
+
+go: extracting github.com/steakknife/hamming v0.0.0-20180906055917-c99c65617cd3
+
+
+go: downloading github.com/opentracing/opentracing-go v1.1.0
+
+
+go: extracting github.com/opentracing/opentracing-go v1.1.0
+
+
+go: downloading github.com/gballet/go-libpcsclite v0.0.0-20190607065134-2772fd86a8ff
+
+
+go: extracting github.com/docker/docker v1.4.2-0.20180625184442-8e610b2b55bf
+
+
+go: downloading github.com/davecgh/go-spew v1.1.1
+
+
+go: extracting github.com/gballet/go-libpcsclite v0.0.0-20190607065134-2772fd86a8ff
+
+
+go: downloading github.com/mattn/go-colorable v0.1.0
+
+
+go: downloading github.com/naoina/go-stringutil v0.1.0
+
+
+go: extracting github.com/davecgh/go-spew v1.1.1
+
+
+go: extracting github.com/mattn/go-colorable v0.1.0
+
+
+go: extracting github.com/naoina/go-stringutil v0.1.0
+
+
+go: downloading github.com/jmespath/go-jmespath v0.0.0-20180206201540-c2b33e8439af
+
+
+go: extracting github.com/jmespath/go-jmespath v0.0.0-20180206201540-c2b33e8439af
+
+
+go: finding github.com/golang/protobuf v1.3.2-0.20190517061210-b285ee9cfc6c
+
+
+go: finding github.com/aristanetworks/goarista v0.0.0-20170210015632-ea17b1a17847
+
+
+go: finding github.com/deckarep/golang-set v0.0.0-20180603214616-504e848d77ea
+
+
+go: finding github.com/davecgh/go-spew v1.1.1
+
+
+go: finding github.com/go-stack/stack v1.8.0
+
+
+go: finding gopkg.in/urfave/cli.v1 v1.20.0
+
+
+go: finding github.com/edsrzf/mmap-go v0.0.0-20160512033002-935e0e8a636c
+
+
+go: finding github.com/aws/aws-sdk-go v1.25.48
+
+
+go: finding github.com/VictoriaMetrics/fastcache v1.5.3
+
+
+go: finding github.com/[secure]/usb v0.0.0-20190919080040-51dc0efba356
+
+
+go: finding github.com/pborman/uuid v0.0.0-20170112150404-1b00554d8222
+
+
+go: finding github.com/huin/goupnp v0.0.0-20161224104101-679507af18f3
+
+
+go: finding github.com/elastic/gosigar v0.8.1-0.20180330100440-37f05ff46ffa
+
+
+go: finding github.com/dop251/goja v0.0.0-20200106141417-aaec0e7bde29
+
+
+go: finding github.com/cloudflare/cloudflare-go v0.10.2-0.20190916151808-a80f83b9add9
+
+
+go: finding github.com/gballet/go-libpcsclite v0.0.0-20190607065134-2772fd86a8ff
+
+
+go: finding github.com/rjeczalik/notify v0.9.1
+
+
+go: finding github.com/cespare/xxhash/v2 v2.1.1
+
+
+go: finding github.com/jackpal/go-nat-pmp v1.0.2-0.20160603034137-1fa385a6f458
+
+
+go: finding github.com/status-im/keycard-go v0.0.0-20190316090335-8537d3370df4
+
+
+go: finding github.com/golang/snappy v0.0.1
+
+
+go: finding github.com/wsddn/go-ecdh v0.0.0-20161211032359-48726bab9208
+
+
+go: finding github.com/hashicorp/golang-lru v0.0.0-20160813221303-0a025b7e63ad
+
+
+go: finding github.com/dlclark/regexp2 v1.2.0
+
+
+go: finding golang.org/x/sys v0.0.0-20190712062909-fae7ac547cb7
+
+
+go: finding golang.org/x/text v0.3.2
+
+
+go: finding github.com/syndtr/goleveldb v1.0.1-0.20190923125748-758128399b1d
+
+
+go: finding github.com/steakknife/bloomfilter v0.0.0-20180922174646-6819c0d2a570
+
+
+go: finding github.com/olekukonko/tablewriter v0.0.2-0.20190409134802-7e037d187b0c
+
+
+go: finding github.com/gorilla/websocket v1.4.1-0.20190629185528-ae1634f6a989
+
+
+go: finding github.com/jmespath/go-jmespath v0.0.0-20180206201540-c2b33e8439af
+
+
+go: finding github.com/pkg/errors v0.8.1
+
+
+go: finding github.com/rs/cors v0.0.0-20160617231935-a62a804a8a00
+
+
+go: finding github.com/prometheus/tsdb v0.6.2-0.20190402121629-4f204dcbc150
+
+
+go: finding golang.org/x/net v0.0.0-20190628185345-da137c7871d7
+
+
+go: finding github.com/mattn/go-colorable v0.1.0
+
+
+go: finding golang.org/x/time v0.0.0-20190308202827-9d24e82272b4
+
+
+go: finding github.com/rs/xhandler v0.0.0-20160618193221-ed27b6fd6521
+
+
+go: finding github.com/peterh/liner v1.1.1-0.20190123174540-a2c9a5303de7
+
+
+go: finding github.com/go-sourcemap/sourcemap v2.1.2+incompatible
+
+
+go: finding github.com/fatih/color v1.3.0
+
+
+go: finding github.com/docker/docker v1.4.2-0.20180625184442-8e610b2b55bf
+
+
+go: finding github.com/mattn/go-isatty v0.0.5-0.20180830101745-3fb116b82035
+
+
+go: finding github.com/mattn/go-runewidth v0.0.4
+
+
+go: finding github.com/fjl/memsize v0.0.0-20180418122429-ca190fb6ffbc
+
+
+go: finding github.com/tyler-smith/go-bip39 v1.0.1-0.20181017060643-dbb3b84ba2ef
+
+
+go: finding github.com/julienschmidt/httprouter v1.1.1-0.20170430222011-975b5c4c7c21
+
+
+go: finding github.com/steakknife/hamming v0.0.0-20180906055917-c99c65617cd3
+
+
+go: finding github.com/influxdata/influxdb v1.2.3-0.20180221223340-01288bdb0883
+
+
+go: finding github.com/naoina/toml v0.1.2-0.20170918210437-9fafd6967416
+
+
+go: finding github.com/graph-gophers/graphql-go v0.0.0-20191115155744-f33e81362277
+
+
+go: finding github.com/naoina/go-stringutil v0.1.0
+
+
+go: finding golang.org/x/sync v0.0.0-20181108010431-42b317875d0f
+
+
+go: finding gopkg.in/olebedev/go-duktape.v3 v3.0.0-20190213234257-ec84240a7772
+
+
+go: finding github.com/opentracing/opentracing-go v1.1.0
+
+
+golang.org/x/crypto/curve25519
+
+
+github.com/cespare/xxhash/v2
+
+
+github.com/golang/snappy
+
+
+github.com/aristanetworks/goarista/monotime
+
+
+github.com/ethereum/go-ethereum/common/mclock
+
+
+github.com/VictoriaMetrics/fastcache
+
+
+github.com/ethereum/go-ethereum/common/prque
+
+
+github.com/ethereum/go-ethereum/ethdb
+
+
+github.com/go-stack/stack
+
+
+github.com/ethereum/go-ethereum/log
+
+
+golang.org/x/sys/unix
+
+
+github.com/steakknife/hamming
+
+
+github.com/steakknife/bloomfilter
+
+
+github.com/ethereum/go-ethereum/event
+
+
+github.com/ethereum/go-ethereum/accounts/abi
+
+
+github.com/elastic/gosigar
+
+
+github.com/davecgh/go-spew/spew
+
+
+github.com/deckarep/golang-set
+
+
+github.com/pborman/uuid
+
+
+github.com/rjeczalik/notify
+
+
+github.com/ethereum/go-ethereum/metrics
+
+
+github.com/ethereum/go-ethereum/trie
+
+
+github.com/ethereum/go-ethereum/core/types
+
+
+github.com/ethereum/go-ethereum
+
+
+github.com/ethereum/go-ethereum/accounts
+
+
+golang.org/x/crypto/pbkdf2
+
+
+golang.org/x/crypto/scrypt
+
+
+github.com/gballet/go-libpcsclite
+
+
+github.com/status-im/keycard-go/derivationpath
+
+
+github.com/wsddn/go-ecdh
+
+
+golang.org/x/text/transform
+
+
+golang.org/x/text/unicode/norm
+
+
+github.com/ethereum/go-ethereum/accounts/scwallet
+
+
+github.com/hashicorp/golang-lru/simplelru
+
+
+github.com/hashicorp/golang-lru
+
+
+github.com/ethereum/go-ethereum/core/state
+
+
+github.com/ethereum/go-ethereum/p2p/netutil
+
+
+github.com/gorilla/websocket
+
+
+golang.org/x/net/context
+
+
+github.com/rs/xhandler
+
+
+github.com/rs/cors
+
+
+github.com/ethereum/go-ethereum/rpc
+
+
+github.com/ethereum/go-ethereum/consensus
+
+
+github.com/ethereum/go-ethereum/consensus/misc
+
+
+github.com/ethereum/go-ethereum/consensus/clique
+
+
+github.com/edsrzf/mmap-go
+
+
+github.com/ethereum/go-ethereum/common/bitutil
+
+
+github.com/ethereum/go-ethereum/consensus/ethash
+
+
+github.com/ethereum/go-ethereum/accounts/keystore
+
+
+github.com/syndtr/goleveldb/leveldb/util
+
+
+github.com/syndtr/goleveldb/leveldb/cache
+
+
+github.com/syndtr/goleveldb/leveldb/comparer
+
+
+github.com/syndtr/goleveldb/leveldb/storage
+
+
+github.com/syndtr/goleveldb/leveldb/filter
+
+
+github.com/syndtr/goleveldb/leveldb/opt
+
+
+github.com/ethereum/go-ethereum/ethdb/memorydb
+
+
+github.com/mattn/go-runewidth
+
+
+github.com/olekukonko/tablewriter
+
+
+github.com/pkg/errors
+
+
+github.com/syndtr/goleveldb/leveldb/errors
+
+
+github.com/syndtr/goleveldb/leveldb/iterator
+
+
+github.com/syndtr/goleveldb/leveldb/journal
+
+
+github.com/prometheus/tsdb/fileutil
+
+
+github.com/syndtr/goleveldb/leveldb/memdb
+
+
+github.com/syndtr/goleveldb/leveldb/table
+
+
+golang.org/x/sys/cpu
+
+
+github.com/ethereum/go-ethereum/crypto/blake2b
+
+
+github.com/ethereum/go-ethereum/crypto/bn256/cloudflare
+
+
+github.com/syndtr/goleveldb/leveldb
+
+
+github.com/ethereum/go-ethereum/crypto/bn256
+
+
+golang.org/x/crypto/ripemd160
+
+
+github.com/ethereum/go-ethereum/core/vm
+
+
+github.com/ethereum/go-ethereum/core/bloombits
+
+
+github.com/ethereum/go-ethereum/ethdb/leveldb
+
+
+github.com/ethereum/go-ethereum/crypto/ecies
+
+
+github.com/ethereum/go-ethereum/core/rawdb
+
+
+github.com/ethereum/go-ethereum/p2p/enr
+
+
+github.com/ethereum/go-ethereum/p2p/enode
+
+
+github.com/ethereum/go-ethereum/p2p/discover
+
+
+github.com/ethereum/go-ethereum/core
+
+
+github.com/ethereum/go-ethereum/p2p/discv5
+
+
+github.com/huin/goupnp/httpu
+
+
+github.com/huin/goupnp/scpd
+
+
+github.com/huin/goupnp/soap
+
+
+github.com/huin/goupnp/ssdp
+
+
+golang.org/x/net/html/atom
+
+
+golang.org/x/net/html
+
+
+golang.org/x/text/encoding/internal/identifier
+
+
+golang.org/x/text/encoding
+
+
+github.com/ethereum/go-ethereum/eth/downloader
+
+
+golang.org/x/text/encoding/internal
+
+
+golang.org/x/text/encoding/charmap
+
+
+golang.org/x/text/encoding/japanese
+
+
+golang.org/x/text/encoding/korean
+
+
+golang.org/x/text/encoding/simplifiedchinese
+
+
+golang.org/x/text/encoding/traditionalchinese
+
+
+golang.org/x/text/internal/utf8internal
+
+
+golang.org/x/text/runes
+
+
+golang.org/x/text/internal/tag
+
+
+golang.org/x/text/internal/language
+
+
+golang.org/x/text/encoding/unicode
+
+
+github.com/jackpal/go-nat-pmp
+
+
+github.com/tyler-smith/go-bip39/wordlists
+
+
+github.com/tyler-smith/go-bip39
+
+
+github.com/golang/protobuf/proto
+
+
+golang.org/x/text/internal/language/compact
+
+
+golang.org/x/text/language
+
+
+golang.org/x/text/encoding/htmlindex
+
+
+golang.org/x/net/html/charset
+
+
+github.com/huin/goupnp
+
+
+github.com/huin/goupnp/dcps/internetgateway1
+
+
+github.com/huin/goupnp/dcps/internetgateway2
+
+
+github.com/ethereum/go-ethereum/p2p/nat
+
+
+github.com/ethereum/go-ethereum/p2p
+
+
+github.com/golang/protobuf/protoc-gen-go/descriptor
+
+
+github.com/ethereum/go-ethereum/internal/ethapi
+
+
+github.com/ethereum/go-ethereum/accounts/usbwallet/trezor
+
+
+github.com/[secure]/usb
+
+
+github.com/ethereum/go-ethereum/signer/storage
+
+
+golang.org/x/crypto/ssh/terminal
+
+
+github.com/ethereum/go-ethereum/eth/filters
+
+
+github.com/ethereum/go-ethereum/common/fdlimit
+
+
+github.com/ethereum/go-ethereum/core/forkid
+
+
+github.com/ethereum/go-ethereum/eth/fetcher
+
+
+github.com/ethereum/go-ethereum/eth/gasprice
+
+
+github.com/ethereum/go-ethereum/eth/tracers/internal/tracers
+
+
+gopkg.in/olebedev/go-duktape.v3
+
+
+github.com/ethereum/go-ethereum/accounts/usbwallet
+
+
+github.com/ethereum/go-ethereum/signer/core
+
+
+github.com/ethereum/go-ethereum/accounts/external
+
+
+github.com/ethereum/go-ethereum/accounts/abi/bind
+
+
+github.com/ethereum/go-ethereum/accounts/abi/bind/backends
+
+
+github.com/ethereum/go-ethereum/signer/fourbyte
+
+
+github.com/ethereum/go-ethereum/cmd/abidump
+
+
+# github.com/ethereum/go-ethereum/cmd/abidump
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000010.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000011.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000012.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000013.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000014.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000019.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000020.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000021.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000022.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000023.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000024.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000025.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000026.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000027.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000032.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000033.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000034.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-824139888/000035.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+github.com/ethereum/go-ethereum/miner
+
+
+github.com/ethereum/go-ethereum/metrics/prometheus
+
+
+github.com/ethereum/go-ethereum/metrics/exp
+
+
+github.com/fjl/memsize
+
+
+github.com/fjl/memsize/memsizeui
+
+
+github.com/mattn/go-isatty
+
+
+github.com/mattn/go-colorable
+
+
+gopkg.in/urfave/cli.v1
+
+
+github.com/ethereum/go-ethereum/internal/debug
+
+
+github.com/ethereum/go-ethereum/node
+
+
+github.com/ethereum/go-ethereum/contracts/checkpointoracle/contract
+
+
+github.com/ethereum/go-ethereum/contracts/checkpointoracle
+
+
+github.com/ethereum/go-ethereum/les/checkpointoracle
+
+
+github.com/ethereum/go-ethereum/les/flowcontrol
+
+
+github.com/ethereum/go-ethereum/light
+
+
+github.com/graph-gophers/graphql-go/errors
+
+
+github.com/graph-gophers/graphql-go/internal/common
+
+
+github.com/graph-gophers/graphql-go/internal/schema
+
+
+github.com/graph-gophers/graphql-go/internal/exec/packer
+
+
+github.com/graph-gophers/graphql-go/introspection
+
+
+github.com/graph-gophers/graphql-go/internal/exec/resolvable
+
+
+github.com/graph-gophers/graphql-go/internal/query
+
+
+github.com/graph-gophers/graphql-go/internal/exec/selected
+
+
+github.com/graph-gophers/graphql-go/log
+
+
+github.com/opentracing/opentracing-go/log
+
+
+github.com/opentracing/opentracing-go
+
+
+github.com/opentracing/opentracing-go/ext
+
+
+github.com/graph-gophers/graphql-go/trace
+
+
+github.com/graph-gophers/graphql-go/internal/exec
+
+
+github.com/graph-gophers/graphql-go/internal/validation
+
+
+github.com/graph-gophers/graphql-go
+
+
+github.com/graph-gophers/graphql-go/relay
+
+
+github.com/ethereum/go-ethereum/graphql
+
+
+github.com/influxdata/influxdb/pkg/escape
+
+
+github.com/influxdata/influxdb/models
+
+
+github.com/influxdata/influxdb/client
+
+
+github.com/ethereum/go-ethereum/metrics/influxdb
+
+
+golang.org/x/sync/syncmap
+
+
+github.com/ethereum/go-ethereum/whisper/whisperv6
+
+
+github.com/ethereum/go-ethereum/common/compiler
+
+
+github.com/ethereum/go-ethereum/ethclient
+
+
+github.com/dlclark/regexp2/syntax
+
+
+github.com/dlclark/regexp2
+
+
+github.com/dop251/goja/file
+
+
+github.com/dop251/goja/token
+
+
+github.com/go-sourcemap/sourcemap/internal/base64vlq
+
+
+github.com/go-sourcemap/sourcemap
+
+
+github.com/dop251/goja/ast
+
+
+github.com/dop251/goja/parser
+
+
+golang.org/x/text/internal
+
+
+golang.org/x/text/cases
+
+
+golang.org/x/text/internal/colltab
+
+
+golang.org/x/text/collate
+
+
+github.com/dop251/goja
+
+
+github.com/fatih/color
+
+
+github.com/ethereum/go-ethereum/internal/jsre
+
+
+github.com/ethereum/go-ethereum/internal/jsre/deps
+
+
+github.com/ethereum/go-ethereum/internal/web3ext
+
+
+github.com/peterh/liner
+
+
+github.com/ethereum/go-ethereum/console
+
+
+github.com/ethereum/go-ethereum/signer/rules/deps
+
+
+github.com/ethereum/go-ethereum/signer/rules
+
+
+github.com/aws/aws-sdk-go/aws/awserr
+
+
+github.com/aws/aws-sdk-go/internal/ini
+
+
+github.com/aws/aws-sdk-go/internal/shareddefaults
+
+
+github.com/aws/aws-sdk-go/aws/credentials
+
+
+github.com/aws/aws-sdk-go/aws/endpoints
+
+
+github.com/aws/aws-sdk-go/internal/sdkio
+
+
+github.com/aws/aws-sdk-go/aws
+
+
+github.com/aws/aws-sdk-go/aws/client/metadata
+
+
+github.com/jmespath/go-jmespath
+
+
+github.com/aws/aws-sdk-go/aws/awsutil
+
+
+github.com/aws/aws-sdk-go/aws/request
+
+
+github.com/aws/aws-sdk-go/internal/sdkrand
+
+
+github.com/aws/aws-sdk-go/aws/client
+
+
+github.com/aws/aws-sdk-go/aws/corehandlers
+
+
+github.com/aws/aws-sdk-go/aws/credentials/processcreds
+
+
+github.com/aws/aws-sdk-go/internal/sdkmath
+
+
+github.com/aws/aws-sdk-go/private/protocol
+
+
+github.com/aws/aws-sdk-go/private/protocol/rest
+
+
+github.com/aws/aws-sdk-go/aws/signer/v4
+
+
+github.com/aws/aws-sdk-go/private/protocol/query/queryutil
+
+
+github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil
+
+
+github.com/aws/aws-sdk-go/private/protocol/query
+
+
+github.com/aws/aws-sdk-go/service/sts
+
+
+github.com/aws/aws-sdk-go/service/sts/stsiface
+
+
+github.com/aws/aws-sdk-go/aws/credentials/stscreds
+
+
+github.com/aws/aws-sdk-go/aws/csm
+
+
+github.com/aws/aws-sdk-go/internal/sdkuri
+
+
+github.com/aws/aws-sdk-go/aws/ec2metadata
+
+
+github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds
+
+
+github.com/aws/aws-sdk-go/private/protocol/json/jsonutil
+
+
+github.com/aws/aws-sdk-go/aws/credentials/endpointcreds
+
+
+github.com/aws/aws-sdk-go/aws/defaults
+
+
+github.com/aws/aws-sdk-go/aws/session
+
+
+github.com/aws/aws-sdk-go/private/protocol/restxml
+
+
+github.com/aws/aws-sdk-go/service/route53
+
+
+golang.org/x/time/rate
+
+
+github.com/cloudflare/cloudflare-go
+
+
+github.com/ethereum/go-ethereum/p2p/dnsdisc
+
+
+github.com/ethereum/go-ethereum/cmd/devp2p
+
+
+# github.com/ethereum/go-ethereum/cmd/devp2p
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/go.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000000.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000001.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000002.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000003.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000004.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000005.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000006.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000007.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000008.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000009.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000010.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000011.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000012.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000013.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000024.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000025.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000026.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-892025581/000027.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+github.com/ethereum/go-ethereum/core/asm
+
+
+github.com/ethereum/go-ethereum/cmd/evm/internal/compiler
+
+
+github.com/ethereum/go-ethereum/core/vm/runtime
+
+
+github.com/ethereum/go-ethereum/tests
+
+
+github.com/naoina/go-stringutil
+
+
+github.com/naoina/toml/ast
+
+
+github.com/naoina/toml
+
+
+github.com/docker/docker/pkg/reexec
+
+
+github.com/ethereum/go-ethereum/p2p/simulations/pipes
+
+
+github.com/ethereum/go-ethereum/p2p/simulations/adapters
+
+
+github.com/julienschmidt/httprouter
+
+
+github.com/ethereum/go-ethereum/p2p/simulations
+
+
+github.com/ethereum/go-ethereum/cmd/p2psim
+
+
+# github.com/ethereum/go-ethereum/cmd/p2psim
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000006.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000007.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000008.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000009.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000010.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000011.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000012.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000013.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000014.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000015.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000016.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000017.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000018.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000019.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000022.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000023.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000024.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-236953907/000025.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+golang.org/x/crypto/ed25519/internal/edwards25519
+
+
+golang.org/x/crypto/ed25519
+
+
+golang.org/x/crypto/internal/subtle
+
+
+golang.org/x/crypto/internal/chacha20
+
+
+golang.org/x/crypto/poly1305
+
+
+golang.org/x/crypto/ssh
+
+
+github.com/ethereum/go-ethereum/cmd/puppeth
+
+
+# github.com/ethereum/go-ethereum/cmd/puppeth
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/go.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000000.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000001.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000002.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000003.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000004.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000005.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000006.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000007.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000008.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000011.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000012.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000013.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000014.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000015.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000016.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000017.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000018.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-484646821/000019.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+github.com/ethereum/go-ethereum/cmd/rlpdump
+
+
+github.com/ethereum/go-ethereum/whisper/mailserver
+
+
+github.com/ethereum/go-ethereum/eth/tracers
+
+
+github.com/ethereum/go-ethereum/crypto/bn256/google
+
+
+github.com/ethereum/go-ethereum/eth
+
+
+github.com/ethereum/go-ethereum/ethdb/dbtest
+
+
+github.com/ethereum/go-ethereum/internal/cmdtest
+
+
+github.com/ethereum/go-ethereum/internal/guide
+
+
+github.com/ethereum/go-ethereum/internal/testlog
+
+
+github.com/ethereum/go-ethereum/metrics/librato
+
+
+github.com/ethereum/go-ethereum/whisper/shhclient
+
+
+github.com/ethereum/go-ethereum/p2p/simulations/examples
+
+
+github.com/ethereum/go-ethereum/les
+
+
+github.com/ethereum/go-ethereum/ethstats
+
+
+github.com/ethereum/go-ethereum/cmd/utils
+
+
+github.com/ethereum/go-ethereum/cmd/abigen
+
+
+# github.com/ethereum/go-ethereum/p2p/simulations/examples
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000002.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000003.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000004.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000005.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000006.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000007.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000008.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000009.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000010.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000011.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000012.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000013.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000014.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000015.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000016.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000017.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000018.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-928473441/000019.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+github.com/ethereum/go-ethereum/cmd/bootnode
+
+
+# github.com/ethereum/go-ethereum/cmd/abigen
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000000.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000001.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000002.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000003.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/go.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000010.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000011.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000012.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000013.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000014.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000017.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000018.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000019.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000020.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000021.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000022.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000023.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000024.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-498917378/000025.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+github.com/ethereum/go-ethereum/cmd/checkpoint-admin
+
+
+# github.com/ethereum/go-ethereum/cmd/bootnode
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000000.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/go.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000001.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000002.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000003.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000004.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000005.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000006.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000007.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000008.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000009.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000010.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000011.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000012.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000013.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000014.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000015.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000016.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-404982140/000017.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+github.com/ethereum/go-ethereum/cmd/clef
+
+
+# github.com/ethereum/go-ethereum/cmd/checkpoint-admin
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000002.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000003.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000004.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000005.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000006.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000007.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000008.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000009.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000010.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000011.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000012.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000013.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000014.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000015.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000016.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000017.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000018.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-529914478/000019.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+github.com/ethereum/go-ethereum/cmd/ethkey
+
+
+# github.com/ethereum/go-ethereum/cmd/clef
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000000.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000001.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000002.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000003.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000006.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/go.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000007.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000008.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000009.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000010.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000011.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000012.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000013.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000014.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000021.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000022.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000023.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000024.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-558376008/000025.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+github.com/ethereum/go-ethereum/cmd/evm
+
+
+# github.com/ethereum/go-ethereum/cmd/ethkey
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000002.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000003.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000004.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000005.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000012.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000013.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000014.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000015.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000016.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000017.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000018.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000019.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000020.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000021.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000022.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000023.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000024.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-457481882/000025.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+github.com/ethereum/go-ethereum/cmd/faucet
+
+
+# github.com/ethereum/go-ethereum/cmd/evm
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/go.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000000.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000001.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000002.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000003.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000006.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000007.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000008.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000009.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000010.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000015.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000016.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000017.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000018.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000019.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000020.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000021.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000022.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-942879476/000023.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+github.com/ethereum/go-ethereum/cmd/geth
+
+
+# github.com/ethereum/go-ethereum/cmd/faucet
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/go.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000000.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000001.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000002.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000003.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000004.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000009.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000010.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000011.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000012.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000015.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000016.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000017.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000018.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000019.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000020.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000021.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000022.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-978569774/000023.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+github.com/ethereum/go-ethereum/cmd/wnode
+
+
+# github.com/ethereum/go-ethereum/cmd/geth
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000006.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000007.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000008.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000009.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000014.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000015.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000016.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000017.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000018.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000019.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000020.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000021.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000022.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000023.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000024.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000025.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000026.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-542444568/000027.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+github.com/ethereum/go-ethereum/mobile
+
+
+github.com/ethereum/go-ethereum/p2p/testing
+
+
+github.com/ethereum/go-ethereum/tests/fuzzers/keystore
+
+
+github.com/ethereum/go-ethereum/tests/fuzzers/rlp
+
+
+github.com/ethereum/go-ethereum/tests/fuzzers/trie
+
+
+# github.com/ethereum/go-ethereum/cmd/wnode
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/go.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000000.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000001.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000002.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000003.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000010.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000011.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000012.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000013.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000014.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000015.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000016.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000017.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000018.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000019.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000020.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000021.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000022.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-910229442/000023.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+github.com/ethereum/go-ethereum/tests/fuzzers/whisperv6
+
+
+travis_time:end:29200cc9:start=1580380241488589000,finish=1580380357857623000,duration=116369034000,event=script
+[0K[32;1mThe command "go run build/ci.go install" exited with 0.[0m
+
+
+travis_time:start:2f71c980
+[0K$ go run build/ci.go archive -type tar -signer OSX_SIGNING_KEY -upload gethstore/builds
+
+
+# command-line-arguments
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000000.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000001.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000002.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000003.o) was built for newer OSX version (10.15) than being linked (10.13)ld: warning: 
+
+
+object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/go.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000004.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000005.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000006.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000007.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000008.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000013.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000014.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000015.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000016.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000017.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000018.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000019.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000020.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-753854273/000021.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+geth-darwin-amd64-1.9.11-unstable-24cab2d5.tar.gz
+
+
+   + COPYING
+
+
+   + geth
+
+
+geth-alltools-darwin-amd64-1.9.11-unstable-24cab2d5.tar.gz
+
+
+   + COPYING
+
+
+   + abigen
+
+
+   + bootnode
+
+
+   + evm
+
+
+   + geth
+
+
+   + puppeth
+
+
+   + rlpdump
+
+
+   + wnode
+
+
+   + clef
+
+
+travis_time:end:2f71c980:start=1580380357875907000,finish=1580380384971939000,duration=27096032000,event=script
+[0K[32;1mThe command "go run build/ci.go archive -type tar -signer OSX_SIGNING_KEY -upload gethstore/builds" exited with 0.[0m
+
+
+travis_time:start:0538289a
+[0K$ gem uninstall cocoapods -a -x
+
+
+Removing pod
+
+
+Removing sandbox-pod
+
+
+Successfully uninstalled cocoapods-1.8.4
+
+
+travis_time:end:0538289a:start=1580380384984047000,finish=1580380385792097000,duration=808050000,event=script
+[0K[32;1mThe command "gem uninstall cocoapods -a -x" exited with 0.[0m
+
+
+travis_time:start:0b727567
+[0K$ gem install cocoapods
+
+
+Successfully installed cocoapods-1.8.4
+
+
+1 gem installed
+
+
+travis_time:end:0b727567:start=1580380385804184000,finish=1580380388096226000,duration=2292042000,event=script
+[0K[32;1mThe command "gem install cocoapods" exited with 0.[0m
+
+
+travis_time:start:16852a5c
+[0K$ mv ~/.cocoapods/repos/master ~/.cocoapods/repos/master.bak
+
+
+mv: rename /Users/travis/.cocoapods/repos/master to /Users/travis/.cocoapods/repos/master.bak: No such file or directory
+
+
+travis_time:end:16852a5c:start=1580380388109331000,finish=1580380388124977000,duration=15646000,event=script
+[0K[31;1mThe command "mv ~/.cocoapods/repos/master ~/.cocoapods/repos/master.bak" exited with 1.[0m
+
+
+travis_time:start:1eeadb98
+[0K$ sed -i '.bak' 's/repo.join/!repo.join/g' $(dirname `gem which cocoapods`)/cocoapods/sources_manager.rb
+
+
+travis_time:end:1eeadb98:start=1580380388137122000,finish=1580380388634293000,duration=497171000,event=script
+[0K[32;1mThe command "sed -i '.bak' 's/repo.join/!repo.join/g' $(dirname `gem which cocoapods`)/cocoapods/sources_manager.rb" exited with 0.[0m
+
+
+travis_time:start:07427f4f
+[0K$ if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git clone --depth=1 https://github.com/CocoaPods/Specs.git ~/.cocoapods/repos/master && pod setup --verbose; fi
+
+
+Cloning into '/Users/travis/.cocoapods/repos/master'...
+
+
+Updating files:   0% (2976/390453)
+Updating files:   1% (3905/390453)
+Updating files:   1% (6226/390453)
+Updating files:   2% (7810/390453)
+Updating files:   2% (9337/390453)
+Updating files:   2% (9865/390453)
+Updating files:   2% (9937/390453)
+Updating files:   3% (11714/390453)
+Updating files:   3% (12839/390453)
+Updating files:   4% (15619/390453)
+Updating files:   4% (15946/390453)
+Updating files:   4% (18834/390453)
+Updating files:   5% (19523/390453)
+Updating files:   5% (21099/390453)
+Updating files:   5% (23194/390453)
+Updating files:   6% (23428/390453)
+Updating files:   6% (24726/390453)
+Updating files:   7% (27332/390453)
+Updating files:   7% (27760/390453)
+Updating files:   7% (31160/390453)
+Updating files:   8% (31237/390453)
+Updating files:   8% (34456/390453)
+Updating files:   9% (35141/390453)
+Updating files:   9% (37660/390453)
+Updating files:  10% (39046/390453)
+Updating files:  10% (40627/390453)
+Updating files:  11% (42950/390453)
+Updating files:  11% (44095/390453)
+Updating files:  12% (46855/390453)
+Updating files:  12% (47549/390453)
+Updating files:  13% (50759/390453)
+Updating files:  13% (50959/390453)
+Updating files:  13% (54417/390453)
+Updating files:  14% (54664/390453)
+Updating files:  14% (57722/390453)
+Updating files:  15% (58568/390453)
+Updating files:  15% (61106/390453)
+Updating files:  16% (62473/390453)
+Updating files:  16% (64494/390453)
+Updating files:  17% (66378/390453)
+Updating files:  17% (67664/390453)
+Updating files:  18% (70282/390453)
+Updating files:  18% (70696/390453)
+Updating files:  18% (73748/390453)
+Updating files:  19% (74187/390453)
+Updating files:  19% (76859/390453)
+Updating files:  20% (78091/390453)
+Updating files:  20% (80097/390453)
+Updating files:  21% (81996/390453)
+Updating files:  21% (83449/390453)
+Updating files:  22% (85900/390453)
+Updating files:  22% (86729/390453)
+Updating files:  23% (89805/390453)
+Updating files:  23% (90015/390453)
+Updating files:  23% (93311/390453)
+Updating files:  24% (93709/390453)
+Updating files:  24% (96718/390453)
+Updating files:  25% (97614/390453)
+Updating files:  25% (100107/390453)
+Updating files:  26% (101518/390453)
+Updating files:  26% (103431/390453)
+Updating files:  27% (105423/390453)
+Updating files:  27% (106877/390453)
+Updating files:  28% (109327/390453)
+Updating files:  28% (110399/390453)
+Updating files:  29% (113232/390453)
+Updating files:  29% (113794/390453)
+Updating files:  30% (117136/390453)
+Updating files:  30% (117275/390453)
+Updating files:  30% (120501/390453)
+Updating files:  31% (121041/390453)
+Updating files:  31% (123684/390453)
+Updating files:  32% (124945/390453)
+Updating files:  32% (126842/390453)
+Updating files:  33% (128850/390453)
+Updating files:  33% (130154/390453)
+Updating files:  34% (132755/390453)
+Updating files:  34% (133424/390453)
+Updating files:  34% (135948/390453)
+Updating files:  35% (136659/390453)
+Updating files:  35% (139080/390453)
+Updating files:  36% (140564/390453)
+Updating files:  36% (142453/390453)
+Updating files:  37% (144468/390453)
+Updating files:  37% (145866/390453)
+Updating files:  38% (148373/390453)
+Updating files:  38% (149314/390453)
+Updating files:  39% (152277/390453)
+Updating files:  39% (152660/390453)
+Updating files:  39% (155918/390453)
+Updating files:  40% (156182/390453)
+Updating files:  40% (159287/390453)
+Updating files:  41% (160086/390453)
+Updating files:  41% (162505/390453)
+Updating files:  42% (163991/390453)
+Updating files:  42% (165621/390453)
+Updating files:  43% (167895/390453)
+Updating files:  43% (168319/390453)
+Updating files:  43% (171337/390453)
+Updating files:  44% (171800/390453)
+Updating files:  44% (174470/390453)
+Updating files:  44% (175628/390453)
+Updating files:  45% (175704/390453)
+Updating files:  45% (178060/390453)
+Updating files:  46% (179609/390453)
+Updating files:  46% (180995/390453)
+Updating files:  46% (181402/390453)
+Updating files:  47% (183513/390453)
+Updating files:  47% (184428/390453)
+Updating files:  47% (186682/390453)
+Updating files:  48% (187418/390453)
+Updating files:  48% (189279/390453)
+Updating files:  49% (191322/390453)
+Updating files:  49% (192343/390453)
+Updating files:  50% (195227/390453)
+Updating files:  50% (195636/390453)
+Updating files:  50% (198967/390453)
+Updating files:  51% (199132/390453)
+Updating files:  51% (202083/390453)
+Updating files:  52% (203036/390453)
+Updating files:  52% (205443/390453)
+Updating files:  53% (206941/390453)
+Updating files:  53% (208464/390453)
+Updating files:  54% (210845/390453)
+Updating files:  54% (211389/390453)
+Updating files:  54% (214686/390453)
+Updating files:  55% (214750/390453)
+Updating files:  55% (217788/390453)
+Updating files:  56% (218654/390453)
+Updating files:  56% (220913/390453)
+Updating files:  57% (222559/390453)
+Updating files:  57% (224200/390453)
+Updating files:  58% (226463/390453)
+Updating files:  58% (227470/390453)
+Updating files:  59% (230368/390453)
+Updating files:  59% (230868/390453)
+Updating files:  59% (234200/390453)
+Updating files:  60% (234272/390453)
+Updating files:  60% (236919/390453)
+Updating files:  61% (238177/390453)
+Updating files:  61% (240335/390453)
+Updating files:  62% (242081/390453)
+Updating files:  62% (243633/390453)
+Updating files:  63% (245986/390453)
+Updating files:  63% (246340/390453)
+Updating files:  63% (249724/390453)
+Updating files:  64% (249890/390453)
+Updating files:  64% (253110/390453)
+Updating files:  65% (253795/390453)
+Updating files:  65% (256403/390453)
+Updating files:  66% (257699/390453)
+Updating files:  66% (259912/390453)
+Updating files:  67% (261604/390453)
+Updating files:  67% (263282/390453)
+Updating files:  68% (265509/390453)
+Updating files:  68% (266610/390453)
+Updating files:  69% (269413/390453)
+Updating files:  69% (269553/390453)
+Updating files:  69% (273044/390453)
+Updating files:  70% (273318/390453)
+Updating files:  70% (276396/390453)
+Updating files:  71% (277222/390453)
+Updating files:  71% (279784/390453)
+Updating files:  72% (281127/390453)
+Updating files:  72% (283022/390453)
+Updating files:  73% (285031/390453)
+Updating files:  73% (286295/390453)
+Updating files:  74% (288936/390453)
+Updating files:  74% (289578/390453)
+Updating files:  75% (292840/390453)
+Updating files:  75% (292882/390453)
+Updating files:  75% (296102/390453)
+Updating files:  76% (296745/390453)
+Updating files:  76% (299293/390453)
+Updating files:  77% (300649/390453)
+Updating files:  77% (302366/390453)
+Updating files:  78% (304554/390453)
+Updating files:  78% (305719/390453)
+Updating files:  79% (308458/390453)
+Updating files:  79% (309131/390453)
+Updating files:  80% (312363/390453)
+Updating files:  80% (312446/390453)
+Updating files:  80% (315649/390453)
+Updating files:  81% (316267/390453)
+Updating files:  81% (318655/390453)
+Updating files:  82% (320172/390453)
+Updating files:  82% (321982/390453)
+Updating files:  83% (324076/390453)
+Updating files:  83% (325072/390453)
+Updating files:  83% (327863/390453)
+Updating files:  84% (327981/390453)
+Updating files:  84% (331060/390453)
+Updating files:  85% (331886/390453)
+Updating files:  85% (334228/390453)
+Updating files:  86% (335790/390453)
+Updating files:  86% (337407/390453)
+Updating files:  87% (339695/390453)
+Updating files:  87% (340437/390453)
+Updating files:  87% (342856/390453)
+Updating files:  88% (343599/390453)
+Updating files:  88% (345728/390453)
+Updating files:  89% (347504/390453)
+Updating files:  89% (348710/390453)
+Updating files:  90% (351408/390453)
+Updating files:  90% (351456/390453)
+Updating files:  90% (354798/390453)
+Updating files:  91% (355313/390453)
+Updating files:  91% (358149/390453)
+Updating files:  92% (359217/390453)
+Updating files:  92% (361435/390453)
+Updating files:  93% (363122/390453)
+Updating files:  93% (363461/390453)
+Updating files:  93% (365146/390453)
+Updating files:  94% (367026/390453)
+Updating files:  94% (368442/390453)
+Updating files:  95% (370931/390453)
+Updating files:  95% (371794/390453)
+Updating files:  95% (374740/390453)
+Updating files:  96% (374835/390453)
+Updating files:  96% (377658/390453)
+Updating files:  97% (378740/390453)
+Updating files:  97% (380885/390453)
+Updating files:  98% (382644/390453)
+Updating files:  98% (384078/390453)
+Updating files:  99% (386549/390453)
+Updating files:  99% (387435/390453)
+Updating files: 100% (390453/390453)
+Updating files: 100% (390453/390453), done.
+
+
+travis_time:end:07427f4f:start=1580380388647679000,finish=1580380566158121000,duration=177510442000,event=script
+[0K[32;1mThe command "if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git clone --depth=1 https://github.com/CocoaPods/Specs.git ~/.cocoapods/repos/master && pod setup --verbose; fi" exited with 0.[0m
+
+
+travis_time:start:2eb465ba
+[0K$ xctool -version
+
+
+0.3.7
+
+
+travis_time:end:2eb465ba:start=1580380566173366000,finish=1580380566798551000,duration=625185000,event=script
+[0K[32;1mThe command "xctool -version" exited with 0.[0m
+
+
+travis_time:start:036f25a1
+[0K$ xcrun simctl list
+
+
+== Device Types ==
+
+
+iPhone 4s (com.apple.CoreSimulator.SimDeviceType.iPhone-4s)
+
+
+iPhone 5 (com.apple.CoreSimulator.SimDeviceType.iPhone-5)
+
+
+iPhone 5s (com.apple.CoreSimulator.SimDeviceType.iPhone-5s)
+
+
+iPhone 6 (com.apple.CoreSimulator.SimDeviceType.iPhone-6)
+
+
+iPhone 6 Plus (com.apple.CoreSimulator.SimDeviceType.iPhone-6-Plus)
+
+
+iPhone 6s (com.apple.CoreSimulator.SimDeviceType.iPhone-6s)
+
+
+iPhone 6s Plus (com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus)
+
+
+iPhone 7 (com.apple.CoreSimulator.SimDeviceType.iPhone-7)
+
+
+iPhone 7 Plus (com.apple.CoreSimulator.SimDeviceType.iPhone-7-Plus)
+
+
+iPhone 8 (com.apple.CoreSimulator.SimDeviceType.iPhone-8)
+
+
+iPhone 8 Plus (com.apple.CoreSimulator.SimDeviceType.iPhone-8-Plus)
+
+
+iPhone SE (com.apple.CoreSimulator.SimDeviceType.iPhone-SE)
+
+
+iPhone X (com.apple.CoreSimulator.SimDeviceType.iPhone-X)
+
+
+iPad 2 (com.apple.CoreSimulator.SimDeviceType.iPad-2)
+
+
+iPad Retina (com.apple.CoreSimulator.SimDeviceType.iPad-Retina)
+
+
+iPad Air (com.apple.CoreSimulator.SimDeviceType.iPad-Air)
+
+
+iPad Air 2 (com.apple.CoreSimulator.SimDeviceType.iPad-Air-2)
+
+
+iPad (5th generation) (com.apple.CoreSimulator.SimDeviceType.iPad--5th-generation-)
+
+
+iPad Pro (9.7-inch) (com.apple.CoreSimulator.SimDeviceType.iPad-Pro--9-7-inch-)
+
+
+iPad Pro (12.9-inch) (com.apple.CoreSimulator.SimDeviceType.iPad-Pro)
+
+
+iPad Pro (12.9-inch) (2nd generation) (com.apple.CoreSimulator.SimDeviceType.iPad-Pro--12-9-inch---2nd-generation-)
+
+
+iPad Pro (10.5-inch) (com.apple.CoreSimulator.SimDeviceType.iPad-Pro--10-5-inch-)
+
+
+iPad (6th generation) (com.apple.CoreSimulator.SimDeviceType.iPad--6th-generation-)
+
+
+Apple TV (com.apple.CoreSimulator.SimDeviceType.Apple-TV-1080p)
+
+
+Apple TV 4K (com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-4K)
+
+
+Apple TV 4K (at 1080p) (com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-1080p)
+
+
+Apple Watch - 38mm (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-38mm)
+
+
+Apple Watch - 42mm (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-42mm)
+
+
+Apple Watch Series 2 - 38mm (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-2-38mm)
+
+
+Apple Watch Series 2 - 42mm (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-2-42mm)
+
+
+Apple Watch Series 3 - 38mm (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-3-38mm)
+
+
+Apple Watch Series 3 - 42mm (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-3-42mm)
+
+
+== Runtimes ==
+
+
+iOS 8.1 (8.1 - 12B411) - com.apple.CoreSimulator.SimRuntime.iOS-8-1
+
+
+iOS 8.2 (8.2 - 12D508) - com.apple.CoreSimulator.SimRuntime.iOS-8-2
+
+
+iOS 8.3 (8.3 - 12F70) - com.apple.CoreSimulator.SimRuntime.iOS-8-3
+
+
+iOS 8.4 (8.4 - 12H141) - com.apple.CoreSimulator.SimRuntime.iOS-8-4
+
+
+iOS 9.0 (9.0 - 13A344) - com.apple.CoreSimulator.SimRuntime.iOS-9-0
+
+
+iOS 9.1 (9.1 - 13B143) - com.apple.CoreSimulator.SimRuntime.iOS-9-1
+
+
+iOS 9.2 (9.2 - 13C75) - com.apple.CoreSimulator.SimRuntime.iOS-9-2
+
+
+iOS 9.3 (9.3 - 13E233) - com.apple.CoreSimulator.SimRuntime.iOS-9-3
+
+
+iOS 10.0 (10.0 - 14A345) - com.apple.CoreSimulator.SimRuntime.iOS-10-0
+
+
+iOS 10.1 (10.1 - 14B72) - com.apple.CoreSimulator.SimRuntime.iOS-10-1
+
+
+iOS 10.2 (10.2 - 14C89) - com.apple.CoreSimulator.SimRuntime.iOS-10-2
+
+
+iOS 10.3 (10.3.1 - 14E8301) - com.apple.CoreSimulator.SimRuntime.iOS-10-3
+
+
+iOS 11.0 (11.0.1 - 15A8401) - com.apple.CoreSimulator.SimRuntime.iOS-11-0
+
+
+iOS 11.1 (11.1 - 15B87) - com.apple.CoreSimulator.SimRuntime.iOS-11-1
+
+
+iOS 11.2 (11.2 - 15C107) - com.apple.CoreSimulator.SimRuntime.iOS-11-2
+
+
+iOS 11.3 (11.3 - 15E217) - com.apple.CoreSimulator.SimRuntime.iOS-11-3
+
+
+iOS 11.4 (11.4 - 15F79) - com.apple.CoreSimulator.SimRuntime.iOS-11-4
+
+
+tvOS 9.0 (9.0 - 13T395) - com.apple.CoreSimulator.SimRuntime.tvOS-9-0
+
+
+tvOS 9.1 (9.1 - 13U85) - com.apple.CoreSimulator.SimRuntime.tvOS-9-1
+
+
+tvOS 9.2 (9.2 - 13Y234) - com.apple.CoreSimulator.SimRuntime.tvOS-9-2
+
+
+tvOS 10.0 (10.0 - 14T328) - com.apple.CoreSimulator.SimRuntime.tvOS-10-0
+
+
+tvOS 10.1 (10.1 - 14U591) - com.apple.CoreSimulator.SimRuntime.tvOS-10-1
+
+
+tvOS 10.2 (10.2 - 14W260) - com.apple.CoreSimulator.SimRuntime.tvOS-10-2
+
+
+tvOS 11.0 (11.0 - 15J380) - com.apple.CoreSimulator.SimRuntime.tvOS-11-0
+
+
+tvOS 11.1 (11.1 - 15J580) - com.apple.CoreSimulator.SimRuntime.tvOS-11-1
+
+
+tvOS 11.2 (11.2 - 15K104) - com.apple.CoreSimulator.SimRuntime.tvOS-11-2
+
+
+tvOS 11.3 (11.3 - 15L211) - com.apple.CoreSimulator.SimRuntime.tvOS-11-3
+
+
+tvOS 11.4 (11.4 - 15L576) - com.apple.CoreSimulator.SimRuntime.tvOS-11-4
+
+
+watchOS 2.0 (2.0 - 13S343) - com.apple.CoreSimulator.SimRuntime.watchOS-2-0
+
+
+watchOS 2.1 (2.1 - 13S661) - com.apple.CoreSimulator.SimRuntime.watchOS-2-1
+
+
+watchOS 2.2 (2.2 - 13V144) - com.apple.CoreSimulator.SimRuntime.watchOS-2-2
+
+
+watchOS 3.1 (3.1 - 14S471a) - com.apple.CoreSimulator.SimRuntime.watchOS-3-1
+
+
+watchOS 3.2 (3.2 - 14V243) - com.apple.CoreSimulator.SimRuntime.watchOS-3-2
+
+
+watchOS 4.0 (4.0 - 15R372) - com.apple.CoreSimulator.SimRuntime.watchOS-4-0
+
+
+watchOS 4.1 (4.1 - 15R844) - com.apple.CoreSimulator.SimRuntime.watchOS-4-1
+
+
+watchOS 4.2 (4.2 - 15S100) - com.apple.CoreSimulator.SimRuntime.watchOS-4-2
+
+
+watchOS 4.3 (4.3 - 15T212) - com.apple.CoreSimulator.SimRuntime.watchOS-4-3
+
+
+== Devices ==
+
+
+-- iOS 8.1 --
+
+
+    iPhone 4s (E145DE0D-8641-4E85-8EAF-C40230E59823) (Shutdown)
+
+
+    iPhone 5 (9B84F61E-93BD-4AD0-AF99-0E0C81CF26EB) (Shutdown)
+
+
+    iPhone 5s (4F6013A8-7149-4CA0-8EA5-16397AF05697) (Shutdown)
+
+
+    iPhone 6 (7A59B747-397E-4481-8E25-301EE292689E) (Shutdown)
+
+
+    iPhone 6 Plus (D0013AA0-19EB-4AE6-9F1F-6143D0F683C2) (Shutdown)
+
+
+    iPad 2 (117AEE33-6B9B-4452-8733-AA2A82B435BB) (Shutdown)
+
+
+    iPad Retina (26C66582-6F21-4D6E-AE69-EC8D156CD888) (Shutdown)
+
+
+    iPad Air (89F90328-AD88-4577-8736-40780779B263) (Shutdown)
+
+
+-- iOS 8.2 --
+
+
+    iPhone 4s (8AABC5C9-6C5F-464D-89CD-B923B4444A64) (Shutdown)
+
+
+    iPhone 5 (D5A50F84-EB7B-4F0D-AEE9-AB416423E841) (Shutdown)
+
+
+    iPhone 5s (EFDB60FD-245A-41FC-B6D9-E9E7A49B9D1D) (Shutdown)
+
+
+    iPhone 6 (15D9386F-E386-4827-9036-94F89CE7E1A8) (Shutdown)
+
+
+    iPhone 6 Plus (B59628C0-4CA9-4BE5-83DA-4E64D34B3165) (Shutdown)
+
+
+    iPad 2 (240FE5D6-A78D-48D4-B552-C128E5A85676) (Shutdown)
+
+
+    iPad Retina (3D5D4969-FFE1-4C60-A73E-9EBF113B8AA5) (Shutdown)
+
+
+    iPad Air (E5AFD716-008F-47E8-B260-7DDE2341E95F) (Shutdown)
+
+
+-- iOS 8.3 --
+
+
+    iPhone 4s (63F40A90-299B-4C7D-B1C9-EA88224D54DB) (Shutdown)
+
+
+    iPhone 5 (00E85FD1-61CF-4FE5-AF5F-D443327BB161) (Shutdown)
+
+
+    iPhone 5s (82441DC5-1BC7-41C9-BD12-195E1738D1A7) (Shutdown)
+
+
+    iPhone 6 (3211A352-AD5C-4FBD-AE57-17B0A2BE5E86) (Shutdown)
+
+
+    iPhone 6 Plus (778A87FF-8435-4D00-AFCC-2A00BF06C872) (Shutdown)
+
+
+    iPad 2 (E7D8CA87-CA87-4578-8AA7-B99509F8EAE2) (Shutdown)
+
+
+    iPad Retina (D4528350-0A78-4CA9-9004-CF1B2964D7F8) (Shutdown)
+
+
+    iPad Air (28FB9078-A33F-463F-A019-AD258FFF8411) (Shutdown)
+
+
+-- iOS 8.4 --
+
+
+    iPhone 4s (92003015-4C0E-481F-B6A9-302F7B8FF3AE) (Shutdown)
+
+
+    iPhone 5 (6FFEE319-601B-4765-BB82-CB54324FB413) (Shutdown)
+
+
+    iPhone 5s (9FD77AAE-27F6-4E63-A1A1-C6ED492460DF) (Shutdown)
+
+
+    iPhone 6 (951D1E23-A48A-4C7F-A204-D422EB72E612) (Shutdown)
+
+
+    iPhone 6 Plus (0CFA50F1-A050-4511-A509-E7AAEE15C731) (Shutdown)
+
+
+    iPad 2 (397319BA-1D3A-4FFC-954D-E2AC04E0630A) (Shutdown)
+
+
+    iPad Retina (6FC55E75-E7E3-46FA-8EFB-6BFAADA4F35C) (Shutdown)
+
+
+    iPad Air (A65669E3-9C1D-454D-978A-45F5BFC24615) (Shutdown)
+
+
+-- iOS 9.0 --
+
+
+    iPhone 4s (E55428B9-4087-44E1-B1EE-4C618D11A0AA) (Shutdown)
+
+
+    iPhone 5 (DA2BE94F-AF6E-49D0-9FBB-511B3862DA44) (Shutdown)
+
+
+    iPhone 5s (B7B91829-6B32-4370-9A78-E74742FCD38C) (Shutdown)
+
+
+    iPhone 6 (8B3254DD-6328-48E5-9F93-B30CA54E7659) (Shutdown)
+
+
+    iPhone 6 Plus (65914EAD-A89D-4208-85D6-8306A02BA954) (Shutdown)
+
+
+    iPhone 6s (60028C2C-45E2-4B86-8D2F-CC58AFF29CE1) (Shutdown)
+
+
+    iPhone 6s Plus (758D589A-1FEE-4204-BDD5-A71F93FC8459) (Shutdown)
+
+
+    iPad 2 (F51C9E50-1498-4FCD-82A5-95D9B9DDD04D) (Shutdown)
+
+
+    iPad Retina (C860DDB0-4F9B-45E4-BD0C-B69F8DBA745F) (Shutdown)
+
+
+    iPad Air (8AC57345-77EC-4CEC-812B-8CB2B95220ED) (Shutdown)
+
+
+    iPad Air 2 (42277D3E-E496-4326-BBB6-7D0214FFE099) (Shutdown)
+
+
+-- iOS 9.1 --
+
+
+    iPhone 4s (D8E31848-E188-4588-AC29-51FAF4C1A370) (Shutdown)
+
+
+    iPhone 5 (F90D21DF-0BEC-4E8E-AD81-B66BFDB046FF) (Shutdown)
+
+
+    iPhone 5s (04152D8B-9224-41D3-A464-C08090E81938) (Shutdown)
+
+
+    iPhone 6 (27651792-73C3-431B-BE9E-798CC2641280) (Shutdown)
+
+
+    iPhone 6 Plus (42A2D983-6747-4B54-8550-09F23FD5C452) (Shutdown)
+
+
+    iPhone 6s (4B23C1E8-A8AB-40D1-8EB3-CE06E6FA2BB7) (Shutdown)
+
+
+    iPhone 6s Plus (97961EC2-1DB6-4BFC-BC73-18A0B83C1C6A) (Shutdown)
+
+
+    iPad 2 (DC934C3F-B719-4E42-A3BB-83D6EA5586EE) (Shutdown)
+
+
+    iPad Retina (F4504983-90F2-461C-8D33-D8EF551BD5BF) (Shutdown)
+
+
+    iPad Air (FD2F94DC-11D9-4E8B-9161-BD7255840D81) (Shutdown)
+
+
+    iPad Air 2 (053A8D94-AEE5-42B6-BDCD-B5480D51B883) (Shutdown)
+
+
+    iPad Pro (2AF6B774-0077-4CDE-AC38-42D5C45C50CA) (Shutdown)
+
+
+-- iOS 9.2 --
+
+
+    iPhone 4s (A0DCDCF9-8F89-4913-89BD-E90BED1457FE) (Shutdown)
+
+
+    iPhone 5 (12BF2AEA-3B7E-4AD5-843B-642743B4DEFA) (Shutdown)
+
+
+    iPhone 5s (CD7FA290-0696-49C6-91FC-3EDD1C42AE54) (Shutdown)
+
+
+    iPhone 6 (8203DB47-C45B-4005-8716-621862A5DD8D) (Shutdown)
+
+
+    iPhone 6 Plus (7008DD56-1E26-4FA0-A15E-6360EDCDCE96) (Shutdown)
+
+
+    iPhone 6s (08CCA0AF-DC79-42AD-8903-202F45ABC76A) (Shutdown)
+
+
+    iPhone 6s Plus (5740955C-8626-431A-A758-5710FE545359) (Shutdown)
+
+
+    iPad 2 (A8FD9DFB-3BA9-4F37-9786-918A8040A1D0) (Shutdown)
+
+
+    iPad Retina (869490D1-5D88-49CA-A717-7E5661D39F92) (Shutdown)
+
+
+    iPad Air (8E3E6A54-003C-4E75-BF73-A8E27C564F1B) (Shutdown)
+
+
+    iPad Air 2 (137BBC87-B0B0-4857-AEFA-363A05D0EB0B) (Shutdown)
+
+
+    iPad Pro (1CDDFF14-C310-4C2B-A97B-3BD2C6AAB370) (Shutdown)
+
+
+-- iOS 9.3 --
+
+
+    iPhone 4s (5BF72836-8568-4EC9-BE09-13837A9AF29B) (Shutdown)
+
+
+    iPhone 5 (E4416F1A-2C29-4E09-80EE-B8E33E00E672) (Shutdown)
+
+
+    iPhone 5s (ADBF8974-3F87-4E42-93D3-934E1B0F24D5) (Shutdown)
+
+
+    iPhone 6 (D371393B-143D-423A-86AC-3DEB2191ADED) (Shutdown)
+
+
+    iPhone 6 Plus (6EED02D9-2574-4954-8420-6FB08A5D7662) (Shutdown)
+
+
+    iPhone 6s (63443857-BE68-470A-8C29-10A68406EA4B) (Shutdown)
+
+
+    iPhone 6s Plus (BA8EDC25-9EC9-42BC-8AE4-1115909AF2FA) (Shutdown)
+
+
+    iPad 2 (3CDE50A2-E43C-4A1C-9774-40B122108FCD) (Shutdown)
+
+
+    iPad Retina (C643E6ED-6AAF-4DA1-9D6A-113D017AB218) (Shutdown)
+
+
+    iPad Air (20D55ECB-BE39-447D-99E7-8D22AAB73FC5) (Shutdown)
+
+
+    iPad Air 2 (9255F0BA-5FD5-4A9C-A32B-C16BEC19474E) (Shutdown)
+
+
+    iPad Pro (49F82808-6820-443C-AE54-46563B3B4A3C) (Shutdown)
+
+
+-- iOS 10.0 --
+
+
+    iPhone 5 (CE64C1D1-2941-494E-9776-F163A273A985) (Shutdown)
+
+
+    iPhone 5s (1E9E38B6-7943-42FD-8C41-8CF0D4CC1604) (Shutdown)
+
+
+    iPhone 6 (E3033539-5028-4FD4-AA16-653FC37CEE4F) (Shutdown)
+
+
+    iPhone 6 Plus (D77996D3-BC74-47E3-B0B3-857BCFB1E6AF) (Shutdown)
+
+
+    iPhone 6s (A3A57FB5-C0B9-4CA7-865E-F7779B924975) (Shutdown)
+
+
+    iPhone 6s Plus (7041C612-C9B2-4122-BCC5-A400E10AAAB0) (Shutdown)
+
+
+    iPhone SE (5D09570A-A1FE-498E-B05F-D05F9C0F4020) (Shutdown)
+
+
+    iPad Air (56134955-89C0-4C66-AD1C-F03BDF80A8B6) (Shutdown)
+
+
+    iPad Air 2 (A449EE34-C10C-4466-BC55-F371F0A94E3A) (Shutdown)
+
+
+    iPad Pro (9.7 inch) (A9CBBF0A-E21E-4EF2-86E2-F22E12C42CF4) (Shutdown)
+
+
+    iPad Pro (12.9 inch) (6140337D-E25E-4EDF-9162-966417705F77) (Shutdown)
+
+
+-- iOS 10.1 --
+
+
+    iPhone 5 (1D3EDE7C-4249-40AD-BAE5-40D7A239183B) (Shutdown)
+
+
+    iPhone 5s (7A15B00D-056F-423C-A6D7-E1CC9FFD69F5) (Shutdown)
+
+
+    iPhone 6 (6511E9C7-E650-432C-B297-F5D4498F385F) (Shutdown)
+
+
+    iPhone 6 Plus (B39CE01F-DB88-4A02-A270-2C1C884567F6) (Shutdown)
+
+
+    iPhone 6s (7B6E693D-CA53-4894-99D8-C859F1002C74) (Shutdown)
+
+
+    iPhone 6s Plus (5B3E6A92-DF23-43E2-8992-CC169712A91B) (Shutdown)
+
+
+    iPhone 7 (00E7C4E5-C9FD-4C22-A9F4-7A414FCEB40F) (Shutdown)
+
+
+    iPhone 7 Plus (D2114C0B-0853-4757-9592-D8A085710E70) (Shutdown)
+
+
+    iPhone SE (C50FC40A-4B87-4FB9-8CCC-7C03DEDD1082) (Shutdown)
+
+
+    iPad Air (15644559-1DB3-4E2F-BCD3-16A70ADD046C) (Shutdown)
+
+
+    iPad Air 2 (F93E740D-DBAE-43C5-AB3F-81B5F8AF82ED) (Shutdown)
+
+
+    iPad Pro (9.7 inch) (345492F4-8956-4B22-8C47-E979C8B1C430) (Shutdown)
+
+
+    iPad Pro (12.9 inch) (758D0FAF-CAD9-421E-81A7-A4EB0C690FBA) (Shutdown)
+
+
+-- iOS 10.2 --
+
+
+    iPhone 5 (3B3C20C4-8C82-4CA8-9038-5AECE00787BD) (Shutdown)
+
+
+    iPhone 5s (A2400270-8AC2-4559-AE1B-E9BE18419E90) (Shutdown)
+
+
+    iPhone 6 (2F4F50F8-EF24-4117-8F48-4A5C11D2CA32) (Shutdown)
+
+
+    iPhone 6 Plus (DA901EC3-95E5-444D-91F0-421374C97B61) (Shutdown)
+
+
+    iPhone 6s (9B4ABE14-2929-4C57-9315-B39700CD6656) (Shutdown)
+
+
+    iPhone 6s Plus (B5D12611-7D74-4AC2-B391-A080F24F88B7) (Shutdown)
+
+
+    iPhone 7 (1C771F81-C9C3-43F4-A033-6100AB22F87D) (Shutdown)
+
+
+    iPhone 7 Plus (B7A86ABE-32AD-4E3E-86CE-37DD98A2056F) (Shutdown)
+
+
+    iPhone SE (534F4885-01D5-477D-BE7B-5F3648523DF7) (Shutdown)
+
+
+    iPad Air (CBEB649F-815B-4778-A19C-59DE03B94F7D) (Shutdown)
+
+
+    iPad Air 2 (CBCC54C2-0152-439D-8ACB-502D3AEE0D3F) (Shutdown)
+
+
+    iPad Pro (9.7 inch) (25BAB1EE-C38B-4B79-829D-D10858144C66) (Shutdown)
+
+
+    iPad Pro (12.9 inch) (0A9F05E3-49A9-416D-965D-E21701D7206D) (Shutdown)
+
+
+-- iOS 10.3 --
+
+
+    iPhone 5 (78C70CFE-9358-4F34-A294-574E33FE3B24) (Shutdown)
+
+
+    iPhone 5s (53834BC8-588C-4211-8E51-56D4851F87A5) (Shutdown)
+
+
+    iPhone 6 (571A28A9-A860-4981-81DB-E49575D14EA1) (Shutdown)
+
+
+    iPhone 6 Plus (84144717-536F-4356-B570-8E400743F9CF) (Shutdown)
+
+
+    iPhone 6s (CFE142A3-1088-4246-981D-F0450568AD40) (Shutdown)
+
+
+    iPhone 6s Plus (0B1D537B-BFB8-4469-AC2B-47247418A543) (Shutdown)
+
+
+    iPhone 7 (02BA93B0-B437-424C-A0E6-1E7C016D99C4) (Shutdown)
+
+
+    iPhone 7 Plus (6AF38BC8-2993-4C8A-8360-4ABD65D5FB98) (Shutdown)
+
+
+    iPhone SE (839B0DCB-4DE3-4D90-BA84-8ED26517A052) (Shutdown)
+
+
+    iPad Air (6F180D21-E03A-4988-AE77-30AEB26D6E6D) (Shutdown)
+
+
+    iPad Air 2 (4C47E132-B649-4613-827D-A298003ABA7B) (Shutdown)
+
+
+    iPad (5th generation) (281EE567-7C49-4C80-B860-7038840D6C17) (Shutdown)
+
+
+    iPad Pro (9.7 inch) (24E8A5F5-0A59-4A85-9054-2F6B7E24761D) (Shutdown)
+
+
+    iPad Pro (12.9 inch) (8B3738ED-F803-46EC-9C8D-74E8A54700F0) (Shutdown)
+
+
+    iPad Pro (12.9-inch) (2nd generation) (A3E32ED0-CAD2-4349-9F34-8D656107A558) (Shutdown)
+
+
+    iPad Pro (10.5-inch) (E142A5F7-691D-41F0-A341-634CB0870FBC) (Shutdown)
+
+
+-- iOS 11.0 --
+
+
+    iPhone 5s (EC845964-3326-4B60-A3DC-51374AED4414) (Shutdown)
+
+
+    iPhone 6 (EC96BFB8-F9EC-48D2-B48C-A9F7CEECADDA) (Shutdown)
+
+
+    iPhone 6 Plus (943D96BC-B39F-4E0E-BB3B-6261A7F8A51D) (Shutdown)
+
+
+    iPhone 6s (690C3DCF-3DC9-47CE-B52D-13AF096D19D3) (Shutdown)
+
+
+    iPhone 6s Plus (F0DD277D-3661-45E6-ABE5-FCD8F90FE16C) (Shutdown)
+
+
+    iPhone 7 (E5357DCF-74FB-4268-8606-F50CA97099E7) (Shutdown)
+
+
+    iPhone 7 Plus (C8956703-437C-4A6A-9D4C-7AD09CBCB019) (Shutdown)
+
+
+    iPhone 8 (6DB3C9DA-E178-4714-8B6D-1378D8FB112B) (Shutdown)
+
+
+    iPhone 8 Plus (6923BBD8-4D98-43B7-AA99-7F744E2589E7) (Shutdown)
+
+
+    iPhone SE (64B19BDF-A160-4DC1-9D55-81BE461F60C7) (Shutdown)
+
+
+    iPhone X (3E102A0A-BE4F-46AB-ADA7-BC2306A85CD7) (Shutdown)
+
+
+    iPad Air (17112C49-E13C-4D84-BAAF-242A8C67E65A) (Shutdown)
+
+
+    iPad Air 2 (D9ED5EF3-BFAB-4C75-999F-00494EBB9F02) (Shutdown)
+
+
+    iPad (5th generation) (4D0FB9E4-E0A2-4900-A9E9-83ADD8A65AD5) (Shutdown)
+
+
+    iPad Pro (9.7-inch) (14C10567-E201-4F86-B8F0-782ED860B4EA) (Shutdown)
+
+
+    iPad Pro (12.9-inch) (F82A3026-4881-42ED-AC9F-312F462D03B6) (Shutdown)
+
+
+    iPad Pro (12.9-inch) (2nd generation) (345C81BF-73CA-4C62-A46B-F9C58FFF4BEB) (Shutdown)
+
+
+    iPad Pro (10.5-inch) (E4C355DB-6404-4F69-9BCC-BFB214C21742) (Shutdown)
+
+
+-- iOS 11.1 --
+
+
+    iPhone 5s (641E8901-0378-4460-9B93-6D972C15BA7B) (Shutdown)
+
+
+    iPhone 6 (10DBA2C6-5977-4E68-A962-CEDA32017F48) (Shutdown)
+
+
+    iPhone 6 Plus (56307E91-5845-4FF9-80D8-18B5CBFB8722) (Shutdown)
+
+
+    iPhone 6s (C57BF8F5-7C65-4FB0-8662-195E4FEC793C) (Shutdown)
+
+
+    iPhone 6s Plus (B9CE6497-25B4-4BC0-83EE-D9F453A004EC) (Shutdown)
+
+
+    iPhone 7 (30C65F35-269F-45A6-8222-ED0E50D3D4A1) (Shutdown)
+
+
+    iPhone 7 Plus (658662B6-E687-4D2A-9433-DC4EB70ADFFD) (Shutdown)
+
+
+    iPhone 8 (47F19841-296A-4FB4-B739-DB8423B2E171) (Shutdown)
+
+
+    iPhone 8 Plus (E6CB8E5B-2F94-4BFC-943F-CED02590B08D) (Shutdown)
+
+
+    iPhone SE (3DC30833-7E64-499A-A5D2-629FAA2F549A) (Shutdown)
+
+
+    iPhone X (19C04E45-8476-4245-BE6D-6B7030AA3500) (Shutdown)
+
+
+    iPad Air (303C2AB9-9237-44FE-9F10-18E12CE102F3) (Shutdown)
+
+
+    iPad Air 2 (2719F964-04C1-4820-8E2F-2E4DA10F22A4) (Shutdown)
+
+
+    iPad (5th generation) (C39DBA07-46C8-4D23-9DFF-76C60E778CF2) (Shutdown)
+
+
+    iPad Pro (9.7-inch) (7F9E4591-8B9B-43EF-9D1F-4DB2DCCB0E71) (Shutdown)
+
+
+    iPad Pro (12.9-inch) (34617988-12CB-4093-89EC-AB1293898E07) (Shutdown)
+
+
+    iPad Pro (12.9-inch) (2nd generation) (751156D2-4972-4B17-92A5-DEA45A448A6D) (Shutdown)
+
+
+    iPad Pro (10.5-inch) (906B4EF2-123D-4E9E-8356-F5178F42B019) (Shutdown)
+
+
+-- iOS 11.2 --
+
+
+    iPhone 5s (6E176E5B-393C-4C36-AFDA-31E9B85CE4EC) (Shutdown)
+
+
+    iPhone 6 (238A7E3B-ABE5-4075-9106-BBD340828C0B) (Shutdown)
+
+
+    iPhone 6 Plus (F1065747-CA0D-454C-A775-B1B09AFE6FC7) (Shutdown)
+
+
+    iPhone 6s (ED8B807E-2EB9-4AFC-98D2-574FEA52C700) (Shutdown)
+
+
+    iPhone 6s Plus (D3030D47-3B2D-447F-BD14-7982C8EDC780) (Shutdown)
+
+
+    iPhone 7 (AD9B7555-825E-4F92-9168-7D2F95A9F70B) (Shutdown)
+
+
+    iPhone 7 Plus (BE91A5F3-C6ED-4B02-A449-682E175624D2) (Shutdown)
+
+
+    iPhone 8 (F122E59C-EFEF-4991-A745-B8F15B32F334) (Shutdown)
+
+
+    iPhone 8 Plus (31CC51D0-044F-449F-8826-5D58343E54A3) (Shutdown)
+
+
+    iPhone SE (8ABF65EA-5499-4EA8-B1B2-87788D4A7A77) (Shutdown)
+
+
+    iPhone X (2DE1B0D5-B570-46B7-8E6C-48AC06B16727) (Shutdown)
+
+
+    iPad Air (358A4F80-08BC-41B4-B3F9-A7637B14DDBD) (Shutdown)
+
+
+    iPad Air 2 (08CF7446-575A-4C9D-8274-E7E68347D0BC) (Shutdown)
+
+
+    iPad (5th generation) (55F7995A-0A8A-496A-87BE-3DC1804A6F8F) (Shutdown)
+
+
+    iPad Pro (9.7-inch) (34262073-3D0D-42B1-B767-430C3F6E32D1) (Shutdown)
+
+
+    iPad Pro (12.9-inch) (6BAF52B3-0ADD-4965-9898-8C856932062E) (Shutdown)
+
+
+    iPad Pro (12.9-inch) (2nd generation) (FD51D415-23B8-41E9-BFCE-C293C19AC42F) (Shutdown)
+
+
+    iPad Pro (10.5-inch) (7A1DD518-7CF8-49C8-9FE4-14DA9D8E1801) (Shutdown)
+
+
+-- iOS 11.3 --
+
+
+    iPhone 5s (13915325-FA77-4D1A-8878-8F01F4CBB778) (Shutdown)
+
+
+    iPhone 6 (52EB87AB-CFE9-4B4D-ABF3-6668FA51A106) (Shutdown)
+
+
+    iPhone 6 Plus (8CB8903D-564F-4B52-9FA4-523C8EDB7DA4) (Shutdown)
+
+
+    iPhone 6s (D73B4B06-CCE1-4E68-A630-5DA61B400573) (Shutdown)
+
+
+    iPhone 6s Plus (5C83D35E-D7BD-486E-8CEC-0FBCABB59989) (Shutdown)
+
+
+    iPhone 7 (191AACA4-EF8A-4B25-B0E4-20AD57F98C34) (Shutdown)
+
+
+    iPhone 7 Plus (90671981-301F-4739-9991-F72AB4F1B9EF) (Shutdown)
+
+
+    iPhone 8 (5BBD8E1A-FD44-4634-ACB6-8AAE84DA8B81) (Shutdown)
+
+
+    iPhone 8 Plus (59FE6F20-B97C-42A3-9F47-B761AB0CD3FF) (Shutdown)
+
+
+    iPhone SE (6E14BA33-86EF-456B-A976-1E8C41337A69) (Shutdown)
+
+
+    iPhone X (55EA66AD-4E70-411C-9140-3309F33893DB) (Shutdown)
+
+
+    iPad Air (424DF69C-AC62-4EE4-A6E1-3A137A284822) (Shutdown)
+
+
+    iPad Air 2 (B57D67C8-3BA8-40BE-AD04-DF62D54C7DC8) (Shutdown)
+
+
+    iPad (5th generation) (8ED7AD4C-9DF2-43C7-A25C-8E3AEFF0ACE7) (Shutdown)
+
+
+    iPad Pro (9.7-inch) (1B6EB1F7-2664-42EB-95D9-6E2D17A154B1) (Shutdown)
+
+
+    iPad Pro (12.9-inch) (92B08AA3-61DE-44D2-A8B8-A7362F921BBC) (Shutdown)
+
+
+    iPad Pro (12.9-inch) (2nd generation) (BFE9A28C-E2C8-426D-831D-90B16FC61D0D) (Shutdown)
+
+
+    iPad Pro (10.5-inch) (7C6BF4B4-644F-4109-B30D-694C72A301B4) (Shutdown)
+
+
+-- iOS 11.4 --
+
+
+    iPhone 5s (52811967-F70D-4308-B0F7-EC206374504F) (Shutdown)
+
+
+    iPhone 6 (10BA4146-4DAA-41A4-A4A7-00772CE7673E) (Shutdown)
+
+
+    iPhone 6 Plus (40945AC1-9BE0-4FBC-BC97-EFB1763B5DBA) (Shutdown)
+
+
+    iPhone 6s (0D585573-2E18-4664-B29D-C6C9980D43D1) (Shutdown)
+
+
+    iPhone 6s Plus (70B1FBC5-1123-4954-8812-14BA9A37379A) (Shutdown)
+
+
+    iPhone 7 (900F4BEF-5D84-45C2-B6DD-2C7FCE515C98) (Shutdown)
+
+
+    iPhone 7 Plus (EA06DFD7-9FC5-459A-9535-F5D2B4798FE4) (Shutdown)
+
+
+    iPhone 8 (7AC6E698-B459-437D-AEBC-7CAB855F3008) (Shutdown)
+
+
+    iPhone 8 Plus (7AE228C0-F5A0-498F-AD42-60B7E51695E2) (Shutdown)
+
+
+    iPhone SE (7C8840A4-989B-4BF6-90BE-5319DAE5370A) (Shutdown)
+
+
+    iPhone X (1CED7FFD-E495-4BFD-B866-8A0EB1844B03) (Shutdown)
+
+
+    iPad Air (889862BA-1837-4A30-8BD4-7F69516ED387) (Shutdown)
+
+
+    iPad Air 2 (78E55070-B398-43B7-93B0-67AFAC97793C) (Shutdown)
+
+
+    iPad (5th generation) (87AAAEC5-D8CC-4140-B260-0654E66404F7) (Shutdown)
+
+
+    iPad Pro (9.7-inch) (7F32A651-7769-4FA4-B0B4-D9909B732A8E) (Shutdown)
+
+
+    iPad Pro (12.9-inch) (9A70D85F-5B67-4BE4-AA6B-362C36842E1B) (Shutdown)
+
+
+    iPad Pro (12.9-inch) (2nd generation) (DF65CF2C-D4AA-4749-9476-8ED7FC8186C4) (Shutdown)
+
+
+    iPad Pro (10.5-inch) (88C92BC2-D1EB-4456-9B63-0FF0766E12F8) (Shutdown)
+
+
+-- tvOS 9.0 --
+
+
+    Apple TV 1080p (D780D5A8-F0D0-47B0-883A-464952D2CBD5) (Shutdown)
+
+
+-- tvOS 9.1 --
+
+
+    Apple TV 1080p (F50BC5AA-8CD5-496C-99DD-5B27B1DEA70D) (Shutdown)
+
+
+-- tvOS 9.2 --
+
+
+    Apple TV 1080p (A6E56DA2-F4E3-4322-A627-495744E86628) (Shutdown)
+
+
+-- tvOS 10.0 --
+
+
+    Apple TV 1080p (F9319402-97BD-4DFF-B058-5DB28AE21184) (Shutdown)
+
+
+-- tvOS 10.1 --
+
+
+    Apple TV 1080p (0C3C5036-4A65-44C0-B1D2-4005B2F99ECF) (Shutdown)
+
+
+-- tvOS 10.2 --
+
+
+    Apple TV 1080p (F5A1CDFA-A178-491F-B7CE-82DE46198977) (Shutdown)
+
+
+-- tvOS 11.0 --
+
+
+    Apple TV (CC9DA4FB-3738-450A-90A8-EC032AFFBAEC) (Shutdown)
+
+
+    Apple TV 4K (CEF678E7-B79F-4E40-8C63-518919C7F9F7) (Shutdown)
+
+
+    Apple TV 4K (at 1080p) (D3FC3B11-D2B8-44DD-B415-86220D1E4D89) (Shutdown)
+
+
+-- tvOS 11.1 --
+
+
+    Apple TV (BAF2A4E6-B69A-4FDF-BC8B-DF7B317D36E2) (Shutdown)
+
+
+    Apple TV 4K (30CC8568-F39C-4583-AFB1-56A5C1C2E577) (Shutdown)
+
+
+    Apple TV 4K (at 1080p) (BB7BCDED-72F1-4D2E-904C-B8001EB676C1) (Shutdown)
+
+
+-- tvOS 11.2 --
+
+
+    Apple TV (2F2199EF-3367-482F-9625-3E2BBD65A501) (Shutdown)
+
+
+    Apple TV 4K (73E5B6DF-92BC-4D46-B61B-2C1AD7BD6288) (Shutdown)
+
+
+    Apple TV 4K (at 1080p) (59013C6B-1775-490A-98DF-8DF0959265FF) (Shutdown)
+
+
+-- tvOS 11.3 --
+
+
+    Apple TV (8447579E-9CB0-4999-9E5F-9BF47894D701) (Shutdown)
+
+
+    Apple TV 4K (96041B2D-3FC5-4248-92B7-213855AF7F83) (Shutdown)
+
+
+    Apple TV 4K (at 1080p) (42FE02F0-15D6-4247-BE1A-EE7E19719A63) (Shutdown)
+
+
+-- tvOS 11.4 --
+
+
+    Apple TV (65EAABD6-89FE-4ED4-864F-0472928DC1E2) (Shutdown)
+
+
+    Apple TV 4K (AB2B1972-7B19-4860-9609-B9FCDDB9AA68) (Shutdown)
+
+
+    Apple TV 4K (at 1080p) (54655CFD-C8A0-4A78-A6AE-017BF118FF68) (Shutdown)
+
+
+-- watchOS 2.0 --
+
+
+    Apple Watch - 38mm (A13185F0-A7A1-453B-9682-816E81096BB0) (Shutdown)
+
+
+    Apple Watch - 42mm (582C81B6-1C7D-49F5-9EC4-A28F5DC57F45) (Shutdown)
+
+
+-- watchOS 2.1 --
+
+
+    Apple Watch - 38mm (A44CC948-E105-4EAD-AFBD-870151905481) (Shutdown)
+
+
+    Apple Watch - 42mm (8C49D5C4-B0AA-4BA0-9780-18527BC52540) (Shutdown)
+
+
+-- watchOS 2.2 --
+
+
+    Apple Watch - 38mm (6BCF83E2-E919-4FF0-96A0-1158B02AF77E) (Shutdown)
+
+
+    Apple Watch - 42mm (F7C6CCC0-01FF-4863-AD1D-50CAAA89AA48) (Shutdown)
+
+
+-- watchOS 3.1 --
+
+
+    Apple Watch - 38mm (F1209C9B-7B18-4CA7-AEE9-919F5B06B07A) (Shutdown)
+
+
+    Apple Watch - 42mm (63DE8052-84FE-4E48-9513-D40693154F94) (Shutdown)
+
+
+    Apple Watch Series 2 - 38mm (3D267CE5-B08B-4DA5-898A-40426021D3D3) (Shutdown)
+
+
+    Apple Watch Series 2 - 42mm (A69827ED-6386-4D5C-821B-F04789F30F09) (Shutdown)
+
+
+-- watchOS 3.2 --
+
+
+    Apple Watch - 38mm (7FD98460-0F61-4B84-8535-6D80B2E116C0) (Shutdown)
+
+
+    Apple Watch - 42mm (C9714A8D-E71B-4A73-9B12-B5807B825D96) (Shutdown)
+
+
+    Apple Watch Series 2 - 38mm (A5E5FBCF-3C24-4845-ACD7-842B2F882D1A) (Shutdown)
+
+
+    Apple Watch Series 2 - 42mm (C7FCDCDB-20F0-4EDD-9267-4E4A33442E59) (Shutdown)
+
+
+-- watchOS 4.0 --
+
+
+    Apple Watch - 38mm (1F33916C-E232-44FF-8485-C442215072EB) (Shutdown)
+
+
+    Apple Watch - 42mm (73FD776F-8F25-408D-829F-8D1FDA969791) (Shutdown)
+
+
+    Apple Watch Series 2 - 38mm (4EFFF41E-11DB-4C4C-862F-A7C7A23D050F) (Shutdown)
+
+
+    Apple Watch Series 2 - 42mm (822FC947-AC41-499A-AF07-98E95E799EFB) (Shutdown)
+
+
+    Apple Watch Series 3 - 38mm (1F253A15-A664-4C70-8570-8F7E4911D7C5) (Shutdown)
+
+
+    Apple Watch Series 3 - 42mm (DEE4222A-A987-4F76-B129-DB69EB25DA9C) (Shutdown)
+
+
+-- watchOS 4.1 --
+
+
+    Apple Watch - 38mm (58F2D9C0-7158-4616-89C2-D78049E5F838) (Shutdown)
+
+
+    Apple Watch - 42mm (E70FB3E2-7077-4480-A86B-54F0B503A000) (Shutdown)
+
+
+    Apple Watch Series 2 - 38mm (C40D1764-D25B-41CF-88BC-C8418ABD6D5E) (Shutdown)
+
+
+    Apple Watch Series 2 - 42mm (D27617BD-4198-4111-B346-8C1DA0593688) (Shutdown)
+
+
+    Apple Watch Series 3 - 38mm (446666B7-CEAF-400C-B2C5-537B7B745C0F) (Shutdown)
+
+
+    Apple Watch Series 3 - 42mm (39FB641C-707A-48F0-830D-D6475D97D6E5) (Shutdown)
+
+
+-- watchOS 4.2 --
+
+
+    Apple Watch - 38mm (7150DF39-A043-4DBE-BB4B-040673E3805A) (Shutdown)
+
+
+    Apple Watch - 42mm (58C03713-0E55-496D-A8DA-11140CCF5F60) (Shutdown)
+
+
+    Apple Watch Series 2 - 38mm (C328DEFB-15B1-4CAF-A229-9D54B71719F4) (Shutdown)
+
+
+    Apple Watch Series 2 - 42mm (61D8FEF4-B0D2-40EA-9861-AAC9F39D3592) (Shutdown)
+
+
+    Apple Watch Series 3 - 38mm (C2D45EED-0529-42E8-9E27-FF659249C685) (Shutdown)
+
+
+    Apple Watch Series 3 - 42mm (E825E419-C80D-4664-AA65-6057709467BC) (Shutdown)
+
+
+-- watchOS 4.3 --
+
+
+    Apple Watch - 38mm (D38105CE-C61B-4DEC-A1AA-4DC07515877B) (Shutdown)
+
+
+    Apple Watch - 42mm (21E2566C-C720-4BC0-9343-4532CFE8AD44) (Shutdown)
+
+
+    Apple Watch Series 2 - 38mm (95B419C9-B1C6-4A00-BE90-4676D1134AFA) (Shutdown)
+
+
+    Apple Watch Series 2 - 42mm (48185147-4F89-41DF-AA41-D7A11F85BEF1) (Shutdown)
+
+
+    Apple Watch Series 3 - 38mm (B74DFDBD-AC1B-4F96-8F1C-FE02C4583EFC) (Shutdown)
+
+
+    Apple Watch Series 3 - 42mm (6F6B334A-75C0-4B83-8438-EA080C44F6A1) (Shutdown)
+
+
+== Device Pairs ==
+
+
+6C2C5675-819B-49F5-85F3-22C026D1D838 (active, disconnected)
+
+
+    Watch: Apple Watch Series 2 - 38mm (95B419C9-B1C6-4A00-BE90-4676D1134AFA) (Shutdown)
+
+
+    Phone: iPhone 7 (900F4BEF-5D84-45C2-B6DD-2C7FCE515C98) (Shutdown)
+
+
+563E2C57-304C-4141-8D93-F9CCC4CA9B7F (active, disconnected)
+
+
+    Watch: Apple Watch Series 2 - 42mm (48185147-4F89-41DF-AA41-D7A11F85BEF1) (Shutdown)
+
+
+    Phone: iPhone 7 Plus (EA06DFD7-9FC5-459A-9535-F5D2B4798FE4) (Shutdown)
+
+
+C72C97BB-A193-48C3-B1D9-1BC4C38E5971 (active, disconnected)
+
+
+    Watch: Apple Watch Series 3 - 38mm (B74DFDBD-AC1B-4F96-8F1C-FE02C4583EFC) (Shutdown)
+
+
+    Phone: iPhone 8 (7AC6E698-B459-437D-AEBC-7CAB855F3008) (Shutdown)
+
+
+30929C0D-228E-4E73-8E59-9B261AB8E71F (active, disconnected)
+
+
+    Watch: Apple Watch Series 3 - 42mm (6F6B334A-75C0-4B83-8438-EA080C44F6A1) (Shutdown)
+
+
+    Phone: iPhone 8 Plus (7AE228C0-F5A0-498F-AD42-60B7E51695E2) (Shutdown)
+
+
+travis_time:end:036f25a1:start=1580380566810260000,finish=1580380570716178000,duration=3905918000,event=script
+[0K[32;1mThe command "xcrun simctl list" exited with 0.[0m
+
+
+travis_time:start:2133dd48
+[0K$ export CGO_CFLAGS_ALLOW='-fmodules|-fblocks|-fobjc-arc'
+
+
+travis_time:end:2133dd48:start=1580380570739974000,finish=1580380570760081000,duration=20107000,event=script
+[0K[32;1mThe command "export CGO_CFLAGS_ALLOW='-fmodules|-fblocks|-fobjc-arc'" exited with 0.[0m
+
+
+travis_time:start:0604411d
+[0K$ go run build/ci.go xcode -signer IOS_SIGNING_KEY -deploy trunk -upload gethstore/builds
+
+
+# command-line-arguments
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000000.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/go.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000001.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000002.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000003.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000004.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000005.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000006.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000007.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000008.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000013.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000014.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000015.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000016.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000017.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000018.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000019.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000020.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+ld: warning: object file (/var/folders/nz/vv4_9tw56nv9k3tkvyszvwg80000gn/T/go-link-754188788/000021.o) was built for newer OSX version (10.15) than being linked (10.13)
+
+
+>>> /Users/travis/.gimme/versions/go1.13.7.darwin.amd64/bin/go get golang.org/x/mobile/cmd/gomobile golang.org/x/mobile/cmd/gobind
+
+
+go: finding golang.org/x/mobile latest
+
+
+go: downloading golang.org/x/mobile v0.0.0-20200123024942-82c397c4c527
+
+
+go: extracting golang.org/x/mobile v0.0.0-20200123024942-82c397c4c527
+
+
+go: downloading golang.org/x/mod v0.1.1-0.20191209134235-331c550502dd
+
+
+go: downloading golang.org/x/tools v0.0.0-20200117012304-6edc0a871e69
+
+
+go: extracting golang.org/x/mod v0.1.1-0.20191209134235-331c550502dd
+
+
+go: downloading golang.org/x/xerrors v0.0.0-20191011141410-1b5146add898
+
+
+go: extracting golang.org/x/xerrors v0.0.0-20191011141410-1b5146add898
+
+
+go: extracting golang.org/x/tools v0.0.0-20200117012304-6edc0a871e69
+
+
+go: finding golang.org/x/tools v0.0.0-20200117012304-6edc0a871e69
+
+
+go: finding golang.org/x/mod v0.1.1-0.20191209134235-331c550502dd
+
+
+go: finding golang.org/x/xerrors v0.0.0-20191011141410-1b5146add898
+
+
+>>> /Users/travis/gopath/src/github.com/ethereum/go-ethereum/build/bin/gomobile init
+
+
+go: downloading golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550
+
+
+go: downloading github.com/VictoriaMetrics/fastcache v1.5.3
+
+
+go: downloading github.com/steakknife/bloomfilter v0.0.0-20180922174646-6819c0d2a570
+
+
+go: downloading github.com/aristanetworks/goarista v0.0.0-20170210015632-ea17b1a17847
+
+
+go: downloading github.com/go-stack/stack v1.8.0
+
+
+go: downloading github.com/elastic/gosigar v0.8.1-0.20180330100440-37f05ff46ffa
+
+
+go: extracting github.com/go-stack/stack v1.8.0
+
+
+go: extracting github.com/aristanetworks/goarista v0.0.0-20170210015632-ea17b1a17847
+
+
+go: extracting github.com/VictoriaMetrics/fastcache v1.5.3
+
+
+go: extracting github.com/steakknife/bloomfilter v0.0.0-20180922174646-6819c0d2a570
+
+
+go: extracting github.com/elastic/gosigar v0.8.1-0.20180330100440-37f05ff46ffa
+
+
+go: downloading github.com/steakknife/hamming v0.0.0-20180906055917-c99c65617cd3
+
+
+go: downloading golang.org/x/sys v0.0.0-20190712062909-fae7ac547cb7
+
+
+go: downloading github.com/cespare/xxhash v1.1.0
+
+
+go: downloading github.com/golang/snappy v0.0.1
+
+
+go: extracting github.com/steakknife/hamming v0.0.0-20180906055917-c99c65617cd3
+
+
+go: extracting github.com/golang/snappy v0.0.1
+
+
+go: extracting github.com/cespare/xxhash v1.1.0
+
+
+go: downloading github.com/cespare/xxhash/v2 v2.1.1
+
+
+go: extracting github.com/cespare/xxhash/v2 v2.1.1
+
+
+go: extracting golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550
+
+
+go: extracting golang.org/x/sys v0.0.0-20190712062909-fae7ac547cb7
+
+
+go: finding golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550
+
+
+go: finding github.com/VictoriaMetrics/fastcache v1.5.3
+
+
+go: finding github.com/aristanetworks/goarista v0.0.0-20170210015632-ea17b1a17847
+
+
+go: finding github.com/cespare/xxhash/v2 v2.1.1
+
+
+go: finding github.com/steakknife/bloomfilter v0.0.0-20180922174646-6819c0d2a570
+
+
+go: finding github.com/golang/snappy v0.0.1
+
+
+go: finding github.com/go-stack/stack v1.8.0
+
+
+go: finding github.com/elastic/gosigar v0.8.1-0.20180330100440-37f05ff46ffa
+
+
+go: finding github.com/steakknife/hamming v0.0.0-20180906055917-c99c65617cd3
+
+
+go: finding golang.org/x/sys v0.0.0-20190712062909-fae7ac547cb7
+
+
+>>> /Users/travis/gopath/src/github.com/ethereum/go-ethereum/build/bin/gomobile bind -ldflags -s -w --target ios -v github.com/ethereum/go-ethereum/mobile
+
+
+build .: cannot find module for path .
+
+
+/Users/travis/gopath/src/github.com/ethereum/go-ethereum/build/bin/gomobile: exit status 1
+
+
+util.go:45: exit status 1
+
+
+exit status 1
+
+
+travis_time:end:0604411d:start=1580380570787328000,finish=1580380595685096000,duration=24897768000,event=script
+[0K[31;1mThe command "go run build/ci.go xcode -signer IOS_SIGNING_KEY -deploy trunk -upload gethstore/builds" exited with 1.[0m
+
+
+
+
+
+
+
+
+Done. Your build exited with 1.
+
+
