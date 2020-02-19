@@ -8,36 +8,52 @@ import (
 	"strings"
 )
 
-func failedBuilds(repo string, n int, buildStates []string, jobStates []string) {
-	//c := make(chan travis.Log)
-	jobsOpts := travis.JobsOption{State:jobStates}
-	client := travis.NewClient(travis.ApiOrgUrl, "")
-	offset := 0
-	limit := 2
-	for offset < n {
-		buildOpts := travis.BuildsByRepoOption{Offset:offset, Limit:limit, State: buildStates}
-		builds, _, _ := client.Builds.ListByRepoSlug(context.Background(), repo, &buildOpts)
-		for _, b := range builds {
-			jobs, _, _ := client.Jobs.List(context.Background(), &jobsOpts)
-			fmt.Println("build", *b.StartedAt, *b.State, len(jobs))
-			for _, j := range jobs {
-				log, _, _ := client.Logs.FindByJobId(context.Background(), *j.Id)
-				fmt.Println(*log.Href)
-			}
-		}
-		offset += limit
+type travisLog struct {
+	job *travis.Job
+	log *travis.Log
+}
+
+func failedBuilds(repo string, n int, buildStates []string, jobStates []string) chan travisLog {
+	c := make(chan travisLog)
+	jobStatesMap := make(map[string]bool)
+	for _, k := range jobStates {
+		jobStatesMap[k] = true
 	}
+	client := travis.NewClient(travis.ApiOrgUrl, "")
+	//offset := 0
+	offset := 10
+	limit := 2
+	go func() {
+		for offset < n {
+			buildOpts := travis.BuildsByRepoOption{Offset:offset, Limit:limit, State: buildStates}
+			builds, _, _ := client.Builds.ListByRepoSlug(context.Background(), repo, &buildOpts)
+			for _, b := range builds {
+				jobs, _, _ := client.Jobs.ListByBuild(context.Background(), *b.Id)
+				for _, j := range jobs {
+					if want, _ := jobStatesMap[*j.State]; want {
+						log, _, _ := client.Logs.FindByJobId(context.Background(), *j.Id)
+						c <- travisLog{j, log}
+					}
+				}
+			}
+			offset += limit
+		}
+		close(c)
+	}()
+	return c
 }
 
 func main() {
 	repo := flag.String("repo", "ethereum/go-ethereum", "Github <username>/<repo>")
-	buildCount := flag.Int("build.count", 2, "Number of builds to check")
+	buildCount := flag.Int("build.count", 12, "Number of builds to check")
 	bs := flag.String("build.states", "failed,errored", "Comma-separated list of build states")
 	buildStates := strings.Split(*bs, ",")
 	js := flag.String("job.states", "failed,errored", "Comma-separated list of job states")
 	jobStates := strings.Split(*js, ",")
 	flag.Parse()
-	failedBuilds(*repo, *buildCount, buildStates, jobStates)
+	for log := range failedBuilds(*repo, *buildCount, buildStates, jobStates) {
+		fmt.Println(*log.job.Build.Number, *log.job.Number, *log.log.Href)
+	}
 }
 
 
