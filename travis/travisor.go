@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/shuheiktgw/go-travis"
 	"io/ioutil"
+	"log"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -79,41 +80,73 @@ func GetStats(logcontent *string) Stats {
 	return s
 }
 
-func testStats(repo string, n int) Stats {
-	states := []string{"failed"}
-	s := make(Stats)
-	for log := range filterLogs(repo, n, states, states) {
-		for pkg, tests := range GetStats(log.log.Content) {
-			earlierTests, pkgOk := s[pkg]
-			if pkgOk {
-				for testName, _ := range tests {
-					earlierTests[testName] += 1
-				}
+// Change `all`
+func combineStats(all *Stats, one *Stats) {
+	allStats := *all
+	oneStats := *one
+	for pkg, tests := range oneStats {
+		earlierTests, pkgOk := allStats[pkg]
+		if pkgOk {
+			for testName, _ := range tests {
+				earlierTests[testName] += 1
 			}
+		} else {
+			allStats[pkg] = tests
 		}
 	}
-	return s
+}
+
+func statsForLogs(logfolder *string) Stats {
+	allStats := make(Stats)
+	files, err := ioutil.ReadDir(*logfolder)
+	if err != nil {
+		log.Fatal(err)
+	}
+	for _, file := range files {
+		fmt.Println(file.Name())
+		data, err := ioutil.ReadFile(file.Name())
+		if err != nil {
+			log.Fatal(err)
+		}
+		content := string(data)
+		newStats := GetStats(&content)
+		combineStats(&allStats, &newStats)
+	}
+	return  allStats
 }
 
 func main() {
+	downloadCmd := flag.NewFlagSet("download", flag.ExitOnError)
 	repo := flag.String("repo", "ethereum/go-ethereum", "Github <username>/<repo>")
 	buildCount := flag.Int("build.count", 3, "Number of builds to check")
-	logfolder := flag.String("log.folder", "failedLogs", "Logs are save to and read from this folder")
+	logfolder := flag.String("log.folder", "logs", "Logs are save to and read from this folder")
 	bs := flag.String("build.states", "failed,errored", "Comma-separated list of build states")
 	buildStates := strings.Split(*bs, ",")
 	js := flag.String("job.states", "failed,errored", "Comma-separated list of job states")
 	jobStates := strings.Split(*js, ",")
-	flag.Parse()
-	for log := range filterLogs(*repo, *buildCount, buildStates, jobStates) {
+
+	statsCmd := flag.NewFlagSet("stats", flag.ExitOnError)
+	logfolder = flag.String("log.folder", "logs", "Logs are save to and read from this folder")
+
+	switch os.Args[1] {
+	case "download":
+		downloadCmd.Parse(os.Args[2:])
 		if err := os.MkdirAll(*logfolder, 0744); err != nil {
 			fmt.Println("log folder", err)
+			return
 		}
-		path := filepath.Join(*logfolder, fmt.Sprintf("%v.log", *log.log.Id))
-		fmt.Println("Writing to", path)
-		 if err := ioutil.WriteFile(path, []byte(*log.log.Content), 0644); err != nil {
-		 	fmt.Println("oops", err)
-		 	return
-		 }
+		for log := range filterLogs(*repo, *buildCount, buildStates, jobStates) {
+			path := filepath.Join(*logfolder, fmt.Sprintf("%v.log", *log.log.Id))
+			fmt.Println("Writing to", path)
+			if err := ioutil.WriteFile(path, []byte(*log.log.Content), 0644); err != nil {
+				fmt.Println("oops", err)
+				return
+			}
+		}
+	case "stats":
+		statsCmd.Parse(os.Args[2:])
+		s := statsForLogs(logfolder)
+		fmt.Println("stats:", s)
 	}
 }
 
