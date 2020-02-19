@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"flag"
 	"fmt"
 	"github.com/shuheiktgw/go-travis"
@@ -103,8 +104,8 @@ func statsForLogs(logfolder *string) Stats {
 		log.Fatal(err)
 	}
 	for _, file := range files {
-		fmt.Println(file.Name())
-		data, err := ioutil.ReadFile(file.Name())
+		path := filepath.Join(*logfolder, file.Name())
+		data, err := ioutil.ReadFile(path)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -117,26 +118,26 @@ func statsForLogs(logfolder *string) Stats {
 
 func main() {
 	downloadCmd := flag.NewFlagSet("download", flag.ExitOnError)
-	repo := flag.String("repo", "ethereum/go-ethereum", "Github <username>/<repo>")
-	buildCount := flag.Int("build.count", 3, "Number of builds to check")
-	logfolder := flag.String("log.folder", "logs", "Logs are save to and read from this folder")
-	bs := flag.String("build.states", "failed,errored", "Comma-separated list of build states")
+	repo := downloadCmd.String("repo", "ethereum/go-ethereum", "Github <username>/<repo>")
+	buildCount := downloadCmd.Int("build.count", 3, "Number of builds to check")
+	logfolderSave := downloadCmd.String("save.folder", "logs", "Logs are saved to this folder")
+	bs := downloadCmd.String("build.states", "failed,errored", "Comma-separated list of build states")
 	buildStates := strings.Split(*bs, ",")
-	js := flag.String("job.states", "failed,errored", "Comma-separated list of job states")
+	js := downloadCmd.String("job.states", "failed,errored", "Comma-separated list of job states")
 	jobStates := strings.Split(*js, ",")
 
 	statsCmd := flag.NewFlagSet("stats", flag.ExitOnError)
-	logfolder = flag.String("log.folder", "logs", "Logs are save to and read from this folder")
+	logfolderRead := statsCmd.String("read.folder", "logs", "Logs are read from this folder")
 
 	switch os.Args[1] {
 	case "download":
 		downloadCmd.Parse(os.Args[2:])
-		if err := os.MkdirAll(*logfolder, 0744); err != nil {
+		if err := os.MkdirAll(*logfolderSave, 0744); err != nil {
 			fmt.Println("log folder", err)
 			return
 		}
 		for log := range filterLogs(*repo, *buildCount, buildStates, jobStates) {
-			path := filepath.Join(*logfolder, fmt.Sprintf("%v.log", *log.log.Id))
+			path := filepath.Join(*logfolderSave, fmt.Sprintf("%v.log", *log.log.Id))
 			fmt.Println("Writing to", path)
 			if err := ioutil.WriteFile(path, []byte(*log.log.Content), 0644); err != nil {
 				fmt.Println("oops", err)
@@ -145,8 +146,13 @@ func main() {
 		}
 	case "stats":
 		statsCmd.Parse(os.Args[2:])
-		s := statsForLogs(logfolder)
-		fmt.Println("stats:", s)
+		s := statsForLogs(logfolderRead)
+		data, err := json.Marshal(s)
+		if err != nil {
+			fmt.Println("json problem", err)
+			break
+		}
+		fmt.Println(string(data))
 	}
 }
 
