@@ -13,7 +13,7 @@ type travisLog struct {
 	log *travis.Log
 }
 
-func failedBuilds(repo string, n int, buildStates []string, jobStates []string) chan travisLog {
+func filterLogs(repo string, n int, buildStates []string, jobStates []string) chan travisLog {
 	c := make(chan travisLog)
 	jobStatesMap := make(map[string]bool)
 	for _, k := range jobStates {
@@ -45,6 +45,29 @@ func failedBuilds(repo string, n int, buildStates []string, jobStates []string) 
 	return c
 }
 
+type Stats map[string]map[string]int
+
+func GetStats(logcontent *string) Stats {
+	var s Stats
+	return s
+}
+
+func testStats(repo string, n int) Stats {
+	states := []string{"failed"}
+	s := make(Stats)
+	for log := range filterLogs(repo, n, states, states) {
+		for pkg, tests := range GetStats(log.log.Content) {
+			earlierTests, pkgOk := s[pkg]
+			if pkgOk {
+				for testName, _ := range tests {
+					earlierTests[testName] += 1
+				}
+			}
+		}
+	}
+	return s
+}
+
 func main() {
 	repo := flag.String("repo", "ethereum/go-ethereum", "Github <username>/<repo>")
 	buildCount := flag.Int("build.count", 3, "Number of builds to check")
@@ -53,10 +76,8 @@ func main() {
 	js := flag.String("job.states", "failed,errored", "Comma-separated list of job states")
 	jobStates := strings.Split(*js, ",")
 	flag.Parse()
-	for log := range failedBuilds(*repo, *buildCount, buildStates, jobStates) {
+	for log := range filterLogs(*repo, *buildCount, buildStates, jobStates) {
 		fmt.Println(*log.job.Build.Number, *log.job.Number, *log.log.Href)
 	}
 }
-
-
 
