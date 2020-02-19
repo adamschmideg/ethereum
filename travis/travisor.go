@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"encoding/json"
 	"flag"
 	"fmt"
 	"github.com/shuheiktgw/go-travis"
@@ -146,13 +145,11 @@ func main() {
 		}
 	case "stats":
 		statsCmd.Parse(os.Args[2:])
-		s := statsForLogs(logfolderRead)
-		data, err := json.Marshal(s)
-		if err != nil {
-			fmt.Println("json problem", err)
-			break
+		for pkg, tests := range statsForLogs(logfolderRead) {
+			for test, count := range tests {
+				fmt.Printf("%v,%v,%v\n", count, test, pkg)
+			}
 		}
-		fmt.Println(string(data))
 	}
 }
 
