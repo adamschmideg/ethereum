@@ -20,11 +20,13 @@ func failedBuilds(repo string, n int, buildStates []string, jobStates []string) 
 		jobStatesMap[k] = true
 	}
 	client := travis.NewClient(travis.ApiOrgUrl, "")
-	//offset := 0
-	offset := 10
-	limit := 2
+	offset := 0
+	limit := 50
 	go func() {
 		for offset < n {
+			if offset + limit > n {
+				limit = n - offset
+			}
 			buildOpts := travis.BuildsByRepoOption{Offset:offset, Limit:limit, State: buildStates}
 			builds, _, _ := client.Builds.ListByRepoSlug(context.Background(), repo, &buildOpts)
 			for _, b := range builds {
@@ -45,7 +47,7 @@ func failedBuilds(repo string, n int, buildStates []string, jobStates []string) 
 
 func main() {
 	repo := flag.String("repo", "ethereum/go-ethereum", "Github <username>/<repo>")
-	buildCount := flag.Int("build.count", 12, "Number of builds to check")
+	buildCount := flag.Int("build.count", 3, "Number of builds to check")
 	bs := flag.String("build.states", "failed,errored", "Comma-separated list of build states")
 	buildStates := strings.Split(*bs, ",")
 	js := flag.String("job.states", "failed,errored", "Comma-separated list of job states")
