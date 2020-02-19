@@ -5,6 +5,10 @@ import (
 	"flag"
 	"fmt"
 	"github.com/shuheiktgw/go-travis"
+	"io/ioutil"
+	"os"
+	"path/filepath"
+	"regexp"
 	"strings"
 )
 
@@ -48,7 +52,30 @@ func filterLogs(repo string, n int, buildStates []string, jobStates []string) ch
 type Stats map[string]map[string]int
 
 func GetStats(logcontent *string) Stats {
-	var s Stats
+	failingTestRE := regexp.MustCompile("^--- FAIL: (\\w+).*")
+	failingPkgRE := regexp.MustCompile("^FAIL\\s+(\\S+)\\s.*")
+	var s = make(Stats)
+	var names []string
+	var pkg string
+	for _, line := range strings.Split(*logcontent, "\n") {
+		badPkg := failingPkgRE.FindStringSubmatch(line)
+		if len(badPkg) > 0 {
+			pkg = badPkg[1]
+			// Now we know the package, copy all test names into the result struct
+			s[pkg] = make(map[string]int)
+			for _, n := range names {
+				s[pkg][n] = 1
+			}
+			// Empty names for the next round
+			names = []string{}
+			continue
+		}
+		testName := failingTestRE.FindStringSubmatch(line)
+		if len(testName) > 0 {
+			names = append(names, testName[1])
+			continue
+		}
+	}
 	return s
 }
 
@@ -71,13 +98,22 @@ func testStats(repo string, n int) Stats {
 func main() {
 	repo := flag.String("repo", "ethereum/go-ethereum", "Github <username>/<repo>")
 	buildCount := flag.Int("build.count", 3, "Number of builds to check")
+	logfolder := flag.String("log.folder", "failedLogs", "Logs are save to and read from this folder")
 	bs := flag.String("build.states", "failed,errored", "Comma-separated list of build states")
 	buildStates := strings.Split(*bs, ",")
 	js := flag.String("job.states", "failed,errored", "Comma-separated list of job states")
 	jobStates := strings.Split(*js, ",")
 	flag.Parse()
 	for log := range filterLogs(*repo, *buildCount, buildStates, jobStates) {
-		fmt.Println(*log.job.Build.Number, *log.job.Number, *log.log.Href)
+		if err := os.MkdirAll(*logfolder, 0744); err != nil {
+			fmt.Println("log folder", err)
+		}
+		path := filepath.Join(*logfolder, fmt.Sprintf("%v.log", *log.log.Id))
+		fmt.Println("Writing to", path)
+		 if err := ioutil.WriteFile(path, []byte(*log.log.Content), 0644); err != nil {
+		 	fmt.Println("oops", err)
+		 	return
+		 }
 	}
 }
 
