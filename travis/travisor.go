@@ -12,7 +12,6 @@ import (
 	"reflect"
 	"regexp"
 	"strings"
-	"testing"
 )
 
 type travisLog struct {
@@ -163,7 +162,7 @@ func stringify(a ...interface{}) []string {
 		case arg == nil:
 			elem = ""
 		case reflect.ValueOf(arg).Kind() == reflect.Ptr:
-			elem = reflect.ValueOf(arg).Elem().String()
+			elem = fmt.Sprintf("%v", reflect.ValueOf(arg).Elem().Interface())
 		default:
 			elem = fmt.Sprintf("%v", arg)
 		}
