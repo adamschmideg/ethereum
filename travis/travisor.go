@@ -26,8 +26,9 @@ type travisJob struct {
 
 type travisInfo struct {
 	client *travis.Client
-	repo   string
+	repo   *string
 	count  int
+	dir *string
 }
 
 func (tr *travisInfo) buildsAndJobs() chan *travisJob {
@@ -40,7 +41,7 @@ func (tr *travisInfo) buildsAndJobs() chan *travisJob {
 				limit = tr.count - offset
 			}
 			buildOpts := travis.BuildsByRepoOption{Offset: offset, Limit: limit}
-			builds, _, _ := tr.client.Builds.ListByRepoSlug(context.Background(), tr.repo, &buildOpts)
+			builds, _, _ := tr.client.Builds.ListByRepoSlug(context.Background(), *tr.repo, &buildOpts)
 			for _, b := range builds {
 				c <- &travisJob{b, nil}
 				jobs, _, _ := tr.client.Jobs.ListByBuild(context.Background(), *b.Id)
@@ -53,6 +54,58 @@ func (tr *travisInfo) buildsAndJobs() chan *travisJob {
 		close(c)
 	}()
 	return c
+}
+
+func (tr *travisInfo) doJobs() error {
+	// Create buildsFile
+	f := filepath.Join(*tr.dir, "builds.csv")
+	if _, err := os.Stat(f); err == nil {
+		return fmt.Errorf("File %v exists", f)
+
+	}
+	buildsFile, err := os.Create(f)
+	if err != nil {
+		return err
+	}
+	defer buildsFile.Close()
+	buildsFile.WriteString("Id,Number,State,Duration,EventType,PullRequestNumber,StartedAt,FinishedAt,BranchName,CommitSha,CreatedBy\n")
+
+	// Create jobsFile
+	f = filepath.Join(*tr.dir, "jobs.csv")
+	if _, err := os.Stat(f); err == nil {
+		return fmt.Errorf("File %v exists", f)
+
+	}
+	jobsFile, err := os.Create(f)
+	if err != nil {
+		return err
+	}
+	defer jobsFile.Close()
+	jobsFile.WriteString("Id,Number,BuildId,Number,State,StartedAt,FinishedAt")
+
+	// Process builds and logs
+	for job := range tr.buildsAndJobs() {
+		if job.build != nil {
+			b := job.build
+			s := row(b.Id, b.Number, b.State, b.Duration, b.EventType, b.PullRequestNumber,
+				b.StartedAt, b.FinishedAt, b.Branch.Name, b.Commit.Sha, b.CreatedBy.Login)
+			buildsFile.WriteString(s + "\n")
+		}
+		if job.job != nil {
+			j := job.job
+			s := row("job", j.Id, j.Number, j.Build.Id, j.Number, j.State, j.StartedAt, j.FinishedAt)
+			jobsFile.WriteString(s + "\n")
+		}
+	}
+	return nil
+}
+
+func (tr *travisInfo) doLogs() error {
+	return nil
+}
+
+func (tr *travisInfo) doFailures() error {
+	return nil
 }
 
 func filterLogs(repo string, n int, buildStates []string, jobStates []string) chan travisLog {
@@ -149,44 +202,30 @@ func statsForLogs(logfolder *string) Stats {
 		newStats := GetStats(&content)
 		combineStats(&allStats, &newStats)
 	}
-	return  allStats
+	return allStats
 }
 
 func main() {
-	downloadCmd := flag.NewFlagSet("download", flag.ExitOnError)
-	repo := downloadCmd.String("repo", "ethereum/go-ethereum", "Github <username>/<repo>")
-	buildCount := downloadCmd.Int("build.count", 3, "Number of builds to check")
-	logfolderSave := downloadCmd.String("save.folder", "logs", "Logs are saved to this folder")
-	bs := downloadCmd.String("build.states", "failed,errored", "Comma-separated list of build states")
-	buildStates := strings.Split(*bs, ",")
-	js := downloadCmd.String("job.states", "failed,errored", "Comma-separated list of job states")
-	jobStates := strings.Split(*js, ",")
+	count := flag.Int("n", 3, "Number of builds")
+	dir := flag.String("dir", ".", "Working directory")
+	action := flag.String("do", "", "Choose one of: jobs|logs|failures")
+	repo := flag.String("repo", "ethereum/go-ethereum", "Github <username>/<repo>")
+	flag.Parse()
 
-	statsCmd := flag.NewFlagSet("stats", flag.ExitOnError)
-	logfolderRead := statsCmd.String("read.folder", "logs", "Logs are read from this folder")
-
-	switch os.Args[1] {
-	case "download":
-		downloadCmd.Parse(os.Args[2:])
-		if err := os.MkdirAll(*logfolderSave, 0744); err != nil {
-			fmt.Println("log folder", err)
-			return
-		}
-		for log := range filterLogs(*repo, *buildCount, buildStates, jobStates) {
-			path := filepath.Join(*logfolderSave, fmt.Sprintf("%v.log", *log.log.Id))
-			fmt.Println("Writing to", path)
-			if err := ioutil.WriteFile(path, []byte(*log.log.Content), 0644); err != nil {
-				fmt.Println("oops", err)
-				return
-			}
-		}
-	case "stats":
-		statsCmd.Parse(os.Args[2:])
-		for pkg, tests := range statsForLogs(logfolderRead) {
-			for test, count := range tests {
-				fmt.Printf("%v,%v,%v\n", count, test, pkg)
-			}
-		}
+	var err error
+	tr := travisInfo{travis.NewClient(travis.ApiOrgUrl, ""), repo, *count, dir}
+	switch *action {
+	case "jobs":
+		err = tr.doJobs()
+	case "logs":
+		err = tr.doLogs()
+	case "failures":
+		err = tr.doFailures()
+	default:
+		err = fmt.Errorf("Uknown action: %v", *action)
+	}
+	if err != nil {
+		fmt.Println(err)
 	}
 }
 
@@ -205,8 +244,8 @@ func row(a ...interface{}) string {
 	return strings.Join(all, ",")
 }
 
-func main() {
-	tr := travisInfo{client: travis.NewClient(travis.ApiOrgUrl, ""), repo: "ethereum/go-ethereum", count: 2}
+func newmain() {
+	tr := travisInfo{client: travis.NewClient(travis.ApiOrgUrl, "")}
 	for job := range tr.buildsAndJobs() {
 		if job.build != nil {
 			b := job.build

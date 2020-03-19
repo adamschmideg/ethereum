@@ -1,19 +1,25 @@
 
+Each step builds on the previous one(s). Nothing gets overwritten.
 
-Download log files
+## Download build and job data into csv 
 ```
-> travisor download -repo ethereum/go-ethereum -build.count 250
+travisor -do jobs -n 250 -dir .
 ```
+Result: `builds.csv` and `jobs.csv` populated
 
-Extract failures from log files stored locally
+## Download logs
+Downloads all logs referred to in the file `jobs.csv`
 ```
-> travisor stats > failures.csv
+travisor -do logs -dir .
 ```
+Pre-requisite: `jobs.csv`
+Result: `logs/` folder populated with log files
 
-The emitted csv file has this structure
+## Find failures
+```
+travisor -do failures -dir .
+```
+Pre-requisite: `logs/` folder with log files
+Result: `failures.csv`
 
-| Occurrences | Test case | Package |
-| - | - | - |
-| 52 | TestSimulation | github.com/ethereum/go-ethereum/whisper/whisperv6 |
-| 31 | TestBroadcastBlock | github.com/ethereum/go-ethereum/eth |
-| ... | ... | ... |
+
