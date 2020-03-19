@@ -19,6 +19,42 @@ type travisLog struct {
 	log *travis.Log
 }
 
+type travisJob struct {
+	build *travis.Build
+	job   *travis.Job
+}
+
+type travisInfo struct {
+	client *travis.Client
+	repo   string
+	count  int
+}
+
+func (tr *travisInfo) buildsAndJobs() chan *travisJob {
+	limit := 50
+	c := make(chan *travisJob, limit+1)
+	offset := 0
+	go func() {
+		for offset < tr.count {
+			if offset+limit > tr.count {
+				limit = tr.count - offset
+			}
+			buildOpts := travis.BuildsByRepoOption{Offset: offset, Limit: limit}
+			builds, _, _ := tr.client.Builds.ListByRepoSlug(context.Background(), tr.repo, &buildOpts)
+			for _, b := range builds {
+				c <- &travisJob{b, nil}
+				jobs, _, _ := tr.client.Jobs.ListByBuild(context.Background(), *b.Id)
+				for _, j := range jobs {
+					c <- &travisJob{nil, j}
+				}
+			}
+			offset += limit
+		}
+		close(c)
+	}()
+	return c
+}
+
 func filterLogs(repo string, n int, buildStates []string, jobStates []string) chan travisLog {
 	c := make(chan travisLog)
 	jobStatesMap := make(map[string]bool)
@@ -159,7 +195,7 @@ func stringify(a ...interface{}) []string {
 	for _, arg := range a {
 		var elem string
 		switch {
-		case arg == nil:
+		case arg == nil || reflect.ValueOf(arg).IsNil():
 			elem = ""
 		case reflect.ValueOf(arg).Kind() == reflect.Ptr:
 			elem = fmt.Sprintf("%v", reflect.ValueOf(arg).Elem().Interface())
@@ -171,12 +207,24 @@ func stringify(a ...interface{}) []string {
 	return s
 }
 
-func TestStringify(t *testing.T) {
-	s := "asdf"
-	a := []interface{}{s, &s, nil, 55}
-	got := strings.Join(stringify(a), ",")
-	expected := "asdf,asdf,,55"
-	if got != expected {
-		t.Fatalf("Got: %v\nExpected: %v", got, expected)
+func row(a ...interface{}) string {
+	return strings.Join(stringify(a...), ",")
+}
+
+func main() {
+	tr := travisInfo{client: travis.NewClient(travis.ApiOrgUrl, ""), repo: "ethereum/go-ethereum", count: 2}
+	for job := range tr.buildsAndJobs() {
+		if job.build != nil {
+			b := job.build
+			s := row(b.Id, b.Number, b.State, b.Duration, b.EventType, b.PullRequestNumber,
+				b.StartedAt, b.FinishedAt, b.Branch.Name, b.Commit.Sha, b.CreatedBy.Login)
+			fmt.Println("build:", s)
+		}
+		if job.job != nil {
+			j := job.job
+			s := row(j.Id, j.Number, j.Build.Id, j.Number, j.State, j.StartedAt, j.FinishedAt)
+			fmt.Println("job:", s)
+
+		}
 	}
 }
