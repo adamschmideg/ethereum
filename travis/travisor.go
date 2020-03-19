@@ -9,8 +9,10 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"reflect"
 	"regexp"
 	"strings"
+	"testing"
 )
 
 type travisLog struct {
@@ -153,3 +155,29 @@ func main() {
 	}
 }
 
+func stringify(a ...interface{}) []string {
+	var s []string
+	for _, arg := range a {
+		var elem string
+		switch {
+		case arg == nil:
+			elem = ""
+		case reflect.ValueOf(arg).Kind() == reflect.Ptr:
+			elem = reflect.ValueOf(arg).Elem().String()
+		default:
+			elem = fmt.Sprintf("%v", arg)
+		}
+		s = append(s, elem)
+	}
+	return s
+}
+
+func TestStringify(t *testing.T) {
+	s := "asdf"
+	a := []interface{}{s, &s, nil, 55}
+	got := strings.Join(stringify(a), ",")
+	expected := "asdf,asdf,,55"
+	if got != expected {
+		t.Fatalf("Got: %v\nExpected: %v", got, expected)
+	}
+}
