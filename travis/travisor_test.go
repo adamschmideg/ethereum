@@ -54,12 +54,20 @@ func TestCombineStats(t *testing.T) {
 func TestStringify(t *testing.T) {
 	s := "ref"
 	var i uint = 2
-	a := []interface{}{"copy", &s, nil, 1, &i}
-	got := stringify(a...)
-	expected := []string{"copy", "ref", "", "1", "2"}
-	for i, _ := range expected {
-		if got[i] != expected[i] {
-			t.Fatalf("At %v Got: %v\nExpected: %v", i, got[i], expected[i])
+	tests := []struct {
+		input  interface{}
+		expect string
+	}{
+		{input: "copy", expect: "copy"},
+		{input: &s, expect: "ref"},
+		{input: 1, expect: "1"},
+		{input: &i, expect: "2"},
+		{input: nil, expect: ""},
+	}
+	for _, test := range tests {
+		got := stringify(test.expect)
+		if got != test.expect {
+			t.Fatalf("At %v Got: %v\nExpected: %v", i, got, test.expect)
 		}
 	}
 }

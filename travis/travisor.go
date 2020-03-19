@@ -4,12 +4,12 @@ import (
 	"context"
 	"flag"
 	"fmt"
+	"github.com/davecgh/go-spew/spew"
 	"github.com/shuheiktgw/go-travis"
 	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
-	"reflect"
 	"regexp"
 	"strings"
 )
@@ -190,25 +190,19 @@ func main() {
 	}
 }
 
-func stringify(a ...interface{}) []string {
-	var s []string
-	for _, arg := range a {
-		var elem string
-		switch {
-		case arg == nil || reflect.ValueOf(arg).IsNil():
-			elem = ""
-		case reflect.ValueOf(arg).Kind() == reflect.Ptr:
-			elem = fmt.Sprintf("%v", reflect.ValueOf(arg).Elem().Interface())
-		default:
-			elem = fmt.Sprintf("%v", arg)
-		}
-		s = append(s, elem)
-	}
-	return s
+func stringify(a interface{}) string {
+	raw := spew.Sprint(a)
+	raw = strings.Replace(raw, "<*>", "", -1)
+	raw = strings.Replace(raw, "<nil>", "", -1)
+	return raw
 }
 
 func row(a ...interface{}) string {
-	return strings.Join(stringify(a...), ",")
+	var all []string
+	for _, arg := range a {
+		all = append(all, stringify(arg))
+	}
+	return strings.Join(all, ",")
 }
 
 func main() {
@@ -216,14 +210,14 @@ func main() {
 	for job := range tr.buildsAndJobs() {
 		if job.build != nil {
 			b := job.build
-			s := row(b.Id, b.Number, b.State, b.Duration, b.EventType, b.PullRequestNumber,
+			s := row("build", b.Id, b.Number, b.State, b.Duration, b.EventType, b.PullRequestNumber,
 				b.StartedAt, b.FinishedAt, b.Branch.Name, b.Commit.Sha, b.CreatedBy.Login)
-			fmt.Println("build:", s)
+			fmt.Println(s)
 		}
 		if job.job != nil {
 			j := job.job
-			s := row(j.Id, j.Number, j.Build.Id, j.Number, j.State, j.StartedAt, j.FinishedAt)
-			fmt.Println("job:", s)
+			s := row("job", j.Id, j.Number, j.Build.Id, j.Number, j.State, j.StartedAt, j.FinishedAt)
+			fmt.Println(s)
 
 		}
 	}
