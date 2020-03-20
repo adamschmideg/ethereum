@@ -119,10 +119,10 @@ func filterLogs(repo string, n int, buildStates []string, jobStates []string) ch
 	limit := 50
 	go func() {
 		for offset < n {
-			if offset + limit > n {
+			if offset+limit > n {
 				limit = n - offset
 			}
-			buildOpts := travis.BuildsByRepoOption{Offset:offset, Limit:limit, State: buildStates}
+			buildOpts := travis.BuildsByRepoOption{Offset: offset, Limit: limit, State: buildStates}
 			builds, _, _ := client.Builds.ListByRepoSlug(context.Background(), repo, &buildOpts)
 			for _, b := range builds {
 				jobs, _, _ := client.Jobs.ListByBuild(context.Background(), *b.Id)
@@ -244,20 +244,3 @@ func row(a ...interface{}) string {
 	return strings.Join(all, ",")
 }
 
-func newmain() {
-	tr := travisInfo{client: travis.NewClient(travis.ApiOrgUrl, "")}
-	for job := range tr.buildsAndJobs() {
-		if job.build != nil {
-			b := job.build
-			s := row("build", b.Id, b.Number, b.State, b.Duration, b.EventType, b.PullRequestNumber,
-				b.StartedAt, b.FinishedAt, b.Branch.Name, b.Commit.Sha, b.CreatedBy.Login)
-			fmt.Println(s)
-		}
-		if job.job != nil {
-			j := job.job
-			s := row("job", j.Id, j.Number, j.Build.Id, j.Number, j.State, j.StartedAt, j.FinishedAt)
-			fmt.Println(s)
-
-		}
-	}
-}
