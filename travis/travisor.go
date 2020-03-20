@@ -2,15 +2,18 @@ package main
 
 import (
 	"context"
+	"encoding/csv"
 	"flag"
 	"fmt"
 	"github.com/davecgh/go-spew/spew"
 	"github.com/shuheiktgw/go-travis"
+	"io"
 	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
 	"regexp"
+	"strconv"
 	"strings"
 )
 
@@ -81,7 +84,7 @@ func (tr *travisInfo) doJobs() error {
 		return err
 	}
 	defer jobsFile.Close()
-	jobsFile.WriteString("Id,Number,BuildId,Number,State,StartedAt,FinishedAt")
+	jobsFile.WriteString("Id,Number,BuildId,Number,State,StartedAt,FinishedAt\n")
 
 	// Process builds and logs
 	for job := range tr.buildsAndJobs() {
@@ -93,7 +96,7 @@ func (tr *travisInfo) doJobs() error {
 		}
 		if job.job != nil {
 			j := job.job
-			s := row("job", j.Id, j.Number, j.Build.Id, j.Number, j.State, j.StartedAt, j.FinishedAt)
+			s := row(j.Id, j.Number, j.Build.Id, j.Number, j.State, j.StartedAt, j.FinishedAt)
 			jobsFile.WriteString(s + "\n")
 		}
 	}
@@ -101,6 +104,57 @@ func (tr *travisInfo) doJobs() error {
 }
 
 func (tr *travisInfo) doLogs() error {
+	// Create logsFile and a dir
+	f := filepath.Join(*tr.dir, "logs.csv")
+	if _, err := os.Stat(f); err == nil {
+		return fmt.Errorf("File %v exists", f)
+
+	}
+	logsFile, err := os.Create(f)
+	if err != nil {
+		return err
+	}
+	defer logsFile.Close()
+	logsFile.WriteString("LogId,JobId\n")
+
+	jr, err := os.Open(filepath.Join(*tr.dir, "jobs.csv"))
+	if err != nil {
+		return err
+	}
+	defer jr.Close()
+	jobsCsv := csv.NewReader(jr)
+
+	header := true
+	for {
+		record, err := jobsCsv.Read()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return err
+		}
+		if header {
+			header = false
+			continue
+		}
+		jobId, err := strconv.Atoi(record[0])
+		if err != nil {
+			return err
+		}
+		log, _, _ := tr.client.Logs.FindByJobId(context.Background(), uint(jobId))
+		if log.Content == nil {
+			// No log content, job was cancelled
+			continue
+		}
+		logsFile.WriteString(row(log.Id, jobId) + "\n")
+		lf := filepath.Join(*tr.dir, "log", fmt.Sprintf("%v.txt", *log.Id))
+		if _, err := os.Stat(lf); err == nil {
+			// log file exists
+			continue
+		}
+		content := *log.Content
+		ioutil.WriteFile(lf, []byte(content), 0644)
+	}
 	return nil
 }
 
