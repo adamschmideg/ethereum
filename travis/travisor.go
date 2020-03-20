@@ -142,12 +142,12 @@ func (tr *travisInfo) doLogs() error {
 			return err
 		}
 		log, _, _ := tr.client.Logs.FindByJobId(context.Background(), uint(jobId))
-		if log.Content == nil {
+		if log == nil || log.Content == nil {
 			// No log content, job was cancelled
 			continue
 		}
 		logsFile.WriteString(row(log.Id, jobId) + "\n")
-		lf := filepath.Join(*tr.dir, "log", fmt.Sprintf("%v.txt", *log.Id))
+		lf := filepath.Join(*tr.dir, "log", fmt.Sprintf("%v.log", *log.Id))
 		if _, err := os.Stat(lf); err == nil {
 			// log file exists
 			continue
@@ -158,7 +158,67 @@ func (tr *travisInfo) doLogs() error {
 	return nil
 }
 
+func (tr *travisInfo) removeRepoName(pkg string) string {
+	prefix := "github.com/" + *tr.repo + "/"
+	if strings.HasPrefix(pkg, prefix) {
+		return pkg[len(prefix):]
+	}
+	return pkg
+}
+
 func (tr *travisInfo) doFailures() error {
+	f := filepath.Join(*tr.dir, "failures.csv")
+	if _, err := os.Stat(f); err == nil {
+		return fmt.Errorf("File %v exists", f)
+
+	}
+	failuresFile, err := os.Create(f)
+	if err != nil {
+		return err
+	}
+	defer failuresFile.Close()
+	failuresFile.WriteString("LogId,JobId,Package,Test,Error\n")
+
+	lr, err := os.Open(filepath.Join(*tr.dir, "logs.csv"))
+	if err != nil {
+		return err
+	}
+	defer lr.Close()
+	logsCsv := csv.NewReader(lr)
+	header := true
+	for {
+		record, err := logsCsv.Read()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return err
+		}
+		if header {
+			header = false
+			continue
+		}
+		logId := record[0]
+		rawContent, err := ioutil.ReadFile(filepath.Join(*tr.dir, "log", fmt.Sprintf("%v.log", logId)))
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
+		content := string(rawContent)
+		stats := getStats(&content)
+		for pkg, tests := range stats {
+			prjPkg := tr.removeRepoName(pkg)
+			for test, _ := range tests {
+				failuresFile.WriteString(row(logId, record[1], prjPkg, test, "") + "\n")
+			}
+		}
+		/*
+		for _, errMsg := range getErrors(&content) {
+			fmt.Println("writing", logId, errMsg)
+			failuresFile.WriteString(row(logId, record[1], "", "", errMsg) + "\n")
+		}
+		 */
+	}
 	return nil
 }
 
@@ -196,7 +256,20 @@ func filterLogs(repo string, n int, buildStates []string, jobStates []string) ch
 
 type Stats map[string]map[string]int
 
-func GetStats(logcontent *string) Stats {
+func getErrors(logcontent *string) []string {
+	var messages []string
+	exitedRE := regexp.MustCompile("^.*exited with [^0]")
+	for _, line := range strings.Split(*logcontent, "\n") {
+		errMsg := exitedRE.FindStringSubmatch(line)
+		if len(errMsg) > 0 && ! strings.HasPrefix(errMsg[0], "Done.") {
+			msg := strings.TrimSpace(errMsg[0])
+			messages = append(messages, msg)
+		}
+	}
+	return messages
+}
+
+func getStats(logcontent *string) Stats {
 	failingTestRE := regexp.MustCompile("^--- FAIL: (\\w+).*")
 	failingPkgRE := regexp.MustCompile("^FAIL\\s+(\\S+)\\s.*")
 	var s = make(Stats)
@@ -253,7 +326,7 @@ func statsForLogs(logfolder *string) Stats {
 			log.Fatal(err)
 		}
 		content := string(data)
-		newStats := GetStats(&content)
+		newStats := getStats(&content)
 		combineStats(&allStats, &newStats)
 	}
 	return allStats

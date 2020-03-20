@@ -5,21 +5,22 @@ Each step builds on the previous one(s). Nothing gets overwritten.
 ```
 travisor -do jobs -n 250 -dir .
 ```
-Result: `builds.csv` and `jobs.csv` populated
+Depends on: -
+Outputs: `builds.csv` and `jobs.csv` 
 
 ## Download logs
 Downloads all logs referred to in the file `jobs.csv`
 ```
 travisor -do logs -dir .
 ```
-Pre-requisite: `jobs.csv`
-Result: `logs/` folder populated with log files
+Depends on: `jobs.csv`
+Outputs: `logs.csv` and `logs/*.txt`
 
 ## Find failures
 ```
 travisor -do failures -dir .
 ```
-Pre-requisite: `logs/` folder with log files
-Result: `failures.csv`
+Depends on: `logs.csv` and `logs/*.txt`
+Outputs: `failures.csv`
 
 
