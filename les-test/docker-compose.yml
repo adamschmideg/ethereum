@@ -1,0 +1,55 @@
+version: '3.1'
+services:
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    environment:
+      - INFLUXDB_DB=metrics
+      - INFLUXDB_ADMIN_USERNAME=admin
+      - INFLUXDB_ADMIN_PASSWORD=password
+    expose:
+      - 8086
+    networks:
+      - light_network
+  lightserver:
+    image: ethereum/client-go:latest
+    container_name: lightserver
+#    depends_on:
+#      - influxdb
+    entrypoint:
+      - geth
+      - --metrics
+      - --metrics.influxdb
+      - --metrics.influxdb.endpoint=http://influxdb:8086
+      - --metrics.influxdb.username=admin
+      - --metrics.influxdb.password=password
+      - --metrics.influxdb.database=metrics
+      - --lightserv=100
+      - --nousb
+      - --syncmode=fast
+      - --rpc
+      - --rpcapi=les,admin
+      - --rpcport=${RPCPORT}
+      - --rpcaddr=0.0.0.0
+      - --goerli
+    expose:
+      - ${RPCPORT}
+    networks:
+      - light_network
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    depends_on:
+      - influxdb
+      - lightserver
+    volumes:
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+    ports:
+      - "3000:3000"
+    networks:
+      - light_network
+
+networks:
+  light_network:
+    driver: overlay
+
