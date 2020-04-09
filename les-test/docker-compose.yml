@@ -1,5 +1,11 @@
 version: '3.1'
 services:
+  dev:
+    image: alpine:latest
+    entrypoint: |
+      echo "port: $RPCPORT"
+    environment:
+      - RPCPORT
   influxdb:
     image: influxdb:latest
     container_name: influxdb
@@ -33,9 +39,11 @@ services:
       - --rpcaddr=0.0.0.0
       - --goerli
     expose:
-      - ${RPCPORT}
+      - $RPCPORT
     networks:
       - light_network
+    environment:
+      - RPCPORT
   grafana:
     image: grafana/grafana
     container_name: grafana
