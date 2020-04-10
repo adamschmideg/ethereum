@@ -24,22 +24,22 @@ services:
 #      - influxdb
     entrypoint:
       - geth
-      - --metrics
-      - --metrics.influxdb
-      - --metrics.influxdb.endpoint=http://influxdb:8086
-      - --metrics.influxdb.username=admin
-      - --metrics.influxdb.password=password
-      - --metrics.influxdb.database=metrics
+#      - --metrics
+#      - --metrics.influxdb
+#      - --metrics.influxdb.endpoint=http://influxdb:8086
+#      - --metrics.influxdb.username=admin
+#      - --metrics.influxdb.password=password
+#      - --metrics.influxdb.database=metrics
       - --lightserv=100
       - --nousb
       - --syncmode=fast
       - --rpc
       - --rpcapi=les,admin
       - --rpcport=${RPCPORT}
-      - --rpcaddr=0.0.0.0
+#      - --rpcaddr=0.0.0.0
       - --goerli
-    expose:
-      - $RPCPORT
+    ports:
+      - "$RPCPORT:$RPCPORT"
     networks:
       - light_network
     environment:
