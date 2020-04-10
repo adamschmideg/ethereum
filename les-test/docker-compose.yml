@@ -20,16 +20,16 @@ services:
   lightserver:
     image: ethereum/client-go:latest
     container_name: lightserver
-#    depends_on:
-#      - influxdb
+    depends_on:
+      - influxdb
     entrypoint:
       - geth
 #      - --metrics
-#      - --metrics.influxdb
-#      - --metrics.influxdb.endpoint=http://influxdb:8086
-#      - --metrics.influxdb.username=admin
-#      - --metrics.influxdb.password=password
-#      - --metrics.influxdb.database=metrics
+      - --metrics.influxdb
+      - --metrics.influxdb.endpoint=http://influxdb:8086
+      - --metrics.influxdb.username=admin
+      - --metrics.influxdb.password=password
+      - --metrics.influxdb.database=metrics
       - --lightserv=100
       - --nousb
       - --syncmode=fast
