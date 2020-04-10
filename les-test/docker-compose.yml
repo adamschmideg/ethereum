@@ -34,9 +34,9 @@ services:
       - --nousb
       - --syncmode=fast
       - --rpc
-      - --rpcapi=les,admin
+      - --rpcapi=les,admin,web3
       - --rpcport=${RPCPORT}
-#      - --rpcaddr=0.0.0.0
+      - --rpcaddr=0.0.0.0
       - --goerli
     ports:
       - "$RPCPORT:$RPCPORT"
