@@ -7,15 +7,23 @@ import (
 	"os/exec"
 )
 
-func main() {
-	// docker-compose run light
-	// rpc call it
-	port := 8548
-	cmd := exec.Command("docker-compose", "run", "lightserver")
-	cmd.Env = append(os.Environ(), fmt.Sprintf("RPCPORT=%v", port))
+func startServer(rpcport int, networkid int) error {
+	cmd := exec.Command("docker-compose", "-f", "server.yml", "run", "--service-ports", "--no-deps", "lightserver")
+	cmd.Env = append(os.Environ(), fmt.Sprintf("RPCPORT=%v", rpcport), fmt.Sprintf("NETWORKID=%v", networkid))
 	stdoutStderr, err := cmd.CombinedOutput()
+	if err != nil {
+		return err
+	}
+	fmt.Printf("%s\n", stdoutStderr)
+	return nil
+}
+
+func main() {
+	port := 8548
+	networkid := 5 // goerli
+	err := startServer(port, networkid)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%s\n", stdoutStderr)
+	// rpc call it
 }
