@@ -37,12 +37,13 @@ services:
       - --rpcapi=les,admin,web3
       - --rpcport=${RPCPORT}
       - --rpcaddr=0.0.0.0
-      - --goerli
+      - --networkid=$NETWORKID
     ports:
       - "$RPCPORT:$RPCPORT"
     networks:
       - light_network
     environment:
+      - NETWORKID
       - RPCPORT
   grafana:
     image: grafana/grafana

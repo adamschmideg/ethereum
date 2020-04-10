@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+  client:
+    image: ethereum/client-go:latest
+    container_name: client
+    entrypoint:
+      - geth
+      - --nousb
+      - --nodiscover
+      - --syncmode=light
+      - --rpc
+      - --rpcapi=les,eth,admin,web3
+      - --rpcport=${RPCPORT}
+      - --rpcaddr=0.0.0.0
+      - --networkid=$NETWORKID
+    ports:
+      - "$RPCPORT:$RPCPORT"
+    environment:
+      - NETWORKID
+      - RPCPORT
