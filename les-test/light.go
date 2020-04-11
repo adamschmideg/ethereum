@@ -1,12 +1,10 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"log"
 	"os"
 	"os/exec"
-	"time"
 
 	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/ethereum/go-ethereum/rpc"
@@ -72,25 +70,9 @@ func addPeer(serverPort int, clientPort int) error {
 		return err
 	}
 	enode := nodeInfo.Enode
-	peerCh := make(chan *p2p.PeerEvent)
-	sub, err := server.c.Subscribe(context.Background(), "admin", peerCh, "peerEvents")
-	if err != nil {
-		return err
-	}
-	defer sub.Unsubscribe()
 	err = client.c.Call(nil, "admin_addPeer", enode)
 	if err != nil {
 		return err
-	}
-	dur := 14 * time.Second
-	timeout := time.After(dur)
-	select {
-	case ev := <-peerCh:
-		fmt.Printf("At port %v received event: type=%v, peer=%v", serverPort, ev.Type, ev.Peer)
-	case err := <-sub.Err():
-		return err
-	case <-timeout:
-		return fmt.Errorf("Timeout after %v", dur)
 	}
 	return nil
 }
