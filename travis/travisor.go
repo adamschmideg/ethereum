@@ -31,7 +31,7 @@ type travisInfo struct {
 	client *travis.Client
 	repo   *string
 	count  int
-	dir *string
+	dir    *string
 }
 
 func (tr *travisInfo) buildsAndJobs() chan *travisJob {
@@ -213,12 +213,22 @@ func (tr *travisInfo) doFailures() error {
 			}
 		}
 		/*
-		for _, errMsg := range getErrors(&content) {
-			fmt.Println("writing", logId, errMsg)
-			failuresFile.WriteString(row(logId, record[1], "", "", errMsg) + "\n")
-		}
-		 */
+			for _, errMsg := range getErrors(&content) {
+				fmt.Println("writing", logId, errMsg)
+				failuresFile.WriteString(row(logId, record[1], "", "", errMsg) + "\n")
+			}
+		*/
 	}
+	return nil
+}
+
+func (tr *travisInfo) doBisect() error {
+	opts := travis.BuildOption{}
+	b, _, err := tr.client.Builds.Find(context.Background(), 666705211, &opts)
+	if err != nil {
+		return err
+	}
+	fmt.Println(*b.StartedAt, *b.Number, *b.Id)
 	return nil
 }
 
@@ -348,6 +358,8 @@ func main() {
 		err = tr.doLogs()
 	case "failures":
 		err = tr.doFailures()
+	case "bisect":
+		err = tr.doBisect()
 	default:
 		err = fmt.Errorf("Uknown action: %v", *action)
 	}
@@ -370,4 +382,3 @@ func row(a ...interface{}) string {
 	}
 	return strings.Join(all, ",")
 }
-

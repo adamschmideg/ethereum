@@ -2,8 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure
 
-url = "./"
-#url = "./data/"
+#url = "./"
+url = "./data/"
 converters = {'StartedAt': pd.to_datetime, 'FinishedAt': pd.to_datetime}
 builds = pd.read_csv(url + "builds.csv", converters=converters)
 jobs = pd.read_csv(url + "jobs.csv", converters=converters)

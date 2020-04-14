@@ -1,11 +1,5 @@
 version: '3.1'
 services:
-  dev:
-    image: alpine:latest
-    entrypoint: |
-      echo "port: $RPCPORT"
-    environment:
-      - RPCPORT
   influxdb:
     image: influxdb:latest
     container_name: influxdb
@@ -35,16 +29,15 @@ services:
       - --syncmode=fast
       - --rpc
       - --rpcapi=les,admin,web3
-      - --rpcport=${RPCPORT}
+      - --rpcport=8444
       - --rpcaddr=0.0.0.0
       - --networkid=$NETWORKID
     ports:
-      - "$RPCPORT:$RPCPORT"
+      - "8444:8444"
     networks:
       - light_network
     environment:
       - NETWORKID
-      - RPCPORT
   grafana:
     image: grafana/grafana
     container_name: grafana

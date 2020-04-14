@@ -58,11 +58,11 @@ func (cli *client) nodeInfo() (*p2p.NodeInfo, error) {
 func addPeer(serverPort int, clientPort int) error {
 	server, err := connect(serverPort)
 	if err != nil {
-		log.Fatal("Cannot connect server", err)
+		return err
 	}
 	client, err := connect(clientPort)
 	if err != nil {
-		log.Fatal("Cannot connect client", err)
+		return err
 	}
 
 	nodeInfo, err := server.nodeInfo()
