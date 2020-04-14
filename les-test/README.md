@@ -12,5 +12,5 @@ It will
 NETWORKID=5 docker-compose -f server.yml run --service-ports --no-deps lightserver
 NETWORKID=5 docker-compose -f client.yml up --scale client=2
 # In another terminal
-curl http://localhost:8548 -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","id":7151823,"method":"web3_clientVersion","params":[]}'
+curl http://localhost:9444 -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","id":7151823,"method":"web3_clientVersion","params":[]}'
 ```
