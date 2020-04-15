@@ -1,18 +1,27 @@
-version: '3.1'
+version: '3.3'
+
+x-client: &client
+ image: ethereum/client-go:latest
+ entrypoint:
+   - geth
+   - --nousb
+   - --nodiscover
+   - --syncmode=light
+   - --rpc
+   - --rpcapi=les,eth,admin,web3
+   - --rpcport=9444
+   - --rpcaddr=0.0.0.0
+   - --networkid=$NETWORKID
+ environment:
+   - NETWORKID
+
 services:
-  client:
-    image: ethereum/client-go:latest
-    entrypoint:
-      - geth
-      - --nousb
-      - --nodiscover
-      - --syncmode=light
-      - --rpc
-      - --rpcapi=les,eth,admin,web3
-      - --rpcport=9444
-      - --rpcaddr=0.0.0.0
-      - --networkid=$NETWORKID
+  client_1:
+    <<: *client
     ports:
-      - "9444-9500:9444-9500"
-    environment:
-      - NETWORKID
+      - "9444:9441"
+  client_2:
+    <<: *client
+    ports:
+      - "9444:9442"
+
