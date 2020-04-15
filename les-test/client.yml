@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.4'
 
 x-client: &client
  image: ethereum/client-go:latest
@@ -19,9 +19,9 @@ services:
   client_1:
     <<: *client
     ports:
-      - "9444:9441"
+      - "9441:9444"
   client_2:
     <<: *client
     ports:
-      - "9444:9442"
+      - "9442:9444"
 

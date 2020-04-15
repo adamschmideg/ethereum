@@ -1,3 +1,10 @@
+### The `addpeer` command
+
+```
+addpeer <node port> <peer port>
+```
+
+
 ```
 light spam --clients 3 --networkid 5`
 ```
