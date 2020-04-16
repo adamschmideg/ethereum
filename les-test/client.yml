@@ -24,4 +24,7 @@ services:
     <<: *client
     ports:
       - "9442:9444"
-
+  spam:
+    build:
+      context: .
+      dockerfile: Dockerfile
