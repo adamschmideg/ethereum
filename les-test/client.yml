@@ -14,17 +14,34 @@ x-client: &client
    - --networkid=$NETWORKID
  environment:
    - NETWORKID
+ expose:
+   - 9444
+ networks:
+   - light_network
 
 services:
   client_1:
     <<: *client
-    ports:
-      - "9441:9444"
+    container_name: client_1
   client_2:
     <<: *client
-    ports:
-      - "9442:9444"
+    container_name: client_2
+#  spam:
+#    depends_on:
+#      - client_1
+#    image: saintloong/alpine-amd64-coreutils:3.10.2
+#    entrypoint: |
+#      /bin/sh -c "sleep 5 && telnet client_1 9444"
+#    networks:
+#      - light_network
+
   spam:
     build:
       context: .
       dockerfile: Dockerfile
+    networks:
+      - light_network
+
+networks:
+  light_network:
+    driver: overlay
