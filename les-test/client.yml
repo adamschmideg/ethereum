@@ -11,6 +11,7 @@ x-client: &client
    - --rpcapi=les,eth,admin,web3
    - --rpcport=9444
    - --rpcaddr=0.0.0.0
+   - --rpcvhosts=*
    - --networkid=$NETWORKID
  environment:
    - NETWORKID
@@ -26,14 +27,6 @@ services:
   client_2:
     <<: *client
     container_name: client_2
-#  spam:
-#    depends_on:
-#      - client_1
-#    image: saintloong/alpine-amd64-coreutils:3.10.2
-#    entrypoint: |
-#      /bin/sh -c "sleep 5 && telnet client_1 9444"
-#    networks:
-#      - light_network
 
   spam:
     build:
