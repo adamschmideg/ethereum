@@ -4,13 +4,11 @@ enode=`send '{"jsonrpc":"2.0","id":555,"method":"admin_nodeInfo","params":[]}' h
 json="{\"jsonrpc\":\"2.0\",\"id\":555,\"method\":\"admin_addPeer\",\"params\":[\"${enode}\"]}"
 echo "sending: $json"
 send $json http://client_1:9444
-json="{\"jsonrpc\":\"2.0\",\"id\":555,\"method\":\"admin_peers\",\"params\":[]}"
-send $json http://client_1:9444
-sleep 2000
+send $json http://client_2:9444
 
-#ethspam | while read q
-#do
-#	echo $q
-#	curl http://client_1:9444  -H "Content-Type: application/json" -X POST --data $q
-#	curl http://client_2:9444  -H "Content-Type: application/json" -X POST --data $q
-#done
+ethspam | while read q
+do
+	# echo $q
+	send $q http://client_1:9444
+	send $q http://client_2:9444
+done

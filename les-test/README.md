@@ -16,8 +16,11 @@ It will
 
 ### Development
 ```
-NETWORKID=5 docker-compose -f server.yml run --service-ports --no-deps lightserver
-NETWORKID=5 docker-compose -f client.yml up --scale client=2
+ NETWORKID=5 docker-compose up --scale influxdb=0 --scale grafana=0 --build
 # In another terminal
 curl http://localhost:9444 -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","id":7151823,"method":"web3_clientVersion","params":[]}'
 ```
+To add more clients
+
+ - Add client_n to `docker-compose.yml`
+ - Add client_n to `spam.sh` 
