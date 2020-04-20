@@ -41,7 +41,7 @@ services:
       - influxdb
     entrypoint:
       - geth
-      #      - --metrics
+      - --metrics
       - --metrics.influxdb
       - --metrics.influxdb.endpoint=http://influxdb:8086
       - --metrics.influxdb.username=admin
