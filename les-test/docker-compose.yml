@@ -85,12 +85,44 @@ services:
   client_2:
     <<: *client
     container_name: client_2
+  client_3:
+    <<: *client
+    container_name: client_3
+  client_4:
+    <<: *client
+    container_name: client_4
+  client_5:
+    <<: *client
+    container_name: client_5
+  client_6:
+    <<: *client
+    container_name: client_6
+  client_7:
+    <<: *client
+    container_name: client_7
+  client_8:
+    <<: *client
+    container_name: client_8
+  client_9:
+    <<: *client
+    container_name: client_9
+  client_10:
+    <<: *client
+    container_name: client_10
 
   spam:
     depends_on:
       - lightserver
       - client_1
       - client_2
+      - client_3
+      - client_4
+      - client_5
+      - client_6
+      - client_7
+      - client_8
+      - client_9
+      - client_10
     build:
       context: .
       dockerfile: Dockerfile
