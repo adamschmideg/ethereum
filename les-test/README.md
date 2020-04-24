@@ -16,7 +16,7 @@ It will
 
 ### Development
 ```
- NETWORKID=5 docker-compose up --scale influxdb=0 --scale grafana=0 --build
+ NETWORK=' --goerli ' docker-compose up --scale influxdb=0 --scale grafana=0 --build
 # In another terminal
 curl http://localhost:9444 -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","id":7151823,"method":"web3_clientVersion","params":[]}'
 ```

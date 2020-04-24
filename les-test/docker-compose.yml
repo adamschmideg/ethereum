@@ -14,9 +14,9 @@ x-client: &client
    - --rpcport=9444
    - --rpcaddr=0.0.0.0
    - --rpcvhosts=*
-   - --networkid=$NETWORKID
+   - $NETWORK
  environment:
-   - NETWORKID
+   - NETWORK
  expose:
    - 9444
  networks:
@@ -55,7 +55,7 @@ services:
       - --rpcport=8444
       - --rpcaddr=0.0.0.0
       - --rpcvhosts=*
-      - --networkid=$NETWORKID
+      - $NETWORK
     expose:
       - 8444
     ports:
@@ -63,7 +63,7 @@ services:
     networks:
       - light_network
     environment:
-      - NETWORKID
+      - NETWORK
   grafana:
     image: grafana/grafana
     container_name: grafana
