@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="300px" height="300px" xmlns="http://www.w3.org/2000/svg" style="background:#e9e9e9;border:solid 1pt;">
+  <g-table id="table" x="50" y="50">
+    <row>
+	<cell style="color:red;display:block">Index</cell>
+	<cell>0</cell>
+	<cell>1</cell>
+	<cell>2</cell>
+	<cell>3</cell>
+    </row>
+    <row>
+	<cell>id</cell>
+	<cell>0</cell>
+	<cell>3</cell>
+	<cell>0</cell>
+	<cell>3</cell>
+    </row>
+    <row>
+	<cell>character</cell>
+	<cell>a</cell>
+	<cell>b</cell>
+	<cell>c</cell>
+	<cell>d</cell>
+    </row>
+  </g-table>
+</svg>
