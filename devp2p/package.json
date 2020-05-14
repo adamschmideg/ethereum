@@ -7,7 +7,6 @@
     "xmlbuilder2": "^2.1.2"
   },
   "devDependencies": {
-    "jest": "^26.0.1",
     "mocha": "^7.1.2"
   },
   "scripts": {
