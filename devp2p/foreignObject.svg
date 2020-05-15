@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+    <foreignObject x="10" y="10" width="100" height="150">
+        <table xmlns="http://www.w3.org/1999/xhtml">
+            <tr>
+                <td>A1</td>
+                <td>A2</td>
+            </tr>
+            <tr>
+                <td>B1</td>
+                <td>B2</td>
+            </tr>
+        </table>
+    </foreignObject>
+</svg>

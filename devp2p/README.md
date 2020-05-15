@@ -9,3 +9,8 @@ Inline:
 Included:
 
 ![external](./table.svg)
+
+Included table as a foreignObject:
+
+
+![table](./foreignObject.svg)
